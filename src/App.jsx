@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Root from './Pages/raiz/Root';
 import LoginPage from './Pages/LoginPage/LoginPage';
+import PublicationCreatePage from './pages/PublicationCreatePage/PublicationCreatePage';
 
 function App() {
     return (
@@ -12,8 +13,11 @@ function App() {
             <Header />
             <Routes>
                 <Route path='/' element={<Root />} />
-                <Route path='register' element={<RegisterPage />} />
-                <Route path='login' element={<LoginPage />} />
+                <Route path='/register' element={<RegisterPage />} />
+                <Route path='/login' element={<LoginPage />} />
+                <Route path='/message' element={<PublicationCreatePage />} />
+                <Route path='*' element={<NotFoundPage />} />
+
             </Routes>
             <Footer />
         </>

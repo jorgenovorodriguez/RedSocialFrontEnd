@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import registerService from '../../services/registerService';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
+    const navigate = useNavigate();
+
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -16,6 +19,8 @@ const RegisterForm = () => {
             setLoading(true);
 
             await registerService(username, email, password);
+
+            navigate('/activate')
         } catch (err) {
             setErrorMsg(err.msg);
         } finally {

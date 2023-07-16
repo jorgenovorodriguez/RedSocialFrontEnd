@@ -1,5 +1,5 @@
 const loginService = async (email, password) => {
-    const res = await fetch('https://tatooart.fly.dev/users/login', {
+    const res = await fetch('http://localhost:8000/users/login', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json',
