@@ -1,9 +1,11 @@
+import { Navigate } from 'react-router-dom';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import useAuth from '../../hooks/useAuth';
 
 const LoginPage = () => {
-    const login = (newToken) => {
-        localStorage.setItem('token', newToken);
-    };
+    const { token, login } = useAuth();
+
+    if (token) return <Navigate to='/' />
 
     return (
         <main>
