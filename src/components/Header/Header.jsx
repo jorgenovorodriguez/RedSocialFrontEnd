@@ -28,7 +28,7 @@ const Header = () => {
                             <NavLink to='/message'>Mensaje</NavLink>
                         </div>
                         <div onClick={() => logout()}>
-                            <p>Cerrar cesión</p>
+                            <button>Cerrar cesión</button>
                         </div>
                     </>
                 )}

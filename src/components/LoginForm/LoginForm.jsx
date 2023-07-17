@@ -36,7 +36,7 @@ const LoginForm = ({ login }) => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
             />
-            <label onSubmit='password'>Contraseña:</label>
+            <label htmlFor='password'>Contraseña:</label>
             <input
                 type='password'
                 id='password'
