@@ -1,16 +1,22 @@
-const PublicationCreateService = async (text, file, token) => {
+const PublicationCreateService = async (description, photo, title, place, token) => {
     const formData = new FormData();
 
-    formData.append('image', file);
+    formData.append('image', photo);
 
-    if (file) formData.append('image', file);
+    if (photo) formData.append('image', photo);
 
     const res = await fetch('http://localhost:8000/publications', {
         method: 'post',
         headers: {
             Authorization: token,
         },
-        body: formData,
+        body: JSON.stringify({
+            formData,
+            description,
+            title,
+            place,
+        }),
+
     });
 
     const body = await res.json();

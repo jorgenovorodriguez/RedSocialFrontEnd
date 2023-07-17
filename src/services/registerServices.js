@@ -17,7 +17,7 @@ const registerService = async (username, email, password) => {
         throw new Error(body.msg);
     }
 
-    return body.data.token;
+    return body.data.message;
 };
 
 export default registerService;
