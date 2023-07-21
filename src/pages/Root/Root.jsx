@@ -1,9 +1,13 @@
-const Root = () => {
+import PublicationList from '../../components/PublicationList/PublicationList';
+
+const TattooHome = () => {
     return (
-        <>
-            <p>papa fritas con vinagre!</p>
-        </>
+        <main>
+            <div>
+                <PublicationList />
+            </div>
+        </main>
     );
 };
 
-export default Root;
+export default TattooHome;
