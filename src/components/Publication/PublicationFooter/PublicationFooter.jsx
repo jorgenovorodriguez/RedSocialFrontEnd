@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 
 import useAuth from '../../../hooks/useAuth';
 
+import './../publication.css';
+
 const PublicationFooter = ({
     publicationId,
     owner,

@@ -15,14 +15,15 @@ const Publication = ({
             <PublicationHeader
                 username={publication.author}
                 createdAt={publication.createdAt}
+                place={publication.place}
             />
             <PublicationBody
                 text={publication.text}
-                image={publication.photoName}
+                photoName={publication.photoName}
                 description={publication.description}
             />
             <PublicationFooter
-                publicationId={publication.id}
+                publicationId={publication.publicationId}
                 owner={publication.owner}
                 likes={publication.likes}
                 likedByMe={publication.likedByMe}
