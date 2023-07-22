@@ -18,7 +18,11 @@ const RegisterForm = () => {
 
             setLoading(true);
 
+            const validateEmail = email;
+            sessionStorage.setItem('validateEmail', validateEmail);
+
             await registerService(username, email, password);
+
 
             navigate('/activated');
         } catch (err) {
