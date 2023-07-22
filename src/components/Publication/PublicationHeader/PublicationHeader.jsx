@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const PublicationHeader = ({ username, createdAt }) => {
+const PublicationHeader = ({ username, createdAt, place }) => {
     return (
         <header>
             <p>@{username}</p>
@@ -13,6 +13,7 @@ const PublicationHeader = ({ username, createdAt }) => {
                     year: '2-digit',
                 })}
             </time>
+            <p>{place}</p>
         </header>
     );
 };
@@ -20,6 +21,7 @@ const PublicationHeader = ({ username, createdAt }) => {
 PublicationHeader.propTypes = {
     username: PropTypes.string,
     createdAt: PropTypes.string,
+    place: PropTypes.string,
 };
 
 export default PublicationHeader;
