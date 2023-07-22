@@ -4,16 +4,22 @@ import PublicationHeader from './PublicationHeader/PublicationHeader';
 import PublicationBody from './PublicationBody/PublicationBody';
 import PublicationFooter from './PublicationFooter/PublicationFooter';
 
-const Publication = (publication, toogleLike, deletePublication, loading) => {
+const Publication = ({
+    publication,
+    toogleLike,
+    deletePublication,
+    loading,
+}) => {
     return (
         <li>
             <PublicationHeader
-                username={publication.username}
+                username={publication.author}
                 createdAt={publication.createdAt}
             />
             <PublicationBody
                 text={publication.text}
-                image={publication.photo}
+                image={publication.photoName}
+                description={publication.description}
             />
             <PublicationFooter
                 publicationId={publication.id}
