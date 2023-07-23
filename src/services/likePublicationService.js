@@ -5,7 +5,7 @@ const likePublicationService = async (publicationId, likedByMe, token) => {
         `http://localhost:8000/publications/${publicationId}/likes`,
         {
             method,
-            header: {
+            headers: {
                 Authorization: token,
             },
         }
