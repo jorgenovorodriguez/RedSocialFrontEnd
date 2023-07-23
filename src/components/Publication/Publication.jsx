@@ -23,7 +23,7 @@ const Publication = ({
                 description={publication.description}
             />
             <PublicationFooter
-                publicationId={publication.publicationId}
+                publicationId={publication.id}
                 owner={publication.owner}
                 likes={publication.likes}
                 likedByMe={publication.likedByMe}

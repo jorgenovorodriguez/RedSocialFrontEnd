@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 
 import useAuth from '../../../hooks/useAuth';
 
-import './../publication.css';
-
 const PublicationFooter = ({
     publicationId,
     owner,
@@ -38,11 +36,12 @@ const PublicationFooter = ({
     return (
         <footer>
             <div>
-                <div
+                <button
                     className={`heart ${likedByMe && 'like'}`}
                     onClick={(e) => handleLike(e)}
-                ></div>
-                <p>{likes}</p>
+                >
+                    {likes} Like
+                </button>
             </div>
             {token && owner === 1 && (
                 <button
