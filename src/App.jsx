@@ -8,24 +8,29 @@ import ValidatedPage from './pages/ValidatePage/ValidatePage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import PublicationCreatePage from './pages/PublicationCreatePage/PublicationCreatePage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import SinglePublicationPage from './pages/SinglePublicationPage/SinglePublicationPage';
 
 function App() {
-    return (
-        <>
-            <Header />
-            <Routes>
-                <Route path='/' element={<Root />} />
-                <Route path='/register' element={<RegisterPage />} />
-                <Route path='/activated' element={<ValidatedPage />} />
-                <Route path='/login' element={<LoginPage />} />
-                <Route path='/login-success' element={<LoginPage />} />{' '}
-                {/* Nueva ruta */}
-                <Route path='/message' element={<PublicationCreatePage />} />
-                <Route path='*' element={<NotFoundPage />} />
-            </Routes>
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Root />} />
+        <Route
+          path='/singlepublication/:id'
+          element={<SinglePublicationPage />}
+        />
+        <Route path='/register' element={<RegisterPage />} />
+        <Route path='/activated' element={<ValidatedPage />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/login-success' element={<LoginPage />} />
+
+        <Route path='/message' element={<PublicationCreatePage />} />
+        <Route path='*' element={<NotFoundPage />} />
+      </Routes>
+      <Footer />
+    </>
+  );
 }
 
 export default App;
