@@ -3,34 +3,34 @@ import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Publication from '../Publication/Publication';
 
 const PublicationList = () => {
-    const { publications, toogleLike, deletePublication, errMsg, loading } =
-        usePublications();
+  const { publications, toogleLike, deletePublication, errMsg, loading } =
+    usePublications();
 
-    return (
-        <main>
-            {loading && <p>Loading...</p>}
+  return (
+    <main>
+      {loading && <p>Loading...</p>}
 
-            {errMsg && <ErrorMessage msg={errMsg} />}
+      {errMsg && <ErrorMessage msg={errMsg} />}
 
-            <ul>
-                {publications.length > 0 ? (
-                    publications.map((publication) => {
-                        return (
-                            <Publication
-                                key={publication.id}
-                                publication={publication}
-                                toogleLike={toogleLike}
-                                deletePublication={deletePublication}
-                                loading={loading}
-                            />
-                        );
-                    })
-                ) : (
-                    <li>No hay publicaciones</li>
-                )}
-            </ul>
-        </main>
-    );
+      <ul>
+        {publications.length > 0 ? (
+          publications.map((publication) => {
+            return (
+              <Publication
+                key={publication.id}
+                publication={publication}
+                toogleLike={toogleLike}
+                deletePublication={deletePublication}
+                loading={loading}
+              />
+            );
+          })
+        ) : (
+          <li>No hay publicaciones</li>
+        )}
+      </ul>
+    </main>
+  );
 };
 
 export default PublicationList;
