@@ -68,6 +68,34 @@ const usePublications = () => {
     }
   };
 
+  const toog = async (e, publicationId, likedByMe) => {
+    try {
+      setLoading(true);
+
+      await likePublicationService(publicationId, likedByMe, token);
+
+      setPublications(
+        publications.map((publication) => {
+          if (publication.id === publicationId) {
+            const haslikeClass = e.target.classList.contains('like');
+
+            if (haslikeClass) {
+              publication.likes++;
+            } else {
+              publication.likes--;
+            }
+
+            publication.likedByMe = !publication.likedByMe;
+          }
+
+          return publication;
+        })
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const deletePublication = async (publicationId) => {
     try {
       setLoading(true);
@@ -90,6 +118,7 @@ const usePublications = () => {
     setSearchParams,
     errMsg,
     loading,
+    toog,
   };
 };
 
