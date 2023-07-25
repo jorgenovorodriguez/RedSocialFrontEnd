@@ -73,7 +73,7 @@ const useSingerPublication = () => {
       
           await deletePublicationService(publicationId, token);
       
-          setPublication({}); // Establecer el estado como un objeto vacío
+          setPublication(); // Establecer el estado como un objeto vacío
         } finally {
           setLoading(false);
         }}
