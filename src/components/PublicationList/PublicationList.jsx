@@ -15,6 +15,7 @@ const PublicationList = () => {
       <ul>
         {publications.length > 0 ? (
           publications.map((publication) => {
+            console.log(publication.likedByMe + 'lista');
             return (
               <Publication
                 key={publication.id}
