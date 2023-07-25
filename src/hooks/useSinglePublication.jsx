@@ -4,7 +4,7 @@ import likePublicationService from '../services/likePublicationService';
 import deletePublicationService from '../services/deletePublicationService';
 import { useParams } from 'react-router-dom';
 
-const useSingerPublication = () => {
+const useSinglePublication = () => {
     const { token } = useAuth();
     const { id } = useParams();
 
@@ -13,7 +13,7 @@ const useSingerPublication = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        const fetchPublication = async (id) => { // Recibe el parámetro id aquí
+        const fetchPublication = async (id) => {
             try {
                 setLoading(true);
 
@@ -37,50 +37,46 @@ const useSingerPublication = () => {
                 setLoading(false);
             }
         };
-        fetchPublication(id); 
+        fetchPublication(id);
     }, [id, token]);
 
     const toogleLike = async (e, publicationId, likedByMe) => {
         try {
-          setLoading(true);
-      
-          const updatedPublication = { ...publication };
-      
-          if (updatedPublication.id === publicationId) {
-            const hasLikeClass = e.target.classList.contains('like');
-      
-            if (hasLikeClass) {
-              updatedPublication.likes++;
-            } else {
-              updatedPublication.likes--;
-            }
-      
-            updatedPublication.likedByMe = !updatedPublication.likedByMe;
-          }
-      
-          setPublication(updatedPublication);
-      
-          await likePublicationService(publicationId, likedByMe, token);
-        } finally {
-          setLoading(false);
-        }
-      };
-      
+            setLoading(true);
 
-      const deletePublication = async (publicationId) => {
-        try {
-          setLoading(true);
-      
-          await deletePublicationService(publicationId, token);
-      
-          setPublication(); // Establecer el estado como un objeto vacío
+            const updatedPublication = { ...publication };
+
+            if (updatedPublication.id === publicationId) {
+                const hasLikeClass = e.target.classList.contains('like');
+
+                if (hasLikeClass) {
+                    updatedPublication.likes++;
+                } else {
+                    updatedPublication.likes--;
+                }
+
+                updatedPublication.likedByMe = !updatedPublication.likedByMe;
+            }
+
+            setPublication(updatedPublication);
+
+            await likePublicationService(publicationId, likedByMe, token);
         } finally {
-          setLoading(false);
-        }}
-      
-      
-      
-      
+            setLoading(false);
+        }
+    };
+
+    const deletePublication = async (publicationId) => {
+        try {
+            setLoading(true);
+
+            await deletePublicationService(publicationId, token);
+
+            setPublication();
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return {
         publication,
@@ -88,8 +84,7 @@ const useSingerPublication = () => {
         deletePublication,
         errMsg,
         loading,
-        toogleLike,
     };
 };
 
-export default useSingerPublication;
+export default useSinglePublication;
