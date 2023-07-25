@@ -9,6 +9,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import PublicationCreatePage from './pages/PublicationCreatePage/PublicationCreatePage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import SinglePublicationPage from './pages/SinglePublicationPage/SinglePublicationPage';
+import ProfilePage from './pages/ProfilePage/ProfilePage'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           path='/singlepublication/:id'
           element={<SinglePublicationPage />}
         />
+        <Route path='/profile/:id' element={<ProfilePage />}/>
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/activated' element={<ValidatedPage />} />
         <Route path='/login' element={<LoginPage />} />
@@ -29,7 +31,7 @@ function App() {
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
       <Footer />
-    </>
+    </> 
   );
 }
 
