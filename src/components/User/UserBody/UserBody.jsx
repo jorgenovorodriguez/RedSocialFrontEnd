@@ -1,16 +1,12 @@
-import { useEffect } from 'react';
 import ErrorMessage from '../../ErrorMessage/ErrorMessage';
 import usePublications from '../../../hooks/usePublications';
 import Publication from '../../Publication/Publication';
 
 const ProfileBody = () => {
-    const { userId, publications, fetchPublications, errMsg, loading } =
+    const { publications, fetchPublications, errMsg, loading } =
         usePublications();
 
-    useEffect(() => {
-        fetchPublications(userId);
-    }, [userId]);
-
+    fetchPublications(userId);
     return (
         <div>
             {loading && <p>Loading...</p>}
