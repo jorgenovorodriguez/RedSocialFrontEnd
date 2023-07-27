@@ -8,6 +8,7 @@ import { useState } from 'react';
 const SinglePublicationPage = () => {
     const { publication, toogleLike, deletePublication, errMsg, loading, setPublication } =
         useSinglePublication();
+    
 
     const [userComment, setUserComment] = useState([]); // Define el estado de los comentarios
 

@@ -2,7 +2,7 @@ import CommentHeader from './CommentHeader/CommentHeader';
 import CommentBody from './CommentBody/CommentBody';
 
 const Comment = ({ comments }) => {
-    console.log(comments);
+    
     return (
         <ul>
             {comments.map((comment, index) => (

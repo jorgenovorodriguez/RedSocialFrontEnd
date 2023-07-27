@@ -11,9 +11,10 @@ const Publication = ({
     loading,
 }) => {
     return (
-        <li>
+        <div>
             <Link to={`/users/${publication.authorId}`}>
                 <PublicationHeader
+                    avatar={publication.authorAvatar}
                     username={publication.author}
                     createdAt={publication.createdAt}
                     place={publication.place}
@@ -35,7 +36,7 @@ const Publication = ({
                 deletePublication={deletePublication}
                 loading={loading}
             />
-        </li>
+        </div>
     );
 };
 

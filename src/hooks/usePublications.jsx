@@ -31,7 +31,7 @@ const usePublications = () => {
                 }
 
                 setPublications(body.data.publications);
-                console.log(body.data.publication);
+                
             } catch (err) {
                 setErrMsg(err.msg);
             } finally {

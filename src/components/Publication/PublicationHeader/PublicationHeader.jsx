@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
+import Avatar from '../../Avatar/Avatar';
 
-const PublicationHeader = ({ username, createdAt, place }) => {
+const PublicationHeader = ({ username, createdAt, place, avatar }) => {
+   
     return (
         <header>
+            <Avatar avatar={avatar} username={username}/>
             <p>@{username}</p>
             <time>
                 {new Date(createdAt).toLocaleDateString('es-ES', {
