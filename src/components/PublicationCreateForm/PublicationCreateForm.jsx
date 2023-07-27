@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import PublicationCreateService from '../../services/PublicationCreateService';
+import publicationCreateService from '../../services/publicationCreateService';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 const PublicationCreateForm = ({ token }) => {
@@ -21,7 +21,7 @@ const PublicationCreateForm = ({ token }) => {
 
             setLoading(true);
 
-            await PublicationCreateService(
+            await publicationCreateService(
                 description,
                 photo,
                 title,
