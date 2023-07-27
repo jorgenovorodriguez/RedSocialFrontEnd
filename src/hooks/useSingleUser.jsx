@@ -4,7 +4,7 @@ import useAuth from './useAuth';
 const useSingleUser = (userId) => {
     const { token } = useAuth();
 
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState({});
     const [errMsg, setErrMsg] = useState('');
     const [loading, setLoading] = useState(false);
 
@@ -14,7 +14,7 @@ const useSingleUser = (userId) => {
                 setLoading(true);
 
                 const res = await fetch(
-                    `http://localhost:8000/users?${userId}`,
+                    `http://localhost:8000/users/${userId}`,
                     {
                         headers: token ? { Authorization: token } : {},
                     }
