@@ -32,7 +32,7 @@ const SinglePublicationPage = () => {
                 {Array.isArray(publication?.comments) && publication.comments.length > 0 ? (
                     <Comment comments={publication.comments.slice().reverse()} setUserComment={setUserComment} />
                 ) : (
-                    <p>No comments to display</p>
+                    <p>¿No hay comentarios? Anímate, haz el primero</p>
                 )}
             </div>
             <div>

@@ -4,6 +4,7 @@ import usePublications from '../../hooks/usePublications';
 
 const TattooHome = () => {
     const { searchParams, setSearchParams, loading } = usePublications();
+ 
     return (
         <main>
             <div>
@@ -16,6 +17,7 @@ const TattooHome = () => {
             <div>
                 <PublicationList />
             </div>
+            
         </main>
     );
 };
