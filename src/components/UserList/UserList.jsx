@@ -1,5 +1,5 @@
 import useUsers from '../../hooks/useUsers';
-import User from '../User/User';
+import UserListItem from '../UserListItem/UserListItem';
 
 const UserList = () => {
     const { users } = useUsers();
@@ -9,7 +9,7 @@ const UserList = () => {
             <ul>
                 {users.length > 0 ? (
                     users.map((user) => {
-                        return <User key={user.id} user={user} />;
+                        return <UserListItem key={user.id} user={user} />;
                     })
                 ) : (
                     <li>

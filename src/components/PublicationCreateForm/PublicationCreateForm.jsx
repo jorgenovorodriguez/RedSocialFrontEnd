@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import publicationCreateService from '../../services/publicationCreateService';
+import publicationCreateService from '../../services/PublicationCreateService';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 const PublicationCreateForm = ({ token }) => {

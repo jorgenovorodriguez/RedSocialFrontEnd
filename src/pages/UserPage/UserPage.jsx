@@ -1,9 +1,14 @@
-import User from '../../components/User/User';
+import { useParams } from 'react-router-dom';
+import UserProfile from '../../components/UserProfile/UserPofrile';
+import useSingleUser from '../../hooks/useSingleUser';
 
 const UserPage = () => {
+    const { userId } = useParams();
+    const { user } = useSingleUser(userId);
+
     return (
         <main>
-            <User />
+            <UserProfile user={user} />
         </main>
     );
 };

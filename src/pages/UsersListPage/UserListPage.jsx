@@ -1,5 +1,5 @@
 import SearchForm from '../../components/SearchForm/SearchForm';
-import UserList from '../../components/UserList.jsx/UserList';
+import UserList from '../../components/UserList/UserList';
 import useUsers from '../../hooks/useUsers';
 
 const UserListPage = () => {

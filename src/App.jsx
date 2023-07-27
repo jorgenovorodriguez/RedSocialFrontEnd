@@ -22,8 +22,8 @@ function App() {
                     path='/singlepublication/:id'
                     element={<SinglePublicationPage />}
                 />
-                <Route path='users' element={<UserListPage />} />
-                <Route path='users/:id' element={<UserPage />} />
+                <Route path='/users' element={<UserListPage />} />
+                <Route path='/users/:id' element={<UserPage />} />
                 <Route path='/register' element={<RegisterPage />} />
                 <Route path='/activated' element={<ValidatedPage />} />
                 <Route path='/login' element={<LoginPage />} />
