@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import defaultAvatar from '../../assets/images/defaultAvatar.jpg';
+import UserProfilePublications from './UserProfilePublications/UserProfilePublications';
 
 const UserProfile = ({ user }) => {
     return (
@@ -16,6 +17,14 @@ const UserProfile = ({ user }) => {
                 <h2>@{user.username}</h2>
                 <p>{user.role}</p>
                 <p>{user.personalInfo}</p>
+            </div>
+            <div>
+                {Array.isArray(user?.publications) &&
+                user.publications.length > 0 ? (
+                    <UserProfilePublications />
+                ) : (
+                    <p>No hay publicationes</p>
+                )}
             </div>
         </div>
     );

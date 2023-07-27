@@ -12,11 +12,13 @@ const Publication = ({
 }) => {
     return (
         <li>
-            <PublicationHeader
-                username={publication.author}
-                createdAt={publication.createdAt}
-                place={publication.place}
-            />
+            <Link to={`/users/${publication.authorId}`}>
+                <PublicationHeader
+                    username={publication.author}
+                    createdAt={publication.createdAt}
+                    place={publication.place}
+                />
+            </Link>
             <Link to={`/singlepublication/${publication.id}`}>
                 <PublicationBody
                     title={publication.title}
