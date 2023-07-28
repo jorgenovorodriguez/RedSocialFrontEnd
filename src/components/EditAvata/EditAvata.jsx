@@ -11,6 +11,8 @@ const EditAvata = ({ token }) => {
         formData.append('avatar', avatar); // Asegúrate de que avatar contenga el archivo seleccionado
 
         await avatarEditService(formData, token);
+
+        window.location.reload();
     };
 
     return (

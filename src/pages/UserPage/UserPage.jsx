@@ -5,7 +5,7 @@ import useSingleUser from '../../hooks/useSingleUser';
 const UserPage = () => {
     const { userId } = useParams();
     const { user } = useSingleUser(userId);
-
+    console.log(user);
     return (
         <main>
             <UserProfile user={user} />

@@ -1,15 +1,36 @@
+import { useEffect, useState } from 'react';
+import Avatar from '../../components/Avatar/Avatar';
 import EditAvata from '../../components/EditAvata/EditAvata';
 import EditPassword from '../../components/EditPassword/EditPassword';
-import PersonalInfo from '../../components/PersonalInfo/PersonalInfo';
+
 import useAuth from '../../hooks/useAuth';
+import onwerUserService from '../../services/onwerUserService';
+import EditPersonalInfo from '../../components/EditPersonalInfo/EditPersonalInfo';
 
 const SettingsPage = () => {
     const { token } = useAuth();
+    const [user, setUser] = useState('');
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                const userData = await onwerUserService(token);
+                setUser(userData);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchUser();
+    }, [token]);
+
     return (
         <div>
             <h2>ajustes</h2>
             <div>
-                <PersonalInfo token={token} />
+                <Avatar avatar={user.avatar} username={user.username} />
+            </div>
+            <div>
+                <EditPersonalInfo token={token} />
             </div>
             <div>
                 <EditAvata token={token} />

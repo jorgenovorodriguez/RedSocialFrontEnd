@@ -1,18 +1,12 @@
 import PropTypes from 'prop-types';
-import defaultAvatar from '../../assets/images/defaultAvatar.jpg';
 import UserProfilePublications from './UserProfilePublications/UserProfilePublications';
+import Avatar from '../Avatar/Avatar';
 
 const UserProfile = ({ user }) => {
+    console.log(user);
     return (
         <div>
-            <img
-                src={
-                    user.avatar
-                        ? `http://localhost:8000/${user.avatar}`
-                        : defaultAvatar
-                }
-                alt={`${user.username} avatar`}
-            />
+            <Avatar avatar={user.avatar} username={user.username} />
             <div>
                 <h2>@{user.username}</h2>
                 <p>{user.role}</p>
