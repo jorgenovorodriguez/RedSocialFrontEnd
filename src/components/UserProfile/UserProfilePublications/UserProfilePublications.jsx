@@ -1,11 +1,10 @@
-import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import usePublications from '../../../hooks/usePublications';
+
 import PublicationBody from '../../Publication/PublicationBody/PublicationBody';
 
-const UserProfilePublications = () => {
-    const { userId } = useParams();
-    const { publications } = usePublications(userId);
+const UserProfilePublications = ({ publications }) => {
+
+    console.log(publications);
     return (
         <main>
             <ul>
