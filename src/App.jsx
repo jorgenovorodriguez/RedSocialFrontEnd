@@ -11,6 +11,7 @@ import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import SinglePublicationPage from './pages/SinglePublicationPage/SinglePublicationPage';
 import UserListPage from './pages/UsersListPage/UserListPage';
 import UserPage from './pages/UserPage/UserPage';
+import SettingsPage from './pages/SettingsPage/SettingsPage';
 
 function App() {
     return (
@@ -29,6 +30,7 @@ function App() {
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/login-success' element={<LoginPage />} />
                 <Route path='/message' element={<PublicationCreatePage />} />
+                <Route path='/settings' element={<SettingsPage />} />
                 <Route path='*' element={<NotFoundPage />} />
             </Routes>
             <Footer />
