@@ -1,7 +1,8 @@
 const personalInfoEditService = async (personalInfo, token) => {
     const formData = new FormData();
-    formData.append('personalInfo', personalInfo);
 
+    formData.append('personalInfo', personalInfo);
+    console.log(personalInfo);
     try {
         const res = await fetch('http://localhost:8000/users/info', {
             method: 'PUT',
