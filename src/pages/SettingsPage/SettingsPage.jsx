@@ -1,5 +1,6 @@
 import EditAvata from '../../components/EditAvata/EditAvata';
 import EditPassword from '../../components/EditPassword/EditPassword';
+import PersonalInfo from '../../components/PersonalInfo/PersonalInfo';
 import useAuth from '../../hooks/useAuth';
 
 const SettingsPage = () => {
@@ -7,6 +8,9 @@ const SettingsPage = () => {
     return (
         <div>
             <h2>ajustes</h2>
+            <div>
+                <PersonalInfo token={token} />
+            </div>
             <div>
                 <EditAvata token={token} />
             </div>
