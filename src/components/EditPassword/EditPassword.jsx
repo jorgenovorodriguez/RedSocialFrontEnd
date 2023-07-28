@@ -1,16 +1,14 @@
 import { useState } from 'react';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import validatePasswordService from '../../services/validatePasswordService';
-import useAuth from '../../hooks/useAuth';
 
-const EditPassword = () => {
+const EditPassword = ({ token }) => {
     const [currentPass, setCurrentPass] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [errMsg, setErrorMsg] = useState('');
     const [loading, setLoading] = useState(false);
     const [newPasswordCompare, setNewPasswordCompare] = useState('');
     const [confirmations, setConfirmations] = useState('');
-    const { token } = useAuth();
 
     const handlesubmitEditPassword = async (e) => {
         try {
