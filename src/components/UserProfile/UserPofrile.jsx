@@ -19,9 +19,8 @@ const UserProfile = ({ user }) => {
                 <p>{user.personalInfo}</p>
             </div>
             <div>
-                {Array.isArray(user?.publications) &&
-                user.publications.length > 0 ? (
-                    <UserProfilePublications />
+                {Array.isArray(user?.publications) ? (
+                    <UserProfilePublications publications={user.publications} />
                 ) : (
                     <p>No hay publicationes</p>
                 )}
