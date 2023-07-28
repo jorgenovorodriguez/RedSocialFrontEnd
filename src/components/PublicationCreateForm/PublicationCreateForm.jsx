@@ -29,7 +29,7 @@ const PublicationCreateForm = ({ token }) => {
                 token
             );
 
-            navigate('/');
+            navigate('/home');
         } catch (err) {
             setErrMsg(err.msg);
         } finally {

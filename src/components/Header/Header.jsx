@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <header>
             <h1>
-                <NavLink to='/'>TatooArt</NavLink>
+                <NavLink to='/home'>TatooArt</NavLink>
             </h1>
             <nav>
                 {user && <p>@{user.username}</p>}
