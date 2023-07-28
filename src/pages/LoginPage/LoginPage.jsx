@@ -5,7 +5,7 @@ import useAuth from '../../hooks/useAuth';
 const LoginPage = () => {
     const { token, login } = useAuth();
 
-    if (token) return <Navigate to='/' />
+    if (token) return <Navigate to='/home' />;
 
     return (
         <main>

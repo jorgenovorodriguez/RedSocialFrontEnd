@@ -12,13 +12,15 @@ import SinglePublicationPage from './pages/SinglePublicationPage/SinglePublicati
 import UserListPage from './pages/UsersListPage/UserListPage';
 import UserPage from './pages/UserPage/UserPage';
 import SettingsPage from './pages/SettingsPage/SettingsPage';
+import InfoPage from './pages/InfoPage/InfoPage';
 
 function App() {
     return (
         <>
             <Header />
             <Routes>
-                <Route path='/' element={<Root />} />
+                <Route path='/' element={<InfoPage />} />
+                <Route path='/home' element={<Root />} />
                 <Route
                     path='/singlepublication/:id'
                     element={<SinglePublicationPage />}
