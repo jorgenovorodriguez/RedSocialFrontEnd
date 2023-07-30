@@ -1,6 +1,8 @@
 import CommentHeader from './CommentHeader/CommentHeader';
 import CommentBody from './CommentBody/CommentBody';
 
+import './Comment.css';
+
 const Comment = ({ comments }) => {
     console.log(comments);
     return (
