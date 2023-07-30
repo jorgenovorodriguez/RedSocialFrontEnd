@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import defaultAvatar from '../../assets/images/defaultAvatar.jpg';
 import { Link } from 'react-router-dom';
 
-
 const UserListItem = ({ user }) => {
     return (
         <li>
@@ -18,6 +17,7 @@ const UserListItem = ({ user }) => {
                 <div>
                     <h2>@{user.username}</h2>
                     <p>{user.role}</p>
+                    <p>{user.place}</p>
                 </div>
             </Link>
         </li>
@@ -30,6 +30,7 @@ UserListItem.propTypes = {
         username: PropTypes.string.isRequired,
         role: PropTypes.string.isRequired,
         avatar: PropTypes.string,
+        place: PropTypes.string,
     }),
 };
 
