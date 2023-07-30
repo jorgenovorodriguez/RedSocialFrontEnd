@@ -8,7 +8,7 @@ const LoginPage = () => {
     if (token) return <Navigate to='/home' />;
 
     return (
-        <main>
+        <main className='background'>
             <LoginForm login={login} />
         </main>
     );

@@ -23,7 +23,6 @@ const RegisterForm = () => {
 
             await registerService(username, email, password);
 
-
             navigate('/activated');
         } catch (err) {
             setErrorMsg(err.msg);
@@ -33,47 +32,49 @@ const RegisterForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h2>Registro</h2>
+        <div className='card-intro'>
+            <form onSubmit={handleSubmit}>
+                <h2>Registro</h2>
 
-            <label htmlFor='username'>Usuario:</label>
-            <input
-                type='text'
-                id='username'
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                autoFocus
-                required
-                maxLength='40'
-            />
+                <label htmlFor='username'>Usuario:</label>
+                <input
+                    type='text'
+                    id='username'
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    autoFocus
+                    required
+                    maxLength='40'
+                />
 
-            <label htmlFor='email'>Email:</label>
-            <input
-                type='email'
-                id='email'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                minLength='5'
-                maxLength='60'
-            />
+                <label htmlFor='email'>Email:</label>
+                <input
+                    type='email'
+                    id='email'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    minLength='5'
+                    maxLength='60'
+                />
 
-            <label htmlFor='password'>Password:</label>
-            <input
-                type='password'
-                id='password'
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                minLength='8'
-                maxLength='60'
-            />
-            <button>Registrarse</button>
+                <label htmlFor='password'>Password:</label>
+                <input
+                    type='password'
+                    id='password'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    minLength='8'
+                    maxLength='60'
+                />
+                <button>Registrarse</button>
 
-            {loading && <p>Loading...</p>}
+                {loading && <p>Loading...</p>}
 
-            {errMsg && <ErrorMessage msg={errMsg} />}
-        </form>
+                {errMsg && <ErrorMessage msg={errMsg} />}
+            </form>
+        </div>
     );
 };
 

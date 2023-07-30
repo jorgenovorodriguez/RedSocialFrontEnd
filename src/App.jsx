@@ -27,9 +27,21 @@ function App() {
                 />
                 <Route path='/users' element={<UserListPage />} />
                 <Route path='/users/:userId' element={<UserPage />} />
-                <Route path='/register' element={<RegisterPage />} />
-                <Route path='/activated' element={<ValidatedPage />} />
-                <Route path='/login' element={<LoginPage />} />
+                <Route
+                    path='/register'
+                    element={<RegisterPage />}
+                    id='background-intro'
+                />
+                <Route
+                    path='/activated'
+                    element={<ValidatedPage />}
+                    id='background-intro'
+                />
+                <Route
+                    path='/login'
+                    element={<LoginPage />}
+                    id='background-intro'
+                />
                 <Route path='/login-success' element={<LoginPage />} />
                 <Route path='/message' element={<PublicationCreatePage />} />
                 <Route path='/settings' element={<SettingsPage />} />

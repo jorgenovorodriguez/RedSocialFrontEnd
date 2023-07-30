@@ -1,4 +1,74 @@
 body {
     display: flex;
     justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.background {
+    background-image: url('./assets/images/background.jpg');
+    background-size: cover;
+    z-index: -1;
+    position: fixed; /* Posicionar la imagen de fondo */
+    top: 0; /* Asegurarse de que esté pegado a la parte superior */
+    left: 0; /* Asegurarse de que esté pegado a la izquierda */
+    width: 100%; /* Asegurarse de que ocupe toda el área horizontal */
+    height: 100%; /* Asegurarse de que ocupe toda el área vertical */
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    flex: 1;
+}
+
+.navbar {
+    z-index: 1;
+    width: 100vw;
+}
+
+.footer {
+    width: 100vw;
+    z-index: 1;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+main {
+    margin: 30% 0;
+}
+
+.card-intro {
+    background-color: rgba(0, 0, 0, 0.562);
+    margin: 0 1rem;
+    min-height: 2rem;
+    border-radius: 15px;
+    position: relative;
+}
+
+.logo-intro {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.524);
+    border-radius: 50%;
+    margin: 0 10vh;
+}
+
+.logo-intro img {
+    width: 150px;
+    height: 150px;
+}
+
+.logo-position {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 6rem;
+    top: 4rem;
+
 }
