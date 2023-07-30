@@ -4,6 +4,8 @@ import PublicationHeader from './PublicationHeader/PublicationHeader';
 import PublicationBody from './PublicationBody/PublicationBody';
 import PublicationFooter from './PublicationFooter/PublicationFooter';
 
+import './Publication.css';
+
 const Publication = ({
     publication,
     toogleLike,
