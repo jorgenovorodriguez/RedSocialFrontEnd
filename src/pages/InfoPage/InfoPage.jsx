@@ -1,5 +1,4 @@
-import { NavLink } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
+import { NavLink, Navigate } from 'react-router-dom';
 import InfoContainer from '../../components/InfoContainer/InfoContainer';
 import useAuth from '../../hooks/useAuth';
 

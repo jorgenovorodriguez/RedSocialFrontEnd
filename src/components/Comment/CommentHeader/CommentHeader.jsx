@@ -1,8 +1,7 @@
-import Avatar from "../../Avatar/Avatar";
-
+import Avatar from '../../Avatar/Avatar';
 
 const CommentHeader = ({ commenter, commenterAvatar }) => {
-
+    console.log(commenter);
     return (
         <div>
             <div>
@@ -10,7 +9,7 @@ const CommentHeader = ({ commenter, commenterAvatar }) => {
             </div>
             <p>{commenter}</p>
         </div>
-    )
+    );
 };
 
 export default CommentHeader;
