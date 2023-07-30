@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import registerService from '../../services/registerServices';
 import { useNavigate } from 'react-router-dom';
+import Logo from '../Logo/Logo';
 
 const RegisterForm = () => {
     const navigate = useNavigate();
@@ -33,8 +34,11 @@ const RegisterForm = () => {
 
     return (
         <div className='card-intro'>
+            <div className='logo-container'>
+                <Logo />
+            </div>
             <form onSubmit={handleSubmit}>
-                <h2>Registro</h2>
+                <h2 className='card-intro-title'>Registro</h2>
 
                 <label htmlFor='username'>Usuario:</label>
                 <input

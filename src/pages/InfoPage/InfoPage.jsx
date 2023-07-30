@@ -15,7 +15,7 @@ const InfoPage = () => {
                     <InfoContainer />
                 </div>
 
-                <div>
+                <div className='guest'>
                     <NavLink to='/home'>Entrar como invitado</NavLink>
                 </div>
             </main>

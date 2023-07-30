@@ -1,10 +1,10 @@
+import Logo from '../Logo/Logo';
+
 const InfoContainer = () => {
     return (
         <div className='card-intro'>
-            <div className='logo-position'>
-                <div className='logo-intro'>
-                    <img src='../src/assets/images/logo.png' alt='' />
-                </div>
+            <div className='logo-container'>
+                <Logo />
             </div>
             <h2 className='title-info'>
                 ¿Buscas un sitio donde tatuar? ¿Tienes un estudio y te gustaría

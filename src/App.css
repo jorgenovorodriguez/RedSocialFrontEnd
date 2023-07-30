@@ -9,17 +9,17 @@ body {
     background-image: url('./assets/images/background.jpg');
     background-size: cover;
     z-index: -1;
-    position: fixed; /* Posicionar la imagen de fondo */
-    top: 0; /* Asegurarse de que esté pegado a la parte superior */
-    left: 0; /* Asegurarse de que esté pegado a la izquierda */
-    width: 100%; /* Asegurarse de que ocupe toda el área horizontal */
-    height: 100%; /* Asegurarse de que ocupe toda el área vertical */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .main {
     height: 100vh;
     width: 100vw;
     flex: 1;
+    margin: 30% 0;
 }
 
 .navbar {
@@ -37,10 +37,6 @@ body {
     justify-content: space-between;
 }
 
-main {
-    margin: 30% 0;
-}
-
 .card-intro {
     background-color: rgba(0, 0, 0, 0.562);
     margin: 0 1rem;
@@ -49,7 +45,15 @@ main {
     position: relative;
 }
 
-.logo-intro {
+.card-intro-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: Helvetica, Arial, sans-serif;
+    color: aliceblue;
+}
+
+.logo-image {
     width: 150px;
     height: 150px;
     background-color: rgba(255, 255, 255, 0.524);
@@ -57,18 +61,16 @@ main {
     margin: 0 10vh;
 }
 
-.logo-intro img {
+.logo-image img {
     width: 150px;
     height: 150px;
 }
 
-.logo-position {
+.logo-container {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-bottom: 6rem;
-    top: 4rem;
-
+    margin-bottom: 3rem;
 }
