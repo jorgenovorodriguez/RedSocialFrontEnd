@@ -6,7 +6,7 @@ const Header = () => {
     const { token, logout, user } = useAuth();
 
     return (
-        <header>
+        <header className='navbar'>
             <h1>
                 <NavLink to='/home'>TatooArt</NavLink>
             </h1>
