@@ -17,7 +17,7 @@ body {
     grid-template-rows: 200px;
     grid-template-areas: "header-layout"
                             "main-layout"
-                            "footer-layot";
+                            "footer-layout";
                     
     background-image: url('./assets/images/background.jpg');
     background-size: cover;
