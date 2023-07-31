@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import registerService from '../../services/registerServices';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../Logo/Logo';
-import './RegisterForm.css'
+
 const RegisterForm = () => {
     const navigate = useNavigate();
 
@@ -37,7 +37,9 @@ const RegisterForm = () => {
         <div className='register-card'>
 
             <div className='logo-container'>
-                <Logo  />
+                <div className='logo-image'>
+                    <Logo />
+                </div>
             </div>
             
             <form onSubmit={handleSubmit}>
