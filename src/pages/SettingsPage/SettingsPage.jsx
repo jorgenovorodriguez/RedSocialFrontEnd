@@ -24,7 +24,7 @@ const SettingsPage = () => {
     }, [token]);
 
     return (
-        <div>
+        <main className='main-layout'>
             <h2>ajustes</h2>
             <div>
                 <Avatar avatar={user.avatar} username={user.username} />
@@ -38,7 +38,7 @@ const SettingsPage = () => {
             <div>
                 <EditPassword token={token} />
             </div>
-        </div>
+        </main>
     );
 };
 

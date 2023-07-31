@@ -1,15 +1,19 @@
 import { NavLink } from 'react-router-dom';
 import './header.css';
 import useAuth from '../../hooks/useAuth';
+import './Header.css';
+import Logo from '../Logo/Logo';
 
 const Header = () => {
     const { token, logout, user } = useAuth();
 
     return (
-        <header className='navbar'>
-            <h1>
-                <NavLink to='/home'>TatooArt</NavLink>
-            </h1>
+        <header className='header-layout'>
+            <NavLink to='/home'>
+                <div className='logo-navbar'>
+                    <Logo />{' '}
+                </div>
+            </NavLink>
             <nav>
                 {user && <p>@{user.username}</p>}
                 {!token && (

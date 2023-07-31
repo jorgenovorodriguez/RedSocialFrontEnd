@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 
 const InfoContainer = () => {
@@ -16,6 +17,7 @@ const InfoContainer = () => {
                 esporádicas. Si quieres encontrar a las nuevas promesas del
                 tatuaje antes que nadie deberías formar parte de TattoArt..
             </p>
+            <NavLink to='/home'>Entrar como invitado</NavLink>
         </div>
     );
 };

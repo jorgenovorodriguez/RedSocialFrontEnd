@@ -6,9 +6,14 @@ import CommentForm from '../../components/Comment/CommentForm/CommentForm';
 import { useState } from 'react';
 
 const SinglePublicationPage = () => {
-    const { publication, toogleLike, deletePublication, errMsg, loading, setPublication } =
-        useSinglePublication();
-    
+    const {
+        publication,
+        toogleLike,
+        deletePublication,
+        errMsg,
+        loading,
+        setPublication,
+    } = useSinglePublication();
 
     const [userComment, setUserComment] = useState([]); // Define el estado de los comentarios
 
@@ -17,7 +22,7 @@ const SinglePublicationPage = () => {
     };
 
     return (
-        <main>
+        <main className='main-layout'>
             {loading && <p>Loading...</p>}
             {errMsg && <ErrorMessage msg={errMsg} />}
             {publication && (
@@ -30,15 +35,23 @@ const SinglePublicationPage = () => {
                 />
             )}
             <div>
-                {Array.isArray(publication?.comments) && publication.comments.length > 0 ? (
-                    <Comment comments={publication.comments.slice().reverse()} setUserComment={setUserComment} />
+                {Array.isArray(publication?.comments) &&
+                publication.comments.length > 0 ? (
+                    <Comment
+                        comments={publication.comments.slice().reverse()}
+                        setUserComment={setUserComment}
+                    />
                 ) : (
                     <p>¿No hay comentarios? Anímate, haz el primero</p>
                 )}
             </div>
             <div>
                 {publication && publication.id && (
-                    <CommentForm id={publication.id} onAddComment={handleAddComment} setPublication={setPublication} />
+                    <CommentForm
+                        id={publication.id}
+                        onAddComment={handleAddComment}
+                        setPublication={setPublication}
+                    />
                 )}
             </div>
         </main>
@@ -46,4 +59,3 @@ const SinglePublicationPage = () => {
 };
 
 export default SinglePublicationPage;
-

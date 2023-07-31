@@ -6,7 +6,7 @@ const TattooHome = () => {
     const { searchParams, setSearchParams, loading } = usePublications();
 
     return (
-        <main>
+        <main className='main-layout'>
             <div>
                 <SearchForm
                     searchParams={searchParams}

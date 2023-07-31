@@ -29,7 +29,9 @@ const LoginForm = ({ login }) => {
     return (
         <div className='card-intro'>
             <div className='logo-container'>
-                <Logo />
+                <div className='logo-image'>
+                    <Logo />
+                </div>
             </div>
             <form onSubmit={handleSubmit}>
                 <h2 className='card-intro-title'>Login</h2>

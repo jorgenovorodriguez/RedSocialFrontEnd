@@ -2,11 +2,11 @@ import './footer.css';
 
 const Footer = () => {
     return (
-        <div className='footer'>
+        <footer className='footer-layout'>
             <p>soy</p>
             <p>pie</p>
             <p>pagina</p>
-        </div>
+        </footer>
     );
 };
 export default Footer;

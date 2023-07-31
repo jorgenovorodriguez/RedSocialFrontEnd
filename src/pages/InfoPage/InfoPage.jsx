@@ -1,7 +1,6 @@
-import { NavLink, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import InfoContainer from '../../components/InfoContainer/InfoContainer';
 import useAuth from '../../hooks/useAuth';
-import './InfoPage.css';
 
 const InfoPage = () => {
     const { token } = useAuth();
@@ -9,17 +8,11 @@ const InfoPage = () => {
     if (token) return <Navigate to='/home' />;
 
     return (
-        <div id='background-intro' className='background'>
-            <main className='main'>
-                <div>
-                    <InfoContainer />
-                </div>
-
-                <div className='guest'>
-                    <NavLink to='/home'>Entrar como invitado</NavLink>
-                </div>
-            </main>
-        </div>
+        <main className='main-layout'>
+            <div>
+                <InfoContainer />
+            </div>
+        </main>
     );
 };
 
