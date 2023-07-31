@@ -45,4 +45,11 @@ body {
     display: flex;
     flex-direction: row;
     justify-content:space-around;
+    align-items: center;
+}
+
+.logos-footer img {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
 }
