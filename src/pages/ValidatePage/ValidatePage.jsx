@@ -8,9 +8,11 @@ const ValidatedPage = () => {
     if (token) return <Navigate to='/home' />;
 
     return (
-        <main className='main-layout'>
-            <ValidatedForm />
-        </main>
+        <div className='intro'>
+            <main className='main-layout'>
+                <ValidatedForm />
+            </main>
+        </div>
     );
 };
 

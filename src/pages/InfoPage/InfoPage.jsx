@@ -8,11 +8,13 @@ const InfoPage = () => {
     if (token) return <Navigate to='/home' />;
 
     return (
-        <main className='main-layout'>
-            <div>
-                <InfoContainer />
-            </div>
-        </main>
+        <div className='intro'>
+            <main className='main-layout'>
+                <div>
+                    <InfoContainer />
+                </div>
+            </main>
+        </div>
     );
 };
 
