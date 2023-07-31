@@ -35,62 +35,58 @@ const RegisterForm = () => {
 
     return (
         <div className='register-card'>
-
             <div className='logo-container'>
                 <div className='logo-image'>
                     <Logo />
                 </div>
             </div>
-            
-            <form onSubmit={handleSubmit}>
-            <div className='login-input'>
-                <h2>Registro</h2>
-                <div className='imputsLab'>
-                <label htmlFor='username'>Usuario:</label>
-                <input
-                    type='text'
-                    id='username'
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    autoFocus
-                    required
-                    maxLength='40'
-                />
 
-                <label htmlFor='email'>Email:</label>
-                <input
-                    type='email'
-                    id='email'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    minLength='5'
-                    maxLength='60'
-                />
+            <form>
+                <div className='login-input'>
+                    <h2>Registro</h2>
+                    <div className='imputsLab'>
+                        <label htmlFor='username'>Usuario:</label>
+                        <input
+                            type='text'
+                            id='username'
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            autoFocus
+                            required
+                            maxLength='40'
+                        />
 
-                <label htmlFor='password'>Password:</label>
-                <input
-                    type='password'
-                    id='password'
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                    minLength='8'
-                    maxLength='60'
-                />
+                        <label htmlFor='email'>Email:</label>
+                        <input
+                            type='email'
+                            id='email'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                            minLength='5'
+                            maxLength='60'
+                        />
+
+                        <label htmlFor='password'>Password:</label>
+                        <input
+                            type='password'
+                            id='password'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            minLength='8'
+                            maxLength='60'
+                        />
+                    </div>
                 </div>
-            </div>
-               
 
                 {loading && <p>Loading...</p>}
 
                 {errMsg && <ErrorMessage msg={errMsg} />}
-            </form>
-             <div className='button-container'>
-                        <NavLink className='login-button' to='/login'>
-                            Registrarse
-                        </NavLink>
+                <div className='button-container' onClick={handleSubmit}>
+                    <div>Registrarme</div>
                 </div>
+            </form>
         </div>
     );
 };
