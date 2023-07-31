@@ -62,6 +62,14 @@ form {
 
 }
 
+.login-input p{
+color: blanchedalmond;
+text-align: center;
+font-size: 1rem;
+margin-bottom: 20px;
+
+}
+
 .imputsLab{
     display: flex;
     flex-direction: column;
@@ -69,7 +77,7 @@ form {
 }
 
 .imputsLab label{
-    font-size: 15px;
+    font-size: 1rem;
     color: antiquewhite;
     margin-bottom: 0.3rem;
 }

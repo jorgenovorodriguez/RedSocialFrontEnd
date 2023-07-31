@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import loginService from '../../services/loginServices';
+import{NavLink} from 'react-router-dom';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import PropTypes from 'prop-types';
 import Logo from '../Logo/Logo';
@@ -36,6 +37,8 @@ const LoginForm = ({ login }) => {
             <form onSubmit={handleSubmit}>
                 <div className='login-input'>
                 <h2>Login</h2>
+                <div className='imputsLab'> 
+
                 <label htmlFor='email'>Email:</label>
                 <input
                     type='email'
@@ -55,12 +58,18 @@ const LoginForm = ({ login }) => {
                     required
                 />
                 </div>
-                <button>Login</button>
+                </div>
+                
 
                 {loading && <p>loading...</p>}
 
                 {errMsg && <ErrorMessage msg={errMsg} />}
             </form>
+            <div className='button-container'>
+                        <NavLink className='login-button' to='/login'>
+                            Registrarse
+                        </NavLink>
+                </div>
         </div>
     );
 };
