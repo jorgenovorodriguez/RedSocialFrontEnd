@@ -11,3 +11,8 @@ form {
     display: flex;
     flex-direction: column;
 }
+
+.intro {
+    background-image: url('./assets/images/background.jpg');
+    background-size: cover;
+}

@@ -19,8 +19,7 @@ body {
                             "main-layout"
                             "footer-layout";
                     
-    background-image: url('./assets/images/background.jpg');
-    background-size: cover;
+    background-color: white;
     top: 0;
     left: 0;
 }

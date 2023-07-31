@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import './header.css';
 import useAuth from '../../hooks/useAuth';
 import './Header.css';
 import Logo from '../Logo/Logo';
