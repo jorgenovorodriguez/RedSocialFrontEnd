@@ -8,8 +8,8 @@ const RegisterPage = () => {
     if (token) return <Navigate to='/home' />;
 
     return (
-        <div id='background-intro' className='background'>
-            <main className='main'>
+        <div>
+            <main className='main-layout'>
                 <RegisterForm />
             </main>
         </div>

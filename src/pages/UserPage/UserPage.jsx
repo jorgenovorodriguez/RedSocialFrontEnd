@@ -7,7 +7,7 @@ const UserPage = () => {
     const { user } = useSingleUser(userId);
     console.log(user);
     return (
-        <main>
+        <main className='main-layout'>
             <UserProfile user={user} />
         </main>
     );

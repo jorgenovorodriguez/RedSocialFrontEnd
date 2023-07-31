@@ -1,11 +1,7 @@
 import logo from '../../assets/images/logo.png';
 
 const Logo = () => {
-    return (
-        <div className='logo-image'>
-            <img src={logo} alt='Logo' />
-        </div>
-    );
+    return <img src={logo} alt='Logo' />;
 };
 
 export default Logo;

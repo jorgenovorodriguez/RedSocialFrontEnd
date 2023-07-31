@@ -8,7 +8,7 @@ const ValidatedPage = () => {
     if (token) return <Navigate to='/home' />;
 
     return (
-        <main className='background'>
+        <main className='main-layout'>
             <ValidatedForm />
         </main>
     );

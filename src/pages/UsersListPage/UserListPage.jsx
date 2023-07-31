@@ -5,7 +5,7 @@ import useUsers from '../../hooks/useUsers';
 const UserListPage = () => {
     const { searchParams, setSearchParams, loading } = useUsers();
     return (
-        <main>
+        <main className='main-layout'>
             <div>
                 <SearchForm
                     searchParams={searchParams}
