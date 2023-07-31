@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import loginService from '../../services/loginServices';
-import{NavLink} from 'react-router-dom';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import PropTypes from 'prop-types';
 import Logo from '../Logo/Logo';
@@ -34,42 +33,40 @@ const LoginForm = ({ login }) => {
                     <Logo />
                 </div>
             </div>
-            <form >
+            <form>
                 <div className='login-input'>
-                <h2>Login</h2>
-                <div className='imputsLab'> 
-
-                <label htmlFor='email'>Email:</label>
-                <input
-                    type='email'
-                    id='email'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <label htmlFor='password'>Contraseña:</label>
-                <input
-                    type='password'
-                    id='password'
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    minLength='8'
-                    maxLength='60'
-                    required
-                />
+                    <h2>Login</h2>
+                    <div className='imputsLab'>
+                        <label htmlFor='email'>Email:</label>
+                        <input
+                            type='email'
+                            id='email'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                        <label htmlFor='password'>Contraseña:</label>
+                        <input
+                            type='password'
+                            id='password'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            minLength='8'
+                            maxLength='60'
+                            required
+                        />
+                    </div>
                 </div>
-                </div>
-                
 
                 {loading && <p>loading...</p>}
 
                 {errMsg && <ErrorMessage msg={errMsg} />}
             </form>
             <div className='button-container' onClick={handleSubmit}>
-             <div className='login-button' to='/login'>
-                            Login
-                        </div>
+                <div className='login-button' to='/login'>
+                    Login
                 </div>
+            </div>
         </div>
     );
 };
