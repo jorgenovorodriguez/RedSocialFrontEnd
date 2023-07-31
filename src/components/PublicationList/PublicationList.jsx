@@ -9,7 +9,7 @@ const PublicationList = () => {
         usePublications();
 
     return (
-        <main>
+        <div>
             {loading && <p>Loading...</p>}
             {errMsg && <ErrorMessage msg={errMsg} />}
 
@@ -48,7 +48,7 @@ const PublicationList = () => {
                     <li>No hay publicaciones, haz la primera!</li>
                 )}
             </ul>
-        </main>
+        </div>
     );
 };
 
