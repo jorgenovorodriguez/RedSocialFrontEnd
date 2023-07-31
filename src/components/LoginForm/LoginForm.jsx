@@ -34,7 +34,7 @@ const LoginForm = ({ login }) => {
                     <Logo />
                 </div>
             </div>
-            <form onSubmit={handleSubmit}>
+            <form >
                 <div className='login-input'>
                 <h2>Login</h2>
                 <div className='imputsLab'> 
@@ -65,10 +65,10 @@ const LoginForm = ({ login }) => {
 
                 {errMsg && <ErrorMessage msg={errMsg} />}
             </form>
-            <div className='button-container'>
-                        <NavLink className='login-button' to='/login'>
-                            Registrarse
-                        </NavLink>
+            <div className='button-container' onClick={handleSubmit}>
+             <div className='login-button' to='/login'>
+                            Login
+                        </div>
                 </div>
         </div>
     );
