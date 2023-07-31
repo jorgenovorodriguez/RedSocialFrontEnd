@@ -13,7 +13,6 @@ form {
 }
 
 .intro {
-    height: 100vh;
     background-image: url('./assets/images/background.jpg');
     background-size: cover;
 }
@@ -25,13 +24,14 @@ form {
   margin: 0 auto;
   border: 0px none;
   height: 26.25rem;
-  width: 23.5rem ;
+  width: 20rem;
+  min-width: 14rem ;
   background-color: #000000ba;
   border-radius: 1rem;
-  position: relative;
-  top: 10rem;
-  
+  position:relative;
+  top: 100px;
 }
+
 .logo-container {
     display: flex;
   width: 8rem;

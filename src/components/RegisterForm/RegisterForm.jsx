@@ -84,7 +84,7 @@ const RegisterForm = () => {
 
                 {errMsg && <ErrorMessage msg={errMsg} />}
                 <div className='button-container' onClick={handleSubmit}>
-                    <div>Registrarme</div>
+                    <div className='login-button'>Registrarme</div>
                 </div>
             </form>
         </div>
