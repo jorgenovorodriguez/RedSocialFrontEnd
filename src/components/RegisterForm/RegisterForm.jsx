@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import { NavLink } from 'react-router-dom';
 import registerService from '../../services/registerServices';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../Logo/Logo';
-
+import './RegisterForm.css'
 const RegisterForm = () => {
     const navigate = useNavigate();
 
@@ -33,13 +34,16 @@ const RegisterForm = () => {
     };
 
     return (
-        <div className='card-intro'>
-            <div className='logo-container'>
-                <Logo />
-            </div>
-            <form onSubmit={handleSubmit}>
-                <h2 className='card-intro-title'>Registro</h2>
+        <div className='register-card'>
 
+            <div className='logo-container'>
+                <Logo  />
+            </div>
+            
+            <form onSubmit={handleSubmit}>
+            <div className='login-input'>
+                <h2>Registro</h2>
+                <div className='imputsLab'>
                 <label htmlFor='username'>Usuario:</label>
                 <input
                     type='text'
@@ -72,12 +76,19 @@ const RegisterForm = () => {
                     minLength='8'
                     maxLength='60'
                 />
-                <button>Registrarse</button>
+                </div>
+            </div>
+               
 
                 {loading && <p>Loading...</p>}
 
                 {errMsg && <ErrorMessage msg={errMsg} />}
             </form>
+             <div className='button-container'>
+                        <NavLink className='login-button' to='/login'>
+                            Registrarse
+                        </NavLink>
+                </div>
         </div>
     );
 };
