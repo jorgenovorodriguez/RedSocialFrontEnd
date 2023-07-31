@@ -27,14 +27,15 @@ const LoginForm = ({ login }) => {
     };
 
     return (
-        <div className='card-intro'>
+        <div className='register-card'>
             <div className='logo-container'>
                 <div className='logo-image'>
                     <Logo />
                 </div>
             </div>
             <form onSubmit={handleSubmit}>
-                <h2 className='card-intro-title'>Login</h2>
+                <div className='login-input'>
+                <h2>Login</h2>
                 <label htmlFor='email'>Email:</label>
                 <input
                     type='email'
@@ -53,6 +54,7 @@ const LoginForm = ({ login }) => {
                     maxLength='60'
                     required
                 />
+                </div>
                 <button>Login</button>
 
                 {loading && <p>loading...</p>}
