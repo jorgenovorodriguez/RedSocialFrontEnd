@@ -10,6 +10,7 @@ const UserProfile = ({ user }) => {
             <div>
                 <h2>@{user.username}</h2>
                 <p>{user.role}</p>
+                <p>{user.place}</p>
                 <p>{user.personalInfo}</p>
             </div>
             <div>
@@ -28,6 +29,7 @@ UserProfile.propTypes = {
         userId: PropTypes.number.isRequired,
         username: PropTypes.string.isRequired,
         role: PropTypes.string.isRequired,
+        place: PropTypes.string,
         avatar: PropTypes.string,
         personalInfo: PropTypes.string,
         active: PropTypes.number.isRequired,
