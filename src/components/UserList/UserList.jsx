@@ -2,26 +2,21 @@ import useUsers from '../../hooks/useUsers';
 import UserListItem from '../UserListItem/UserListItem';
 
 const UserList = () => {
-    const { users } = useUsers();
+  const { users } = useUsers();
 
-    return (
-        <main>
-            <ul>
-
-                {users.length > 0 ? (
-                    users.map((user) => {
-                        return <UserListItem key={user.id} user={user} />;
-                    })
-
-                ) : (
-                    <li>
-                        Todavía no hay usuarios registrados, enhorabuena por ser
-                        el primero.
-                    </li>
-                )}
-            </ul>
-        </main>
-    );
+  return (
+    <ul>
+      {users.length > 0 ? (
+        users.map((user) => {
+          return <UserListItem key={user.id} user={user} />;
+        })
+      ) : (
+        <li>
+          Todavía no hay usuarios registrados, enhorabuena por ser el primero.
+        </li>
+      )}
+    </ul>
+  );
 };
 
 export default UserList;

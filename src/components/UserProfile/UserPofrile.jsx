@@ -3,50 +3,63 @@ import UserProfilePublications from './UserProfilePublications/UserProfilePublic
 import Avatar from '../Avatar/Avatar';
 import { NavLink } from 'react-router-dom';
 
+import './UserProfile.css';
+
 const UserProfile = ({ user, token }) => {
-    return (
-        <div>
+  return (
+    <div>
+      <div className='userProfile-card'>
+        <div className='headerProfile'>
+          <div className='avatarProfile'>
             <Avatar avatar={user.avatar} username={user.username} />
-            <div>
-                <h2>@{user.username}</h2>
-                <p>{user.role}</p>
-                <p>{user.place}</p>
-                <p>{user.personalInfo}</p>
-            </div>
-            <div>{token && <NavLink to='/settings'>ajustes</NavLink>}</div>
-            <div>
-                {Array.isArray(user?.publications) ? (
-                    <UserProfilePublications publications={user.publications} />
-                ) : (
-                    <p>No hay publicationes</p>
-                )}
-            </div>
+          </div>
+          <div className='role'>
+            <div className='role-role'>{user.role}</div>
+          </div>
+          <div>{token && <NavLink to='/settings'>ajustes</NavLink>}</div>
         </div>
-    );
+        <div className='userName'>
+          <h2>@{user.username}</h2>
+          <p>{user.place}</p>
+        </div>
+
+        <div className='userPersonalInfo'>
+          <p>{user.personalInfo}</p>
+        </div>
+      </div>
+      <div>
+        {Array.isArray(user?.publications) ? (
+          <UserProfilePublications publications={user.publications} />
+        ) : (
+          <p>No hay publicationes</p>
+        )}
+      </div>
+    </div>
+  );
 };
 
 UserProfile.propTypes = {
-    user: PropTypes.shape({
-        userId: PropTypes.number.isRequired,
-        username: PropTypes.string.isRequired,
-        role: PropTypes.string.isRequired,
-        token: PropTypes.string.isRequired,
-        avatar: PropTypes.string,
+  user: PropTypes.shape({
+    userId: PropTypes.number.isRequired,
+    username: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
+    token: PropTypes.string.isRequired,
+    avatar: PropTypes.string,
+    place: PropTypes.string,
+    personalInfo: PropTypes.string,
+    active: PropTypes.number.isRequired,
+    userCreatedAt: PropTypes.string,
+    publications: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number,
         place: PropTypes.string,
-        personalInfo: PropTypes.string,
-        active: PropTypes.number.isRequired,
-        userCreatedAt: PropTypes.string,
-        publications: PropTypes.arrayOf(
-            PropTypes.shape({
-                id: PropTypes.number,
-                place: PropTypes.string,
-                title: PropTypes.string,
-                createdAt: PropTypes.string,
-                photoName: PropTypes.string,
-                description: PropTypes.string,
-            })
-        ),
-    }),
+        title: PropTypes.string,
+        createdAt: PropTypes.string,
+        photoName: PropTypes.string,
+        description: PropTypes.string,
+      })
+    ),
+  }),
 };
 
 export default UserProfile;
