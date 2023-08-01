@@ -10,6 +10,7 @@ const RegisterForm = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [role, setRole] = useState('artista');
     const [errMsg, setErrorMsg] = useState('');
     const [loading, setLoading] = useState(false);
 
@@ -22,7 +23,7 @@ const RegisterForm = () => {
             const validateEmail = email;
             sessionStorage.setItem('validateEmail', validateEmail);
 
-            await registerService(username, email, password);
+            await registerService(username, email, password, role);
 
             navigate('/activated');
         } catch (err) {
@@ -67,6 +68,7 @@ const RegisterForm = () => {
                         />
 
                         <label htmlFor='password'>Password:</label>
+
                         <input
                             type='password'
                             id='password'
@@ -76,6 +78,26 @@ const RegisterForm = () => {
                             minLength='8'
                             maxLength='60'
                         />
+
+                        <label htmlFor='role'>Tipo de perfil:</label>
+                        <div className='check-artista'>
+                            <input
+                                type='checkbox'
+                                id='artista'
+                                onChange={() => setRole('artista')}
+                                checked={role === 'artista'}
+                            />
+                            <label htmlFor='role'>Artista</label>
+                        </div>
+                        <div className='check-estudio'>
+                            <input
+                                type='checkbox'
+                                id='estudio'
+                                onChange={() => setRole('estudio')}
+                                checked={role === 'estudio'}
+                            />
+                            <label htmlFor='role'>Estudio</label>
+                        </div>
                     </div>
                 </div>
 

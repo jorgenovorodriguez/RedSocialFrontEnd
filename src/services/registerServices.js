@@ -1,4 +1,4 @@
-const registerService = async (username, email, password) => {
+const registerService = async (username, email, password, role) => {
     const res = await fetch('http://localhost:8000/users', {
         method: 'post',
         headers: {
@@ -8,6 +8,7 @@ const registerService = async (username, email, password) => {
             username,
             email,
             password,
+            role,
         }),
     });
 
