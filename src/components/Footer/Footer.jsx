@@ -2,12 +2,18 @@ import { useEffect, useState } from 'react';
 import lupa from '../../assets/images/iconos/logoLupa.png';
 import mas from '../../assets/images/iconos/logoMas.png';
 import useAuth from '../../hooks/useAuth';
+import { NavLink } from 'react-router-dom';
 import Avatar from '../Avatar/Avatar';
 import onwerUserService from '../../services/onwerUserService';
+import SearchForm from '../SearchForm/SearchForm';
+import usePublications from '../../hooks/usePublications';
+import './Footer.css';
 
 const Footer = () => {
     const { token } = useAuth();
     const [user, setUser] = useState('');
+    const { searchParams, setSearchParams, loading } = usePublications();
+    const [buscadorActivo, setBuscadorActivo] = useState(false);
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -21,18 +27,41 @@ const Footer = () => {
         fetchUser();
     }, [token]);
 
+    const perfil = `/users/`;
+
     return (
-        <footer className='footer-layout'>
-            <div className='logos-footer'>
-                <img src={lupa} alt='buscador' />
-            </div>
-            <div className='logos-footer'>
-                <img src={mas} alt='crear publicacion' />
-            </div>
-            <div className='logos-footer'>
-                <Avatar avatar={user.avatar} username={user.username} />
-            </div>
-        </footer>
+        <div className='fijo'>
+            <footer className='footer-layout'>
+                <div
+                    className='logos-footer'
+                    onClick={() => setBuscadorActivo(!buscadorActivo)}
+                >
+                    <NavLink to='/home'>
+                        <img src={lupa} alt='buscador' />
+                    </NavLink>
+                </div>
+                <div className='logos-footer'>
+                    <NavLink to='/message'>
+                        <img src={mas} alt='crear publicacion' />
+                    </NavLink>
+                </div>
+                <div className='logos-footer'>
+                    <NavLink to={perfil + user.userId}>
+                        <Avatar avatar={user.avatar} username={user.username} />
+                    </NavLink>
+                </div>
+                {buscadorActivo && (
+                    <div className=''>
+                        <SearchForm
+                            setSearchParams={setSearchParams}
+                            searchParams={searchParams}
+                            loading={loading}
+                        />{' '}
+                    </div>
+                )}{' '}
+            </footer>
+        </div>
     );
 };
+
 export default Footer;

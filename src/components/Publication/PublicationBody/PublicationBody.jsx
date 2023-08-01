@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const PublicationBody = ({ title, photoName, description }) => {
     return (
-        <div>
+        <div className=''>
             {photoName && (
                 <img
                     src={`http://localhost:8000/${photoName}`}
