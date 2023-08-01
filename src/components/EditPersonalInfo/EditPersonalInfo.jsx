@@ -2,16 +2,24 @@ import { useState } from 'react';
 import personalInfoEditService from '../../services/personalInfoEditService';
 
 const EditPersonalInfo = ({ token }) => {
-    const [personalInfo, setPersonalInfo] = useState(null);
+    const [personalInfo, setPersonalInfo] = useState('');
+    const [error, setError] = useState(null);
+    const [msg, setMsg] = useState(null);
 
     const handleSubmitUser = async (e) => {
         e.preventDefault();
+        try {
+            await personalInfoEditService(personalInfo, token);
 
-        await personalInfoEditService(personalInfo, token);
+            window.location.reload();
 
-        window.location.reload();
+            setPersonalInfo('');
 
-        setPersonalInfo(null);
+            setMsg('Información cambiada correctamente');
+        } catch (error) {
+            setError(error);
+            console.log(error);
+        }
     };
 
     return (
@@ -26,6 +34,8 @@ const EditPersonalInfo = ({ token }) => {
                     required
                 />
                 <button type='submit'>Cambiar</button>
+                {msg && <p>{msg}</p>}
+                {error && <p>{error.message}</p>}
             </form>
         </div>
     );

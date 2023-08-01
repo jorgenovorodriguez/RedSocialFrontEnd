@@ -10,6 +10,7 @@ const UserProfile = ({ user, token }) => {
             <div>
                 <h2>@{user.username}</h2>
                 <p>{user.role}</p>
+                <p>{user.place}</p>
                 <p>{user.personalInfo}</p>
             </div>
             <div>{token && <NavLink to='/settings'>ajustes</NavLink>}</div>
@@ -31,6 +32,7 @@ UserProfile.propTypes = {
         role: PropTypes.string.isRequired,
         token: PropTypes.string.isRequired,
         avatar: PropTypes.string,
+        place: PropTypes.string,
         personalInfo: PropTypes.string,
         active: PropTypes.number.isRequired,
         userCreatedAt: PropTypes.string,
