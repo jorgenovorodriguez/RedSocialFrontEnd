@@ -6,6 +6,7 @@ import EditPassword from '../../components/EditPassword/EditPassword';
 import useAuth from '../../hooks/useAuth';
 import onwerUserService from '../../services/onwerUserService';
 import EditPersonalInfo from '../../components/EditPersonalInfo/EditPersonalInfo';
+import EditPlace from '../../components/EditPlace/EditPlace';
 
 const SettingsPage = () => {
     const { token } = useAuth();
@@ -28,6 +29,9 @@ const SettingsPage = () => {
             <h2>ajustes</h2>
             <div>
                 <Avatar avatar={user.avatar} username={user.username} />
+            </div>
+            <div>
+                <EditPlace token={token} places={user.place} />
             </div>
             <div>
                 <EditPersonalInfo token={token} />

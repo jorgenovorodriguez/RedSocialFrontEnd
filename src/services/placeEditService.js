@@ -1,10 +1,10 @@
-const personalInfoEditService = async (personalInfo, token) => {
+const placeEditService = async (place, token) => {
     const formData = new FormData();
 
-    formData.append('personalInfo', personalInfo);
+    formData.append('place', place);
 
     try {
-        const res = await fetch('http://localhost:8000/users/info', {
+        const res = await fetch('http://localhost:8000/users/place', {
             method: 'PUT',
             headers: {
                 Authorization: token,
@@ -15,13 +15,13 @@ const personalInfoEditService = async (personalInfo, token) => {
         const body = await res.json();
 
         if (!res.ok) {
-            throw new Error(body.msg);
+            throw new Error(body.message || 'Error en la solicitud');
         }
 
         return body.data && body.data.message;
     } catch (error) {
-        throw new Error(error.message);
+        throw new Error(error.message || 'Error en la solicitud');
     }
-}
+};
 
-export default personalInfoEditService;
+export default placeEditService;
