@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
 import UserProfilePublications from './UserProfilePublications/UserProfilePublications';
 import Avatar from '../Avatar/Avatar';
+import { NavLink } from 'react-router-dom';
 
-const UserProfile = ({ user }) => {
-    console.log(user);
+const UserProfile = ({ user, token }) => {
     return (
         <div>
             <Avatar avatar={user.avatar} username={user.username} />
             <div>
                 <h2>@{user.username}</h2>
                 <p>{user.role}</p>
-                <p>{user.place}</p>
                 <p>{user.personalInfo}</p>
             </div>
+            <div>{token && <NavLink to='/settings'>ajustes</NavLink>}</div>
             <div>
                 {Array.isArray(user?.publications) ? (
                     <UserProfilePublications publications={user.publications} />
@@ -29,7 +29,7 @@ UserProfile.propTypes = {
         userId: PropTypes.number.isRequired,
         username: PropTypes.string.isRequired,
         role: PropTypes.string.isRequired,
-        place: PropTypes.string,
+        token: PropTypes.string.isRequired,
         avatar: PropTypes.string,
         personalInfo: PropTypes.string,
         active: PropTypes.number.isRequired,
