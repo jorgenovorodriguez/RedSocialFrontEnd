@@ -9,8 +9,10 @@ const RegisterForm = () => {
 
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [firstPassword, setFirstPassword] = useState('');
+    const [passwordConfirm, setPasswordConfirm] = useState('');
     const [role, setRole] = useState('artista');
+    const [confirmations, setConfirmations] = useState('');
     const [errMsg, setErrorMsg] = useState('');
     const [loading, setLoading] = useState(false);
 
@@ -23,9 +25,18 @@ const RegisterForm = () => {
             const validateEmail = email;
             sessionStorage.setItem('validateEmail', validateEmail);
 
-            await registerService(username, email, password, role);
+            if (firstPassword === passwordConfirm) {
+                const password = firstPassword;
 
-            navigate('/activated');
+                setConfirmations(
+                    await registerService(username, email, password, role)
+                );
+
+                navigate('/activated');
+            } else {
+                setErrorMsg('Las contraseñas no coinciden');
+            }
+            console.log(confirmations);
         } catch (err) {
             setErrorMsg(err.msg);
         } finally {
@@ -45,7 +56,7 @@ const RegisterForm = () => {
                 <div className='login-input'>
                     <h2>Registro</h2>
                     <div className='imputsLab'>
-                        <label htmlFor='username'>Usuario:</label>
+                        <label htmlFor='username'>Nombre de usuario:</label>
                         <input
                             type='text'
                             id='username'
@@ -67,13 +78,27 @@ const RegisterForm = () => {
                             maxLength='60'
                         />
 
-                        <label htmlFor='password'>Password:</label>
+                        <label htmlFor='firstPassword'>Contraseña:</label>
 
                         <input
                             type='password'
-                            id='password'
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            id='firstPassword'
+                            value={firstPassword}
+                            onChange={(e) => setFirstPassword(e.target.value)}
+                            required
+                            minLength='8'
+                            maxLength='60'
+                        />
+
+                        <label htmlFor='passwordConfirm'>
+                            Confirmar contraseña:
+                        </label>
+
+                        <input
+                            type='password'
+                            id='passwordConfirm'
+                            value={passwordConfirm}
+                            onChange={(e) => setPasswordConfirm(e.target.value)}
                             required
                             minLength='8'
                             maxLength='60'

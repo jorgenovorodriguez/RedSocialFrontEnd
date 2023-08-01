@@ -22,9 +22,10 @@ const EditPassword = ({ token }) => {
                 setConfirmations(
                     await validatePasswordService(currentPass, newPass, token)
                 );
+                alert(confirmations);
+            } else {
+                alert('Las contraseñas no coinciden');
             }
-
-            alert(confirmations);
         } catch (err) {
             setErrorMsg(err.msg);
         } finally {
