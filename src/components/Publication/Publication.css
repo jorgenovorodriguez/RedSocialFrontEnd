@@ -19,3 +19,8 @@
     object-fit: cover;
     border-radius: 50%;
 }
+
+.correccion img{
+    width: 100px;
+    height: 100px;
+}

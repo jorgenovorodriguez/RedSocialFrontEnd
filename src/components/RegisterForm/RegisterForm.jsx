@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
-import { NavLink } from 'react-router-dom';
 import registerService from '../../services/registerServices';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../Logo/Logo';
