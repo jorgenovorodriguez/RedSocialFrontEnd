@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom';
 import PublicationBody from '../../Publication/PublicationBody/PublicationBody';
 
 const UserProfilePublications = ({ publications }) => {
-
     console.log(publications);
     return (
-        <main>
+        <div>
             <ul>
                 {publications.length > 0 ? (
                     publications.map((publication) => {
                         return (
-                            <div key={publication.id}>
+                            <div
+                                className='userPublication'
+                                key={publication.id}
+                            >
                                 <Link
                                     to={`/singlepublication/${publication.id}`}
                                 >
@@ -27,7 +29,7 @@ const UserProfilePublications = ({ publications }) => {
                     <li>No hay publicaciones</li>
                 )}
             </ul>
-        </main>
+        </div>
     );
 };
 
