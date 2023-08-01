@@ -13,6 +13,7 @@ import UserListPage from './pages/UsersListPage/UserListPage';
 import UserPage from './pages/UserPage/UserPage';
 import SettingsPage from './pages/SettingsPage/SettingsPage';
 import InfoPage from './pages/InfoPage/InfoPage';
+import RecoverPassPage from './pages/RecoverPassPage/RecoverPassPage';
 
 function App() {
     return (
@@ -42,6 +43,7 @@ function App() {
                     element={<LoginPage />}
                     id='background-intro'
                 />
+                <Route path='recover' element={<RecoverPassPage />} />
                 <Route path='/login-success' element={<LoginPage />} />
                 <Route path='/message' element={<PublicationCreatePage />} />
                 <Route path='/settings' element={<SettingsPage />} />

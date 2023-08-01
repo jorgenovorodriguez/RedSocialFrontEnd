@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import loginService from '../../services/loginServices';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import PropTypes from 'prop-types';
@@ -63,9 +64,10 @@ const LoginForm = ({ login }) => {
                 {errMsg && <ErrorMessage msg={errMsg} />}
             </form>
             <div className='button-container' onClick={handleSubmit}>
-                <div className='login-button' to='/login'>
-                    Login
-                </div>
+                <div className='login-button'>Login</div>
+            </div>
+            <div>
+                <NavLink to='/recover'>¿Has olvidado tu contraseña?</NavLink>
             </div>
         </div>
     );
