@@ -16,13 +16,13 @@ const validatePassword = async (currentPass, newPass, token) => {
         const body = await res.json();
 
         if (!res.ok) {
-            throw new Error(body.msg);
+            return body.message;
         }
 
-        return body.data.message;
+        return body.message;
     } catch (error) {
         throw new Error(error.message);
     }
-}
+};
 
 export default validatePassword;
