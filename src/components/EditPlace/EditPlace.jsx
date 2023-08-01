@@ -30,6 +30,7 @@ const EditPlace = ({ token, places }) => {
             setLoading(true);
 
             if (navigator.geolocation) {
+                console.log(place);
                 navigator.geolocation.getCurrentPosition(async (position) => {
                     try {
                         const lat = position.coords.latitude;
@@ -42,6 +43,7 @@ const EditPlace = ({ token, places }) => {
                         const city = data.address.city;
 
                         setPlace(city);
+                        window.location.reload();
                     } catch (err) {
                         console.error(
                             'Error al obtener el nombre de la localidad:',
@@ -71,9 +73,6 @@ const EditPlace = ({ token, places }) => {
                 <button type='submit' disabled={loading}>
                     Cambiar
                 </button>
-                <button onClick={getPlace} disabled={loading}>
-                    Pulsa para añadir tu ubicación
-                </button>
                 <div>
                     <p>{places}</p>
                 </div>
@@ -81,6 +80,9 @@ const EditPlace = ({ token, places }) => {
                 {loading && <p>loading...</p>}
                 {error && <p>{error.message}</p>}
             </form>
+            <button onClick={getPlace} disabled={loading}>
+                Pulsa para añadir tu ubicación
+            </button>
         </div>
     );
 };
