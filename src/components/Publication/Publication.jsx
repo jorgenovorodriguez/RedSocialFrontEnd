@@ -13,7 +13,7 @@ const Publication = ({
     loading,
 }) => {
     return (
-        <div className='correccion'>
+        <div >
             <Link to={`/users/${publication.authorId}`}>
                 <PublicationHeader
                     avatar={publication.authorAvatar}
