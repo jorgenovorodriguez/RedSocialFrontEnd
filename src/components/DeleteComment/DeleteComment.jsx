@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import onwerUserService from '../../services/onwerUserService';
 import useAuth from '../../hooks/useAuth';
-
+//VersionDeControl
 const DeleteComment = ({
     publicationId,
     commentId,
