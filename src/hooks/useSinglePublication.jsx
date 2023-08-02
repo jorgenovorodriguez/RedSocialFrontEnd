@@ -3,6 +3,7 @@ import useAuth from './useAuth';
 import likePublicationService from '../services/likePublicationService';
 import deletePublicationService from '../services/deletePublicationService';
 import { useParams } from 'react-router-dom';
+import deleteCommentService from '../services/deleteCommentService';
 
 const useSinglePublication = () => {
     const { token } = useAuth();
@@ -78,10 +79,30 @@ const useSinglePublication = () => {
         }
     };
 
+    const deleteComment = async (publicationId, commentId) => {
+        try {
+            setLoading(true);
+            console.log(publicationId);
+            const res = await deleteCommentService(
+                publicationId,
+                commentId,
+                token
+            );
+
+            setPublication();
+            return res;
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    //deleteComment
+
     return {
         publication,
         toogleLike,
         deletePublication,
+        deleteComment,
         errMsg,
         loading,
     };

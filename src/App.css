@@ -140,6 +140,22 @@ margin-bottom: 20px;
   margin-left: 7rem;
 }
 
+.avatar-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatar-image img { /* NO TOCAR SIRVE DE FRENO */ 
+  max-width: 100px;
+  max-height: 100px; 
+}
 
 

@@ -10,12 +10,13 @@ const SinglePublicationPage = () => {
         publication,
         toogleLike,
         deletePublication,
+        deleteComment,
         errMsg,
         loading,
         setPublication,
     } = useSinglePublication();
 
-    const [userComment, setUserComment] = useState([]); // Define el estado de los comentarios
+    const [userComment, setUserComment] = useState([]);
 
     const handleAddComment = (newComment) => {
         setUserComment([...userComment, newComment]);
@@ -39,7 +40,9 @@ const SinglePublicationPage = () => {
                 publication.comments.length > 0 ? (
                     <Comment
                         comments={publication.comments.slice().reverse()}
-                        setUserComment={setUserComment}
+                        userComment={userComment}
+                        deleteComment={deleteComment}
+                        publicationId={publication.id}
                     />
                 ) : (
                     <p>¿No hay comentarios? Anímate, haz el primero</p>
