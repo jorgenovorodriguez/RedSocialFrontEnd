@@ -4,9 +4,11 @@ import editRecoverPassCodeService from '../../services/EditRecoverPassCodeServic
 
 const EditRecoverPassCodeForm = () => {
     const [recoverPassCode, setRecoverPassCode] = useState('');
-    const [newPass, setNewPass] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [newPasswordConfirm, setNewpasswordConfirm] = useState('');
     const [errMsg, setErrorMsg] = useState('');
     const [loading, setLoading] = useState(false);
+    const [confirmations, setConfirmations] = useState('');
 
     const handleSubmit = async (e) => {
         try {
@@ -14,7 +16,17 @@ const EditRecoverPassCodeForm = () => {
 
             setLoading(true);
 
-            await editRecoverPassCodeService(recoverPassCode, newPass);
+            if (newPassword === newPasswordConfirm) {
+                const newPass = newPassword;
+
+                setConfirmations(
+                    await editRecoverPassCodeService(recoverPassCode, newPass)
+                );
+            } else {
+                alert('Las contraseñas no coinciden');
+            }
+
+            alert(confirmations);
         } catch (err) {
             setErrorMsg(err.msg);
         } finally {
@@ -42,14 +54,26 @@ const EditRecoverPassCodeForm = () => {
                             maxLength='5'
                             required
                         />
-                        <label htmlFor='newPasswordCompare'>
-                            Nueva contraseña:
+                        <label htmlFor='newPassword'>Nueva contraseña:</label>
+                        <input
+                            type='password'
+                            id='newPassword'
+                            value={newPassword}
+                            onChange={(e) => setNewPassword(e.target.value)}
+                            required
+                            minLength='8'
+                            maxLength='60'
+                        />
+                        <label htmlFor='newpasswordConfirm'>
+                            Confirmar nueva contraseña:
                         </label>
                         <input
                             type='password'
-                            id='newPass'
-                            value={newPass}
-                            onChange={(e) => setNewPass(e.target.value)}
+                            id='newPasswordConfirm'
+                            value={newPasswordConfirm}
+                            onChange={(e) =>
+                                setNewpasswordConfirm(e.target.value)
+                            }
                             required
                             minLength='8'
                             maxLength='60'

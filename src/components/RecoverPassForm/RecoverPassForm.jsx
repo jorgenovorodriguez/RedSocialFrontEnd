@@ -16,7 +16,7 @@ const RecoverPassForm = () => {
 
             await sendRecoverPassService(email);
         } catch (err) {
-            setErrorMsg(err.msg);
+            setErrorMsg(err.message);
         } finally {
             setLoading(false);
         }
@@ -40,7 +40,6 @@ const RecoverPassForm = () => {
                     required
                 />
                 {loading && <p>loading...</p>}
-
                 {errMsg && <ErrorMessage msg={errMsg} />}
             </form>
             <div className='button-container' onClick={handleSubmit}>
