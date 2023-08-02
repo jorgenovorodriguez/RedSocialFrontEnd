@@ -18,19 +18,19 @@ const AuthProvider = ({ children }) => {
             } catch (err) {
                 alert(err.msg);
             }
-        }
+        };
 
         if (token) fetchUser();
-
     }, [token]);
 
     const login = (newToken) => {
         localStorage.setItem('token', newToken);
         setToken(newToken);
-    }
+    };
 
     const logout = () => {
         localStorage.removeItem('token');
+
         setToken(null);
         setUser(null);
     };
@@ -39,7 +39,7 @@ const AuthProvider = ({ children }) => {
         <AuthContext.Provider value={{ token, user, login, logout }}>
             {children}
         </AuthContext.Provider>
-    )
+    );
 };
 
 AuthProvider.propTypes = {

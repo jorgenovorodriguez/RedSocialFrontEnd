@@ -3,16 +3,14 @@ import CommentBody from './CommentBody/CommentBody';
 import './Comment.css';
 import DeleteComment from '../DeleteComment/DeleteComment';
 
-const Comment = ({ comments, userComment, deleteComment, publicationId }) => {
-    const isOwner = (comment) => {
-        // Verifica si el usuario autenticado es dueño del comentario
-        return (
-            userComment &&
-            (comment.commenter.id === userComment.id || // Dueño del comentario
-                publicationId === userComment.publicationId) // Dueño de la publicación
-        );
-    };
-    console.log(publicationId);
+const Comment = ({
+    comments,
+    deleteComment,
+    publicationId,
+    publicationOwner,
+    token,
+}) => {
+    console.log(comments);
     return (
         <ul>
             {comments.map((comment, index) => (
@@ -36,17 +34,17 @@ const Comment = ({ comments, userComment, deleteComment, publicationId }) => {
                             )}
                         </time>
                     )}
-                    {isOwner(comment) && (
-                        <DeleteComment
-                            commentId={comment.id}
-                            publicationId={publicationId}
-                            deleteComment={deleteComment}
-                        />
-                    )}
+                    {console.log(comment)}
+                    <DeleteComment
+                        commentId={comment.id}
+                        publicationId={publicationId}
+                        deleteComment={deleteComment}
+                        commentOwner={comment.commenter}
+                        publicationOwner={publicationOwner}
+                    />
                 </li>
             ))}
         </ul>
     );
 };
-
 export default Comment;
