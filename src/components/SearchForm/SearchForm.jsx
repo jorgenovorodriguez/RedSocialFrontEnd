@@ -5,7 +5,7 @@ const SearchForm = ({ searchParams, setSearchParams, loading }) => {
     const [keyword, setKeyword] = useState(searchParams.get('keyword') || '');
 
     return (
-        <div>
+        <div className='searchForm'>
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
@@ -14,6 +14,7 @@ const SearchForm = ({ searchParams, setSearchParams, loading }) => {
                 }}
             >
                 <input
+                    placeholder='nombre de usuario...'
                     type='search'
                     value={keyword}
                     onChange={(e) => setKeyword(e.target.value)}

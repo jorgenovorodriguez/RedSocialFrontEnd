@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import publicationCreateService from '../../services/PublicationCreateService';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import './PublicationCreateForm.css';
 
 const PublicationCreateForm = ({ token }) => {
     const navigate = useNavigate();
@@ -74,44 +75,47 @@ const PublicationCreateForm = ({ token }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h2>¿Que estás pensando..?</h2>
-            <label htmlFor='title'>Título:</label>
-            <input
-                type='text'
-                onChange={(e) => setTitle(e.target.value)}
-                required
-                autoFocus
-                id='title'
-                value={title}
-            />
-            <label htmlFor='photo'>Foto:</label>
-            <input
-                type='file'
-                onChange={(e) => setPhoto(e.target.files[0])}
-                required
-            />
-            {showResult ? (
-                <p>Ubicación: {place}</p>
-            ) : (
-                <button onClick={getPlace}>
-                    Pulsa para añadir tu ubicación
-                </button>
-            )}
-            <label htmlFor='description'>Descripción:</label>
-            <textarea
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                id='description'
-                required
-            ></textarea>
+        <div className='publicationForm'>
+            <form onSubmit={handleSubmit}>
+                <h2>¿Que estás pensando..?</h2>
 
-            <button disabled={loading}>Enviar</button>
+                <label htmlFor='photo'>Foto:</label>
+                <input
+                    type='file'
+                    onChange={(e) => setPhoto(e.target.files[0])}
+                    required
+                />
+                {showResult ? (
+                    <p>Ubicación: {place}</p>
+                ) : (
+                    <button onClick={getPlace}>
+                        Pulsa para añadir tu ubicación
+                    </button>
+                )}
+                <label htmlFor='title'>Título:</label>
+                <input
+                    type='text'
+                    onChange={(e) => setTitle(e.target.value)}
+                    required
+                    autoFocus
+                    id='title'
+                    value={title}
+                />
+                <label htmlFor='description'>Descripción:</label>
+                <textarea
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    id='description'
+                    required
+                ></textarea>
 
-            {loading && <p>loading...</p>}
+                <button disabled={loading}>Enviar</button>
 
-            {errMsg && <ErrorMessage msg={errMsg} />}
-        </form>
+                {loading && <p>loading...</p>}
+
+                {errMsg && <ErrorMessage msg={errMsg} />}
+            </form>
+        </div>
     );
 };
 

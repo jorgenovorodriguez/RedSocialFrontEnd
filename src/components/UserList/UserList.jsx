@@ -1,6 +1,5 @@
 import useUsers from '../../hooks/useUsers';
 import UserListItem from '../UserListItem/UserListItem';
-import './UserList.css';
 
 const UserList = () => {
     const { users } = useUsers();

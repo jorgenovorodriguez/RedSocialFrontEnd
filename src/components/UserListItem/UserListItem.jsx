@@ -15,7 +15,7 @@ const UserListItem = ({ user }) => {
                     alt={`${user.username} avatar`}
                 />
                 <div className='userInfoList'>
-                    <div>@{user.username}</div>
+                    <div>{user.username}</div>
                     <div>{user.role}</div>
                     <div>{user.place}</div>
                 </div>

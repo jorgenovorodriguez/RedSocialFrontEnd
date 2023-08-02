@@ -105,7 +105,8 @@ const RegisterForm = () => {
                         />
 
                         <label htmlFor='role'>Tipo de perfil:</label>
-                        <div className='check-artista'>
+
+                        <div>
                             <input
                                 type='checkbox'
                                 id='artista'
