@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import placeEditService from '../../services/placeEditService';
+import getGeolocationService from '../../services/getGeolocationService';
 
 const EditPlace = ({ token, places }) => {
     const [place, setPlace] = useState('');
@@ -29,29 +30,10 @@ const EditPlace = ({ token, places }) => {
 
             setLoading(true);
 
-            if (navigator.geolocation) {
-                console.log(place);
-                navigator.geolocation.getCurrentPosition(async (position) => {
-                    try {
-                        const lat = position.coords.latitude;
-                        const lon = position.coords.longitude;
-                        const apiKey = 'pk.e78c1e4d311857031198efeb6e1d62eb';
-                        const url = `https://us1.locationiq.com/v1/reverse?key=${apiKey}&lat=${lat}&lon=${lon}&format=json`;
-                        const response = await fetch(url);
-                        const data = await response.json();
+            const city = await getGeolocationService(setPlace);
 
-                        const city = data.address.city;
-
-                        setPlace(city);
-                        window.location.reload();
-                    } catch (err) {
-                        console.error(
-                            'Error al obtener el nombre de la localidad:',
-                            err
-                        );
-                    }
-                });
-            }
+            setPlace(city);
+            window.location.reload();
         } catch (error) {
             console.error('Error al obtener la ubicación:', error);
             setLoading(false);
