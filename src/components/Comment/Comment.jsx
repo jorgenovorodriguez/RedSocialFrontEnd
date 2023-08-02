@@ -3,16 +3,14 @@ import CommentBody from './CommentBody/CommentBody';
 import './comment.css'
 import DeleteComment from '../DeleteComment/DeleteComment';
 
-const Comment = ({ comments, userComment, deleteComment, publicationId }) => {
-    const isOwner = (comment) => {
-        // Verifica si el usuario autenticado es dueño del comentario
-        return (
-            userComment &&
-            (comment.commenter.id === userComment.id || // Dueño del comentario
-                publicationId === userComment.publicationId) // Dueño de la publicación
-        );
-    };
-    console.log(publicationId);
+const Comment = ({
+    comments,
+    deleteComment,
+    publicationId,
+    publicationOwner,
+    token,
+}) => {
+    console.log(comments);
     return (
         <ul className='ul'>
             {comments.map((comment, index) => (
@@ -34,17 +32,20 @@ const Comment = ({ comments, userComment, deleteComment, publicationId }) => {
                                     day: '2-digit',
                                     month: '2-digit',
                                     year: '2-digit',
-                                })}
-                            </time>
-                        )}
-                    </div>
-                    {isOwner(comment) && (
-                        <DeleteComment
-                            commentId={comment.id}
-                            publicationId={publicationId}
-                            deleteComment={deleteComment}
-                        />
+
+                                }
+                            )}
+                        </time>
                     )}
+                    {console.log(comment)}
+                    <DeleteComment
+                        commentId={comment.id}
+                        publicationId={publicationId}
+                        deleteComment={deleteComment}
+                        commentOwner={comment.commenter}
+                        publicationOwner={publicationOwner}
+                    />
+
                 </li>
             ))}
         </ul>
@@ -52,3 +53,4 @@ const Comment = ({ comments, userComment, deleteComment, publicationId }) => {
 };
 
 export default Comment;
+
