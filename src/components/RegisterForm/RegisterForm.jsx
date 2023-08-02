@@ -4,6 +4,8 @@ import registerService from '../../services/registerServices';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 
+import './RegisterForm.css'
+
 const RegisterForm = () => {
     const navigate = useNavigate();
 
@@ -45,7 +47,7 @@ const RegisterForm = () => {
     };
 
     return (
-        <div className='register-card'>
+        <div className='reg-card'>
             <div className='logo-container'>
                 <div className='logo-image'>
                     <Logo />
@@ -53,7 +55,7 @@ const RegisterForm = () => {
             </div>
 
             <form>
-                <div className='login-input'>
+                <div className='register-input'>
                     <h2>Registro</h2>
                     <div className='imputsLab'>
                         <label htmlFor='username'>Nombre de usuario:</label>

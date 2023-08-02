@@ -34,7 +34,7 @@ const PublicationFooter = ({
     };
 
     return (
-        <footer>
+        <footer className='footer-like'>
             <div>
                 <button
                     className={`heart ${likedByMe && 'like'}`}
