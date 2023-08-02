@@ -4,8 +4,10 @@ import useSinglePublication from '../../hooks/useSinglePublication';
 import Comment from '../../components/Comment/Comment';
 import CommentForm from '../../components/Comment/CommentForm/CommentForm';
 import { useState } from 'react';
+import useAuth from '../../hooks/useAuth';
 
 const SinglePublicationPage = () => {
+    const { token } = useAuth();
     const {
         publication,
         toogleLike,
@@ -40,16 +42,16 @@ const SinglePublicationPage = () => {
                 publication.comments.length > 0 ? (
                     <Comment
                         comments={publication.comments.slice().reverse()}
-                        userComment={userComment}
                         deleteComment={deleteComment}
                         publicationId={publication.id}
+                        publicationOwner={publication.owner}
                     />
                 ) : (
                     <p>¿No hay comentarios? Anímate, haz el primero</p>
                 )}
             </div>
             <div>
-                {publication && publication.id && (
+                {publication && publication.id && token && (
                     <CommentForm
                         id={publication.id}
                         onAddComment={handleAddComment}
