@@ -5,20 +5,22 @@ const SearchForm = ({ searchParams, setSearchParams, loading }) => {
     const [keyword, setKeyword] = useState(searchParams.get('keyword') || '');
 
     return (
-        <form
-            onSubmit={(e) => {
-                e.preventDefault();
+        <div>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault();
 
-                setSearchParams(new URLSearchParams({ keyword }));
-            }}
-        >
-            <input
-                type='search'
-                value={keyword}
-                onChange={(e) => setKeyword(e.target.value)}
-            />
-            <button disabled={loading}>Buscar</button>
-        </form>
+                    setSearchParams(new URLSearchParams({ keyword }));
+                }}
+            >
+                <input
+                    type='search'
+                    value={keyword}
+                    onChange={(e) => setKeyword(e.target.value)}
+                />
+                <button disabled={loading}>Buscar</button>
+            </form>
+        </div>
     );
 };
 

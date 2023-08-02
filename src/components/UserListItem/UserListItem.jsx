@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const UserListItem = ({ user }) => {
     return (
-        <li>
+        <li className='userListItem'>
             <Link to={`/users/${user.id}`}>
                 <img
                     src={
@@ -14,10 +14,10 @@ const UserListItem = ({ user }) => {
                     }
                     alt={`${user.username} avatar`}
                 />
-                <div>
-                    <h2>@{user.username}</h2>
-                    <p>{user.role}</p>
-                    <p>{user.place}</p>
+                <div className='userInfoList'>
+                    <div>@{user.username}</div>
+                    <div>{user.role}</div>
+                    <div>{user.place}</div>
                 </div>
             </Link>
         </li>
