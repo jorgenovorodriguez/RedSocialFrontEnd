@@ -12,7 +12,7 @@ const sendRecoverPassService = async (email) => {
     const body = await res.json();
 
     if (!res.ok) {
-        throw new Error(body.msg);
+        throw new Error(body.message);
     }
 };
 
