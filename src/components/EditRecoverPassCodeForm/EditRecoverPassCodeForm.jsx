@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import editRecoverPassCodeService from '../../services/EditRecoverPassCodeService';
 
 const EditRecoverPassCodeForm = () => {
+    const navigate = useNavigate();
     const [recoverPassCode, setRecoverPassCode] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [newPasswordConfirm, setNewpasswordConfirm] = useState('');
@@ -22,6 +24,7 @@ const EditRecoverPassCodeForm = () => {
                 setConfirmations(
                     await editRecoverPassCodeService(recoverPassCode, newPass)
                 );
+                navigate('/login');
             } else {
                 alert('Las contraseñas no coinciden');
             }

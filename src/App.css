@@ -132,3 +132,19 @@ form {
     text-decoration: none;
     margin-left: 7rem;
 }
+
+
+.avatar-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
