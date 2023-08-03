@@ -18,7 +18,10 @@ const EditRecoverPassCodeForm = () => {
 
             setLoading(true);
 
-            if (newPassword === newPasswordConfirm) {
+            if (
+                newPassword === newPasswordConfirm &&
+                newPassword.trim().length > 7
+            ) {
                 const newPass = newPassword;
 
                 setConfirmations(
