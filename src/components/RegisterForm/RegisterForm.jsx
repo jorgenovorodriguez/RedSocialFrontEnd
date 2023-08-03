@@ -4,7 +4,7 @@ import registerService from '../../services/registerServices';
 import { useNavigate } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 
-import './RegisterForm.css'
+import './RegisterForm.css';
 
 const RegisterForm = () => {
     const navigate = useNavigate();
@@ -38,7 +38,6 @@ const RegisterForm = () => {
             } else {
                 setErrorMsg('Las contraseñas no coinciden');
             }
-            console.log(confirmations);
         } catch (err) {
             setErrorMsg(err.msg);
         } finally {

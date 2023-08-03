@@ -1,3 +1,11 @@
+.publication-container{
+    margin:auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 30rem;
+}
+
 .avatar-container {
     display: inline-block;
     position: relative;
@@ -10,10 +18,6 @@
     border: 1px solid black;
 }
 
-
-
-
-
 .correccion img{
     width: 100px;
     min-width: 1rem;
@@ -24,43 +28,55 @@
 .publication-header{
     border: 1px solid black;
     display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    border: 0px none;
-    height: 26.25rem;
-    min-height: 1rem;
-    width: 20rem;
-    min-width: 1rem;
-    width:30rem;
+    align-items: center;
+    padding-left: 1rem;
+    list-style-type: none;
+    background-color: rgb(232, 231, 231);
+    border-radius: 1.5rem 1.5rem 0 0;
+    margin-top: 2rem;
+    height:6rem;
     
-
 }
 
-.header-info{
+
+
+.header-username{
     display: flex;
     flex-direction: column;
-    width:30rem;
-    padding-left: 1rem;
-    border: 1px solid black;
-}
-
-.header-info2{
-    display: flex;
     border: 1px solid black;
     justify-content: space-between;
+    margin: 2rem 1rem 1rem 1rem;
+
 
 }
 
+.header-username p{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+
+}
+
+
 .photo-info{
-    border: 1px solid black;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto; 
     text-align: center;
-    margin:0 2rem;
+    
+}
+
+.photo-info h3{
+    background-color: rgb(232, 231, 231);
+    padding:1rem 0;
+    color:black;
+    text-decoration: none;
 
 }
 
 .photo-info img{
-    width:20rem;
-    height:20rem;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
 
 }
 

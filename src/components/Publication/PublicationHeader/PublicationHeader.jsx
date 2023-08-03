@@ -4,28 +4,28 @@ import Avatar from '../../Avatar/Avatar';
 
 const PublicationHeader = ({ username, createdAt, place, avatar }) => {
     return (
-        <header className='publication-header'>
+        
+            <header className='publication-header'>
                 <div className='avatar-container'>
                     <Avatar avatar={avatar} username={username} />
                 </div>
-                <div className='header-info'>
-                        <div className='header-username'>
-                            <p>@{username}</p>
-                        </div>
-                        <div className='header-info2'>
+                    <div className='header-username'>
+                        <p>@{username}</p>
+                            
                         <time>
-                            {new Date(createdAt).toLocaleDateString('es-ES', {
-                                hour: '2-digit',
-                                minute: '2-digit',
-                                day: '2-digit',
-                                month: '2-digit',
-                                year: '2-digit',
-                            })}
+                                {new Date(createdAt).toLocaleDateString('es-ES', {
+                                    hour: '2-digit',
+                                    minute: '2-digit',
+                                    day: '2-digit',
+                                    month: '2-digit',
+                                    year: '2-digit',
+                                })}
                         </time>
                         <p>{place}</p>
-                        </div>
-                </div>
-        </header>
+                    </div>
+                    
+                </header>
+        
     );
 };
 

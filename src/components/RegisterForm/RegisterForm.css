@@ -32,9 +32,12 @@
     color: antiquewhite; 
 }
 
-.check-artista label,
+.check-artista label{
+    margin-left: 1rem;
+}
+
 .check-estudio label {
-    margin-left: 0.5rem;
+    margin-left: 1rem;
 }
 
 

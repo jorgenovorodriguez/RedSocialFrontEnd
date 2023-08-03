@@ -10,7 +10,6 @@ const Comment = ({
     publicationOwner,
     token,
 }) => {
-    console.log(comments);
     return (
         <ul className='ul'>
             {comments.map((comment, index) => (
@@ -26,6 +25,7 @@ const Comment = ({
                             <CommentBody text={comment.text} />
                         </div>
                         {comment.createdAt && (
+
                             <time className='comment-time'>
                                 {new Date(comment.createdAt).toLocaleDateString(
                                     'es-ES',
@@ -47,6 +47,7 @@ const Comment = ({
                             commentOwner={comment.commenter}
                             publicationOwner={publicationOwner}
                         />
+
                     </div>
                 </li>
             ))}

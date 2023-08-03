@@ -82,7 +82,7 @@ const useSinglePublication = () => {
     const deleteComment = async (publicationId, commentId) => {
         try {
             setLoading(true);
-            console.log(publicationId);
+
             const res = await deleteCommentService(
                 publicationId,
                 commentId,
