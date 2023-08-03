@@ -14,7 +14,7 @@ const likePublicationService = async (publicationId, likedByMe, token) => {
     const body = await res.json();
 
     if (!res.ok) {
-        throw new Error(body.msg);
+        throw new Error(body.message);
     }
 };
 

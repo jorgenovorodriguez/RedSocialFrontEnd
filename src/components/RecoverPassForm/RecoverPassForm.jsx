@@ -5,7 +5,7 @@ import sendRecoverPassService from '../../services/sendRecoverPassService';
 
 const RecoverPassForm = ({ setShowEditForm }) => {
     const [email, setEmail] = useState('');
-    const [errMsg, setErrorMsg] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
@@ -16,8 +16,8 @@ const RecoverPassForm = ({ setShowEditForm }) => {
 
             await sendRecoverPassService(email);
             setShowEditForm(true);
-        } catch (err) {
-            setErrorMsg(err.message);
+        } catch (error) {
+            setErrorMessage(error.message);
         } finally {
             setLoading(false);
         }
@@ -41,7 +41,7 @@ const RecoverPassForm = ({ setShowEditForm }) => {
                     required
                 />
                 {loading && <p>loading...</p>}
-                {errMsg && <ErrorMessage msg={errMsg} />}
+                {errorMessage && <ErrorMessage message={errorMessage} />}
                 <button disabled={loading}>Enviar mail de recuperación</button>
             </form>
         </div>

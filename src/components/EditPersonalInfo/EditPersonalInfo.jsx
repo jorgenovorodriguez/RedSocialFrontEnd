@@ -4,7 +4,7 @@ import personalInfoEditService from '../../services/personalInfoEditService';
 const EditPersonalInfo = ({ token }) => {
     const [personalInfo, setPersonalInfo] = useState('');
     const [error, setError] = useState(null);
-    const [msg, setMsg] = useState(null);
+    const [message, setMessage] = useState(null);
 
     const handleSubmitUser = async (e) => {
         e.preventDefault();
@@ -15,7 +15,7 @@ const EditPersonalInfo = ({ token }) => {
 
             setPersonalInfo('');
 
-            setMsg('Información cambiada correctamente');
+            setMessage('Información cambiada correctamente');
         } catch (error) {
             setError(error);
         }
@@ -33,7 +33,7 @@ const EditPersonalInfo = ({ token }) => {
                     required
                 />
                 <button type='submit'>Cambiar</button>
-                {msg && <p>{msg}</p>}
+                {message && <p>{message}</p>}
                 {error && <p>{error.message}</p>}
             </form>
         </div>

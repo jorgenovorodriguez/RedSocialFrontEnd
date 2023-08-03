@@ -12,16 +12,16 @@ const getGeolocationService = async (setPlace) => {
                     const city = data.address.city;
 
                     setPlace(city);
-                } catch (err) {
+                } catch (error) {
                     console.error(
                         'Error al obtener el nombre de la localidad',
-                        err
+                        error
                     );
                 }
             });
         }
-    } catch (err) {
-        throw new Error('No se pudo obtener la geolocalización', err);
+    } catch (error) {
+        throw new Error('No se pudo obtener la geolocalización', error);
     }
 };
 
