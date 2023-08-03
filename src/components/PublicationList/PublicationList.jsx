@@ -9,11 +9,11 @@ const PublicationList = () => {
         usePublications();
 
     return (
-        <div>
+        <>
             {loading && <p>Loading...</p>}
             {errMsg && <ErrorMessage msg={errMsg} />}
 
-            <ul>
+            <ul className='aa'>
                 {publications.length > 0 ? (
                     publications.map((publication) => (
                         <li key={publication.id}>
@@ -48,7 +48,7 @@ const PublicationList = () => {
                     <li>No hay publicaciones, haz la primera!</li>
                 )}
             </ul>
-        </div>
+        </>
     );
 };
 
