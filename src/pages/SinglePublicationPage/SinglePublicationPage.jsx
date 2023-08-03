@@ -7,6 +7,8 @@ import { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import Footer from '../../components/Footer/Footer';
 
+import './SinglePublicationPage.css'
+
 const SinglePublicationPage = () => {
     const { token } = useAuth();
     const {
@@ -49,7 +51,7 @@ const SinglePublicationPage = () => {
                             publicationOwner={publication.owner}
                         />
                     ) : (
-                        <p>¿No hay comentarios? Anímate, haz el primero</p>
+                        <p className='p'>¿No hay comentarios? Anímate, haz el primero</p>
                     )}
                 </div>
                 <div>

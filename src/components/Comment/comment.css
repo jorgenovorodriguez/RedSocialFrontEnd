@@ -1,38 +1,33 @@
-.ul {
-    list-style-type: none;
+ul {
+    list-style: none;
     padding: 0;
-    margin: 2rem;
 }
 
-.li {
+li {
     display: flex;
-    flex-direction: row; 
-    align-items: flex-start; 
-    margin-bottom: 1rem;
+    flex-direction: row-reverse; /* Invierte el orden de los elementos en el comentario */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    margin-bottom: 20px;
 }
 
-.comment-header {
-    text-align: center;
+.CommentHeader {
+    margin-left: 10px; /* Margen entre el avatar y el texto del comentario */
 }
 
-.comment-header img {
-    width: 40px;
-    height: 40px;
+.CommenterAvatar {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    margin-right: 10px; /* Margen entre el avatar y el borde derecho del comentario */
 }
 
-.comment-content {
-    flex: 1; /* Ocupar todo el espacio disponible */
-    display: flex;
-    flex-direction: column; /* Alinear verticalmente */
-    margin-left: 1rem; /* Espacio entre avatar y comentario */
+.CommentBody {
+    clear: both; /* Limpia el flujo de elementos */
 }
 
-.comment-text {
-    margin-bottom: 0.5rem; /* Espacio entre comentario y fecha */
-}
-
-.comment-time {
-    color: gray;
-    font-size: 0.8rem;
+time {
+    display: block;
+    margin-top: 5px; /* Margen superior para el tiempo */
+    font-size: 12px;
+    color: #888;
 }
