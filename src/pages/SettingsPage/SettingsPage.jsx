@@ -7,6 +7,7 @@ import useAuth from '../../hooks/useAuth';
 import onwerUserService from '../../services/onwerUserService';
 import EditPersonalInfo from '../../components/EditPersonalInfo/EditPersonalInfo';
 import EditPlace from '../../components/EditPlace/EditPlace';
+import Footer from '../../components/Footer/Footer';
 
 const SettingsPage = () => {
     const { token } = useAuth();
@@ -25,24 +26,27 @@ const SettingsPage = () => {
     }, [token]);
 
     return (
-        <main className='main-layout'>
-            <h2>ajustes</h2>
-            <div>
-                <Avatar avatar={user.avatar} username={user.username} />
-            </div>
-            <div>
-                <EditPlace token={token} places={user.place} />
-            </div>
-            <div>
-                <EditPersonalInfo token={token} />
-            </div>
-            <div>
-                <EditAvata token={token} />
-            </div>
-            <div>
-                <EditPassword token={token} />
-            </div>
-        </main>
+        <>
+            <main className='main-layout'>
+                <h2>ajustes</h2>
+                <div>
+                    <Avatar avatar={user.avatar} username={user.username} />
+                </div>
+                <div>
+                    <EditPlace token={token} places={user.place} />
+                </div>
+                <div>
+                    <EditPersonalInfo token={token} />
+                </div>
+                <div>
+                    <EditAvata token={token} />
+                </div>
+                <div>
+                    <EditPassword token={token} />
+                </div>
+            </main>
+            <Footer />
+        </>
     );
 };
 

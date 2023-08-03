@@ -2,6 +2,14 @@ import { NavLink } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 
 const InfoContainer = () => {
+    const pass = 'HACKaBOSS';
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        sessionStorage.setItem('pass', pass);
+    };
+
     return (
         <div className='register-card'>
             <div className='logo-container'>
@@ -21,7 +29,7 @@ const InfoContainer = () => {
                         formar parte de TattoArt..
                     </p>
                 </div>
-                <div>
+                <div onClick={handleSubmit}>
                     <NavLink className='guest-button' to='/home'>
                         Entrar como invitado
                     </NavLink>

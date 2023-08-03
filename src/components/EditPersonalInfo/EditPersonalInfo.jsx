@@ -18,7 +18,6 @@ const EditPersonalInfo = ({ token }) => {
             setMsg('Información cambiada correctamente');
         } catch (error) {
             setError(error);
-            console.log(error);
         }
     };
 

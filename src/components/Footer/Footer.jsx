@@ -32,33 +32,46 @@ const Footer = () => {
     return (
         <div className='fijo'>
             <footer className='footer-layout'>
-                <div
-                    className='logos-footer'
-                    onClick={() => setBuscadorActivo(!buscadorActivo)}
-                >
-                    <NavLink to='/home'>
-                        <img src={lupa} alt='buscador' />
-                    </NavLink>
-                </div>
-                <div className='logos-footer'>
-                    <NavLink to='/message'>
-                        <img src={mas} alt='crear publicacion' />
-                    </NavLink>
-                </div>
-                <div className='logos-footer'>
-                    <NavLink to={perfil + user.userId}>
-                        <Avatar avatar={user.avatar} username={user.username} />
-                    </NavLink>
-                </div>
-                {buscadorActivo && (
-                    <div className=''>
-                        <SearchForm
-                            setSearchParams={setSearchParams}
-                            searchParams={searchParams}
-                            loading={loading}
-                        />{' '}
+                {token ? (
+                    <>
+                        <div
+                            className='logos-footer'
+                            onClick={() => setBuscadorActivo(!buscadorActivo)}
+                        >
+                            <NavLink to='/home'>
+                                <img src={lupa} alt='buscador' />
+                            </NavLink>
+                        </div>
+                        <div className='logos-footer'>
+                            <NavLink to='/message'>
+                                <img src={mas} alt='crear publicacion' />
+                            </NavLink>
+                        </div>
+                        <div className='logos-footer'>
+                            <NavLink to={perfil + user.userId}>
+                                <Avatar
+                                    avatar={user.avatar}
+                                    username={user.username}
+                                />
+                            </NavLink>
+                        </div>
+                        {buscadorActivo && (
+                            <div className=''>
+                                <SearchForm
+                                    setSearchParams={setSearchParams}
+                                    searchParams={searchParams}
+                                    loading={loading}
+                                />
+                            </div>
+                        )}
+                    </>
+                ) : (
+                    <div>
+                        <NavLink to='/register'>
+                            <p>Entra como invitado o inicia sesión por favor</p>
+                        </NavLink>
                     </div>
-                )}{' '}
+                )}
             </footer>
         </div>
     );
