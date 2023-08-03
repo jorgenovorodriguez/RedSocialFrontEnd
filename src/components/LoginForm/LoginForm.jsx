@@ -69,6 +69,11 @@ const LoginForm = ({ login }) => {
             <div>
                 <NavLink to='/recover'>¿Has olvidado tu contraseña?</NavLink>
             </div>
+            <div>
+                <NavLink to='/register'>
+                    ¿Aún no tienes cuenta? Regístrate.
+                </NavLink>
+            </div>
         </div>
     );
 };

@@ -13,6 +13,7 @@ import UserPage from './pages/UserPage/UserPage';
 import SettingsPage from './pages/SettingsPage/SettingsPage';
 import InfoPage from './pages/InfoPage/InfoPage';
 import RecoverPassPage from './pages/RecoverPassPage/RecoverPassPage';
+import ContactPage from './pages/ContactPage/ContactPage';
 
 function App() {
     return (
@@ -34,6 +35,7 @@ function App() {
                 <Route path='/login-success' element={<LoginPage />} />
                 <Route path='/message' element={<PublicationCreatePage />} />
                 <Route path='/settings' element={<SettingsPage />} />
+                <Route path='/contact' element={<ContactPage />} />
                 <Route path='*' element={<NotFoundPage />} />
             </Routes>
         </>
