@@ -39,7 +39,7 @@ body {
 .main-layout {
     grid-area: main-layout;
     min-height: 70vh;
-    max-height: 80vh;
+    max-height: 90vh;
     width: 100vw;
 }
 
