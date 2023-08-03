@@ -30,6 +30,16 @@ const InfoContainer = () => {
                     </p>
                 </div>
                 <div onClick={handleSubmit}>
+                    <NavLink className='login-button' to='/register'>
+                        Registro
+                    </NavLink>
+                </div>
+                <div onClick={handleSubmit}>
+                    <NavLink className='login-button' to='/login'>
+                        Login
+                    </NavLink>
+                </div>
+                <div onClick={handleSubmit}>
                     <NavLink className='guest-button' to='/home'>
                         Entrar como invitado
                     </NavLink>

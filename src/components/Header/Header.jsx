@@ -34,13 +34,13 @@ const Header = () => {
                         <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                             {!token && (
                                 <>
-                                    <li className='nav-item '>
+                                    <li className='nav-item'>
                                         <a
                                             className='nav-link active text-white'
                                             aria-current='page'
-                                            href='/login'
+                                            href='/home'
                                         >
-                                            Login
+                                            Home
                                         </a>
                                     </li>
                                     <li className='nav-item'>
@@ -50,6 +50,15 @@ const Header = () => {
                                             href='/register'
                                         >
                                             Registro
+                                        </a>
+                                    </li>
+                                    <li className='nav-item '>
+                                        <a
+                                            className='nav-link active text-white'
+                                            aria-current='page'
+                                            href='/login'
+                                        >
+                                            Login
                                         </a>
                                     </li>
                                 </>

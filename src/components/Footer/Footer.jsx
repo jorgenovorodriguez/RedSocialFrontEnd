@@ -68,7 +68,7 @@ const Footer = () => {
                 ) : (
                     <div>
                         <NavLink to='/register'>
-                            <p>Entra como invitado o inicia sesión por favor</p>
+                            <p>Regístrate o inicia sesión</p>
                         </NavLink>
                     </div>
                 )}
