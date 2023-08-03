@@ -6,7 +6,7 @@ const useUsers = () => {
     const { token } = useAuth();
 
     const [users, setUsers] = useState({});
-    const [errMsg, setErrMsg] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [searchParams, setSearchParams] = useSearchParams();
     const [loading, setLoading] = useState(false);
 
@@ -25,12 +25,12 @@ const useUsers = () => {
                 const body = await res.json();
 
                 if (!res.ok) {
-                    throw new Error(body.msg);
+                    throw new Error(body.message);
                 }
 
                 setUsers(body.data.users);
-            } catch (err) {
-                setErrMsg(err.msg);
+            } catch (error) {
+                setErrorMessage(error.message);
             } finally {
                 setLoading(false);
             }
@@ -42,7 +42,7 @@ const useUsers = () => {
         users,
         searchParams,
         setSearchParams,
-        errMsg,
+        errorMessage,
         loading,
     };
 };

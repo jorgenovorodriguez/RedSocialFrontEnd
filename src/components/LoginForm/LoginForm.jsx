@@ -8,7 +8,7 @@ import Logo from '../Logo/Logo';
 const LoginForm = ({ login }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errMsg, setErrorMsg] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
@@ -20,8 +20,8 @@ const LoginForm = ({ login }) => {
             const token = await loginService(email, password);
 
             login(token);
-        } catch (err) {
-            setErrorMsg(err.msg);
+        } catch (error) {
+            setErrorMessage(error.message);
         } finally {
             setLoading(false);
         }
@@ -61,7 +61,7 @@ const LoginForm = ({ login }) => {
 
                 {loading && <p>loading...</p>}
 
-                {errMsg && <ErrorMessage msg={errMsg} />}
+                {errorMessage && <ErrorMessage message={errorMessage} />}
             </form>
             <div className='button-container' onClick={handleSubmit}>
                 <div className='login-button'>Login</div>

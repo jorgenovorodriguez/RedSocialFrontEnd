@@ -1,4 +1,10 @@
-const PublicationCreateService = async (description, photo, title, place, token) => {
+const PublicationCreateService = async (
+    description,
+    photo,
+    title,
+    place,
+    token
+) => {
     const formData = new FormData();
     console.log(photo, '---------------');
     formData.append('photo', photo);
@@ -17,7 +23,7 @@ const PublicationCreateService = async (description, photo, title, place, token)
     const body = await res.json();
 
     if (!res.ok) {
-        throw new Error(body.msg)
+        throw new Error(body.message);
     }
 };
 
