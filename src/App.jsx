@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
-import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Root from './pages/Root/Root';
 import ValidatedPage from './pages/ValidatePage/ValidatePage';
@@ -28,28 +27,15 @@ function App() {
                 />
                 <Route path='/users' element={<UserListPage />} />
                 <Route path='/users/:userId' element={<UserPage />} />
-                <Route
-                    path='/register'
-                    element={<RegisterPage />}
-                    id='background-intro'
-                />
-                <Route
-                    path='/activated'
-                    element={<ValidatedPage />}
-                    id='background-intro'
-                />
-                <Route
-                    path='/login'
-                    element={<LoginPage />}
-                    id='background-intro'
-                />
-                <Route path='recover' element={<RecoverPassPage />} />
+                <Route path='/register' element={<RegisterPage />} />
+                <Route path='/activated' element={<ValidatedPage />} />
+                <Route path='/login' element={<LoginPage />} />
+                <Route path='/recover' element={<RecoverPassPage />} />
                 <Route path='/login-success' element={<LoginPage />} />
                 <Route path='/message' element={<PublicationCreatePage />} />
                 <Route path='/settings' element={<SettingsPage />} />
                 <Route path='*' element={<NotFoundPage />} />
             </Routes>
-            <Footer />
         </>
     );
 }

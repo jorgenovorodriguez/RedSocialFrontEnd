@@ -5,6 +5,7 @@ import Comment from '../../components/Comment/Comment';
 import CommentForm from '../../components/Comment/CommentForm/CommentForm';
 import { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
+import Footer from '../../components/Footer/Footer';
 
 const SinglePublicationPage = () => {
     const { token } = useAuth();
@@ -25,41 +26,44 @@ const SinglePublicationPage = () => {
     };
 
     return (
-        <main className='main-layout'>
-            {loading && <p>Loading...</p>}
-            {errMsg && <ErrorMessage msg={errMsg} />}
-            {publication && (
-                <Publication
-                    key={publication.id}
-                    publication={publication}
-                    toogleLike={toogleLike}
-                    deletePublication={deletePublication}
-                    loading={loading}
-                />
-            )}
-            <div>
-                {Array.isArray(publication?.comments) &&
-                publication.comments.length > 0 ? (
-                    <Comment
-                        comments={publication.comments.slice().reverse()}
-                        deleteComment={deleteComment}
-                        publicationId={publication.id}
-                        publicationOwner={publication.owner}
-                    />
-                ) : (
-                    <p>¿No hay comentarios? Anímate, haz el primero</p>
-                )}
-            </div>
-            <div>
-                {publication && publication.id && token && (
-                    <CommentForm
-                        id={publication.id}
-                        onAddComment={handleAddComment}
-                        setPublication={setPublication}
+        <>
+            <main className='main-layout'>
+                {loading && <p>Loading...</p>}
+                {errMsg && <ErrorMessage msg={errMsg} />}
+                {publication && (
+                    <Publication
+                        key={publication.id}
+                        publication={publication}
+                        toogleLike={toogleLike}
+                        deletePublication={deletePublication}
+                        loading={loading}
                     />
                 )}
-            </div>
-        </main>
+                <div>
+                    {Array.isArray(publication?.comments) &&
+                    publication.comments.length > 0 ? (
+                        <Comment
+                            comments={publication.comments.slice().reverse()}
+                            deleteComment={deleteComment}
+                            publicationId={publication.id}
+                            publicationOwner={publication.owner}
+                        />
+                    ) : (
+                        <p>¿No hay comentarios? Anímate, haz el primero</p>
+                    )}
+                </div>
+                <div>
+                    {publication && publication.id && token && (
+                        <CommentForm
+                            id={publication.id}
+                            onAddComment={handleAddComment}
+                            setPublication={setPublication}
+                        />
+                    )}
+                </div>
+            </main>
+            <Footer />
+        </>
     );
 };
 

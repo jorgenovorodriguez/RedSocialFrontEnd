@@ -29,7 +29,6 @@ const useUsers = () => {
                 }
 
                 setUsers(body.data.users);
-                console.log(body.data.users);
             } catch (err) {
                 setErrMsg(err.msg);
             } finally {

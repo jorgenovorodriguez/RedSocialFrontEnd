@@ -1,7 +1,6 @@
 import Avatar from '../../Avatar/Avatar';
 
 const CommentHeader = ({ commenter, commenterAvatar }) => {
-    console.log(commenter);
     return (
         <div>
             <div>

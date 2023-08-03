@@ -1,6 +1,6 @@
 const deleteCommentService = async (publicationId, commentId, token) => {
 
-    console.log(publicationId);
+
 
 
     const res = await fetch(
@@ -14,7 +14,7 @@ const deleteCommentService = async (publicationId, commentId, token) => {
     );
 
     const body = await res.json();
-    console.log(body);
+
     if (!body.ok) {
         throw new Error(body.message);
     }
