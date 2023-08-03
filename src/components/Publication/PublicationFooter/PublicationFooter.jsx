@@ -47,6 +47,7 @@ const PublicationFooter = ({
                 <button
                     onClick={() => handleDeletePublication()}
                     disabled={loading}
+                    className="delete-button"
                 >
                     X
                 </button>

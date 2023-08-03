@@ -3,7 +3,7 @@ import Avatar from '../../Avatar/Avatar';
 const CommentHeader = ({ commenter, commenterAvatar }) => {
     return (
         <div>
-            <div>
+            <div className="CommentHeader">
                 <Avatar avatar={commenterAvatar} username={commenter} />
             </div>
             <p>{commenter}</p>
