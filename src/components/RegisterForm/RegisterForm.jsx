@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import registerService from '../../services/registerServices';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 
 import './RegisterForm.css';
@@ -133,6 +133,11 @@ const RegisterForm = () => {
                 {errMsg && <ErrorMessage msg={errMsg} />}
                 <div className='button-container' onClick={handleSubmit}>
                     <div className='login-button'>Registrarme</div>
+                </div>
+                <div>
+                    <NavLink to='/login'>
+                        ¿Ya estás registrado? Inicia sesión
+                    </NavLink>
                 </div>
             </form>
         </div>
