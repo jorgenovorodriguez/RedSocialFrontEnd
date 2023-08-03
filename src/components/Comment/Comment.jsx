@@ -45,7 +45,7 @@ const Comment = ({
                         commentOwner={comment.commenter}
                         publicationOwner={publicationOwner}
                     />
-
+                    </div>
                 </li>
             ))}
         </ul>
