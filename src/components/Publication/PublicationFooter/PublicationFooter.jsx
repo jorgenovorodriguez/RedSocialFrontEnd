@@ -48,7 +48,7 @@ const PublicationFooter = ({
                     onClick={() => handleDeletePublication()}
                     disabled={loading}
                 >
-                    Eliminar
+                    X
                 </button>
             )}
         </footer>
