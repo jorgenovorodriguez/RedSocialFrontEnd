@@ -1,6 +1,62 @@
 .publicationForm {
-    margin-top: 2rem;
+    flex-wrap: nowrap;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    margin: auto;
+    height: 23rem;
+    min-height: 1rem;
+    min-width: 1rem;
+    background-color: #d6d6d6ba;
+    border-radius: 1rem;
+    position: relative;
+    top: 6rem;
+    max-width: 25rem;
+}
+
+.publicationForm form {
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ubication {
+    margin-top: 1rem;
+    background-color: rgb(213, 213, 213);
+    width: 6rem;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 1rem;
+}
+.titleForm {
+    padding-left: 0.7rem;
+    margin-top: 1rem;
+    width: 12rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+.publicationForm textarea {
+    margin: 2rem;
+    padding: 2rem;
+    width: 100%;
+    border: none;
+}
+
+.buttonPublication {
+    background-color: white;
+    border: none;
+    width: 6rem;
+    border-radius: 1rem;
+}
+.buttonPublicationContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: baseline;
+}
+
+.photoImage {
+    border: none;
 }

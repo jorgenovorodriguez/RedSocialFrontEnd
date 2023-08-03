@@ -8,7 +8,6 @@ import './PublicationCreateForm.css';
 
 import getGeolocationService from '../../services/getGeolocationService';
 
-
 const PublicationCreateForm = ({ token }) => {
     const navigate = useNavigate();
 
@@ -63,23 +62,22 @@ const PublicationCreateForm = ({ token }) => {
     return (
         <div className='publicationForm'>
             <form onSubmit={handleSubmit}>
-                <h2>¿Que estás pensando..?</h2>
-
-                <label htmlFor='photo'>Foto:</label>
                 <input
                     type='file'
                     onChange={(e) => setPhoto(e.target.files[0])}
                     required
                 />
                 {showResult ? (
-                    <p>Ubicación: {place}</p>
+                    <p>{place}</p>
                 ) : (
-                    <button onClick={getPlace}>
-                        Pulsa para añadir tu ubicación
+                    <button className='ubication' onClick={getPlace}>
+                        ubicación
                     </button>
                 )}
-                <label htmlFor='title'>Título:</label>
+
                 <input
+                    className='titleForm'
+                    placeholder='titulo'
                     type='text'
                     onChange={(e) => setTitle(e.target.value)}
                     required
@@ -87,15 +85,18 @@ const PublicationCreateForm = ({ token }) => {
                     id='title'
                     value={title}
                 />
-                <label htmlFor='description'>Descripción:</label>
+
                 <textarea
+                    placeholder='Añade una descripcion a tu imagen'
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     id='description'
                     required
                 ></textarea>
 
-                <button disabled={loading}>Enviar</button>
+                <button className='buttonPublication' disabled={loading}>
+                    Enviar
+                </button>
 
                 {loading && <p>loading...</p>}
 
