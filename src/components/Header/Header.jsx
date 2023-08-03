@@ -74,6 +74,16 @@ const Header = () => {
                                 </a>
                             </li>
 
+                            <li className='nav-item'>
+                                <a
+                                    className='nav-link active text-white'
+                                    aria-current='page'
+                                    href='/contact'
+                                >
+                                    Contacto
+                                </a>
+                            </li>
+
                             {token && (
                                 <>
                                     <li className='nav-item'>
