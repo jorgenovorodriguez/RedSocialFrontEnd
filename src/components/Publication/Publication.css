@@ -1,8 +1,9 @@
 .publication-container{
-    margin:auto;
+    margin: 0 1rem;
     display:flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 10rem;
     max-width: 30rem;
 }
 

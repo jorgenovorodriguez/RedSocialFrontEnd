@@ -9,16 +9,16 @@ const TattooHome = () => {
     return (
         <>
             <main className='main-layout'>
-                <div>
+                <>
                     <SearchForm
                         searchParams={searchParams}
                         setSearchParams={setSearchParams}
                         loading={loading}
                     />
-                </div>
-                <div>
+                </>
+                <>
                     <PublicationList />
-                </div>
+                </>
             </main>
             <Footer />
         </>

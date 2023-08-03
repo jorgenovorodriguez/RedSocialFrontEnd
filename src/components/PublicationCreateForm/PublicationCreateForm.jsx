@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import publicationCreateService from '../../services/PublicationCreateService';
@@ -13,12 +13,24 @@ const PublicationCreateForm = ({ token }) => {
 
     const [description, setDescription] = useState('');
     const [photo, setPhoto] = useState();
+    const [pre, setPre] = useState(null);
     const [title, setTitle] = useState('');
     const [place, setPlace] = useState('');
     const [errMsg, setErrMsg] = useState('');
     const [loading, setLoading] = useState(false);
     const [showResult, setShowResult] = useState(false);
 
+    useEffect(() => {
+        setPre(pre);
+    }, [pre]);
+
+    const handlePhotoChange = (e) => {
+        const file = e.target.files[0];
+        const photoUrl = URL.createObjectURL(file);
+        setPre(photoUrl);
+        setPhoto(e.target.files[0]);
+    };
+    console.log(photo);
     const handleSubmit = async (e) => {
         try {
             e.preventDefault();
@@ -34,6 +46,7 @@ const PublicationCreateForm = ({ token }) => {
             );
 
             navigate('/home');
+            setPre(null);
         } catch (err) {
             setErrMsg(err.msg);
         } finally {
@@ -62,11 +75,16 @@ const PublicationCreateForm = ({ token }) => {
     return (
         <div className='publicationForm'>
             <form onSubmit={handleSubmit}>
-                <input
-                    type='file'
-                    onChange={(e) => setPhoto(e.target.files[0])}
-                    required
-                />
+                <input type='file' onChange={handlePhotoChange} required />
+                <div>
+                    {photo && (
+                        <img
+                            className='precarga'
+                            src={pre}
+                            alt='previsualizacion de imagen'
+                        />
+                    )}
+                </div>
                 {showResult ? (
                     <p>{place}</p>
                 ) : (
