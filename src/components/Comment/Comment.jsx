@@ -25,27 +25,28 @@ const Comment = ({
                             <CommentBody text={comment.text} />
                         </div>
                         {comment.createdAt && (
-                            <time className='comment-time'>
-                                {new Date(comment.createdAt).toLocaleDateString(
-                                    'es-ES',
-                                    {
-                                        hour: '2-digit',
-                                        minute: '2-digit',
-                                        day: '2-digit',
-                                        month: '2-digit',
-                                        year: '2-digit',
-                                    }
-                                )}
-                            </time>
-                        )}
-                        {console.log(comment)}
-                        <DeleteComment
-                            commentId={comment.id}
-                            publicationId={publicationId}
-                            deleteComment={deleteComment}
-                            commentOwner={comment.commenter}
-                            publicationOwner={publicationOwner}
-                        />
+
+                            <time className="comment-time">
+                                {new Date(comment.createdAt).toLocaleDateString('es-ES', {
+                                    hour: '2-digit',
+                                    minute: '2-digit',
+                                    day: '2-digit',
+                                    month: '2-digit',
+                                    year: '2-digit',
+
+                                }
+                            )}
+                        </time>
+                    )}
+                    {console.log(comment)}
+                    <DeleteComment
+                        commentId={comment.id}
+                        publicationId={publicationId}
+                        deleteComment={deleteComment}
+                        commentOwner={comment.commenter}
+                        publicationOwner={publicationOwner}
+                    />
+
                     </div>
                 </li>
             ))}
