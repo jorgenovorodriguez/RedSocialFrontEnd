@@ -1,30 +1,25 @@
 .publicationForm {
-    flex-wrap: nowrap;
-    align-content: center;
-    flex-wrap: nowrap;
-    align-content: center;
+    display: flex;
     margin: auto;
-    height: 23rem;
+    height: 18rem;
+    width: 20rem;
     min-height: 1rem;
     min-width: 1rem;
     background-color: #d6d6d6ba;
-    border-radius: 1rem;
-    position: relative;
-    top: 6rem;
-    max-width: 25rem;
+    border-radius: 0 0 1rem 1rem;
 }
 
 .publicationForm form {
-    padding-top: 2rem;
+    padding-top: 1rem;
     display: flex;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 .ubication {
-    margin-top: 1rem;
     background-color: rgb(213, 213, 213);
     width: 6rem;
     border: 1px solid rgba(0, 0, 0, 0);
@@ -32,17 +27,16 @@
 }
 .titleForm {
     padding-left: 0.7rem;
-    margin-top: 1rem;
-    width: 12rem;
+
+    width: 9rem;
     border-radius: 1rem;
     border: none;
 }
 
 .publicationForm textarea {
     text-align: center;
-    margin: 1rem;
-    width: 100%;
-    height: 3rem;
+    width: 90%;
+    height: 5rem;
     max-height: 5rem;
     border: none;
 }
@@ -64,6 +58,38 @@
 }
 
 .precarga {
-    width: 8em;
-    height: 8em;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.imgBox {
+    flex-wrap: nowrap;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    margin: 3rem auto auto auto;
+    height: 20rem;
+    width: 20rem;
+    min-height: 1rem;
+    min-width: 1rem;
+    background-color: #d6d6d6ba;
+    border-radius: 1rem 1rem 0 0;
+    max-width: 20rem;
+}
+
+.fileIcon img {
+    width: 3rem;
+    height: 3rem;
+}
+.fileIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    height: 20rem;
+}
+
+.publicationForm form p {
+    margin-bottom: 0;
 }

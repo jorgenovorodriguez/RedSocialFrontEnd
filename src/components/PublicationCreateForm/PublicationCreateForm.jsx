@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import publicationCreateService from '../../services/PublicationCreateService';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import mas from '../../assets/images/iconos/logoMas.png';
 
 import './PublicationCreateForm.css';
 
@@ -12,7 +13,7 @@ const PublicationCreateForm = ({ token }) => {
     const navigate = useNavigate();
 
     const [description, setDescription] = useState('');
-    const [photo, setPhoto] = useState();
+    const [photo, setPhoto] = useState(null);
     const [pre, setPre] = useState(null);
     const [title, setTitle] = useState('');
     const [place, setPlace] = useState('');
@@ -21,16 +22,19 @@ const PublicationCreateForm = ({ token }) => {
     const [showResult, setShowResult] = useState(false);
 
     useEffect(() => {
-        setPre(pre);
-    }, [pre]);
+        if (photo) {
+            const photoUrl = URL.createObjectURL(photo);
+            setPre(photoUrl);
+        } else {
+            setPre(null);
+        }
+    }, [photo]);
 
     const handlePhotoChange = (e) => {
         const file = e.target.files[0];
-        const photoUrl = URL.createObjectURL(file);
-        setPre(photoUrl);
-        setPhoto(e.target.files[0]);
+        setPhoto(file);
     };
-    console.log(photo);
+
     const handleSubmit = async (e) => {
         try {
             e.preventDefault();
@@ -73,54 +77,73 @@ const PublicationCreateForm = ({ token }) => {
     };
 
     return (
-        <div className='publicationForm'>
-            <form onSubmit={handleSubmit}>
-                <input type='file' onChange={handlePhotoChange} required />
-                <div>
-                    {photo && (
-                        <img
-                            className='precarga'
-                            src={pre}
-                            alt='previsualizacion de imagen'
-                        />
+        <>
+            <div className='imgBox'>
+                <label htmlFor='fileInput'>
+                    {pre ? (
+                        <div>
+                            <img
+                                className='precarga'
+                                src={pre}
+                                alt='previsualizacion de imagen'
+                            />
+                        </div>
+                    ) : (
+                        // Replace the icon here with your desired icon
+                        <div className='fileIcon'>
+                            <img src={mas} alt='crear publicacion' />
+                        </div>
                     )}
-                </div>
-                {showResult ? (
-                    <p>{place}</p>
-                ) : (
-                    <button className='ubication' onClick={getPlace}>
-                        ubicación
+                </label>
+            </div>
+            <div className='publicationForm'>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type='file'
+                        id='fileInput'
+                        onChange={handlePhotoChange}
+                        accept='image/*'
+                        style={{ display: 'none' }}
+                        required
+                    />
+
+                    {showResult ? (
+                        <p>{place}</p>
+                    ) : (
+                        <button className='ubication' onClick={getPlace}>
+                            ubicación
+                        </button>
+                    )}
+
+                    <input
+                        className='titleForm'
+                        placeholder='titulo'
+                        type='text'
+                        onChange={(e) => setTitle(e.target.value)}
+                        required
+                        autoFocus
+                        id='title'
+                        value={title}
+                    />
+
+                    <textarea
+                        placeholder='Añade una descripcion a tu imagen'
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        id='description'
+                        required
+                    ></textarea>
+
+                    <button className='buttonPublication' disabled={loading}>
+                        Enviar
                     </button>
-                )}
 
-                <input
-                    className='titleForm'
-                    placeholder='titulo'
-                    type='text'
-                    onChange={(e) => setTitle(e.target.value)}
-                    required
-                    autoFocus
-                    id='title'
-                    value={title}
-                />
+                    {loading && <p>loading...</p>}
 
-                <textarea
-                    placeholder='Añade una descripcion a tu imagen'
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    id='description'
-                    required
-                ></textarea>
-
-                <button className='buttonPublication' disabled={loading}>
-                    Enviar
-                </button>
-
-                {loading && <p>loading...</p>}
-
-                {errorMessage && <ErrorMessage message={errorMessage} />}
-            </form>
-        </div>
+                    {errorMessage && <ErrorMessage message={errorMessage} />}
+                </form>
+            </div>
+        </>
     );
 };
 
