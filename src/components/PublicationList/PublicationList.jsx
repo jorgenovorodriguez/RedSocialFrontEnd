@@ -3,6 +3,7 @@ import usePublications from '../../hooks/usePublications';
 import Comment from '../Comment/Comment';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Publication from '../Publication/Publication';
+import './PublicationList.css';
 
 const PublicationList = () => {
     const {
@@ -28,7 +29,7 @@ const PublicationList = () => {
                                 deletePublication={deletePublication}
                                 loading={loading}
                             />
-                            <div>
+                            <div className='classP'>
                                 <Link
                                     to={`/singlepublication/${publication.id}`}
                                 >
