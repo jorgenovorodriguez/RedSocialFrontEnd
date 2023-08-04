@@ -3,6 +3,7 @@ import placeEditService from '../../services/placeEditService';
 import getGeolocationService from '../../services/getGeolocationService';
 
 const EditPlace = ({ token, places }) => {
+    const [placeUser, setPlaceUser] = useState('');
     const [place, setPlace] = useState('');
     const [error, setError] = useState(null);
     const [message, setMessage] = useState(null);
@@ -30,10 +31,12 @@ const EditPlace = ({ token, places }) => {
 
             setLoading(true);
 
-            const city = await getGeolocationService(setPlace);
+            const city = await getGeolocationService(setPlaceUser);
 
-            setPlace(city);
-            window.location.reload();
+            setPlaceUser(city);
+
+            await placeEditService(placeUser, token);
+            window.document.reload();
         } catch (error) {
             console.error('Error al obtener la ubicación:', error);
             setLoading(false);
@@ -41,6 +44,7 @@ const EditPlace = ({ token, places }) => {
             setLoading(false);
         }
     };
+    console.log(place);
     return (
         <div>
             <form onSubmit={handleSubmitPlace}>
@@ -62,9 +66,7 @@ const EditPlace = ({ token, places }) => {
                 {loading && <p>loading...</p>}
                 {error && <p>{error.message}</p>}
             </form>
-            <button onClick={getPlace} disabled={loading}>
-                Pulsa para añadir tu ubicación
-            </button>
+            <button onClick={getPlace}>Pulsa para añadir tu ubicación</button>
         </div>
     );
 };

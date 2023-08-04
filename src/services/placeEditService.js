@@ -2,6 +2,7 @@ const placeEditService = async (place, token) => {
     const formData = new FormData();
 
     formData.append('place', place);
+    console.log(place);
 
     try {
         const res = await fetch('http://localhost:8000/users/place', {
