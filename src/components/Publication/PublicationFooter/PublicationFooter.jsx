@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-
 import useAuth from '../../../hooks/useAuth';
+import { MdDelete } from 'react-icons/md';
 
 const PublicationFooter = ({
     publicationId,
@@ -44,13 +44,13 @@ const PublicationFooter = ({
                 </button>
             </div>
             {token && owner === 1 && (
-                <button
+                <div
                     onClick={() => handleDeletePublication()}
                     disabled={loading}
                     className='delete-button'
                 >
-                    X
-                </button>
+                    <MdDelete style={{ fontSize: '1.5rem' }} />
+                </div>
             )}
         </footer>
     );

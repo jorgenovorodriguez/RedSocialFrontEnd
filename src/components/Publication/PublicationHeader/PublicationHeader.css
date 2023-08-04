@@ -1,0 +1,4 @@
+.publication-location {
+    display: flex;
+    flex-direction: row;
+}

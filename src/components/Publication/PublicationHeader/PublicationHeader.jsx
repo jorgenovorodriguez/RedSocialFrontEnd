@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import Avatar from '../../Avatar/Avatar';
+import { FaLocationDot } from 'react-icons/fa6';
+import './PublicationHeader.css';
 
 const PublicationHeader = ({ username, createdAt, place, avatar }) => {
     return (
@@ -19,7 +21,10 @@ const PublicationHeader = ({ username, createdAt, place, avatar }) => {
                         year: '2-digit',
                     })}
                 </time>
-                <p>{place}</p>
+                <div className='publication-location'>
+                    <FaLocationDot />
+                    <p>{place}</p>
+                </div>
             </div>
         </header>
     );

@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-import lupa from '../../assets/images/iconos/logoLupa.png';
-import mas from '../../assets/images/iconos/logoMas.png';
 import useAuth from '../../hooks/useAuth';
 import { NavLink } from 'react-router-dom';
 import Avatar from '../Avatar/Avatar';
@@ -8,6 +6,8 @@ import onwerUserService from '../../services/onwerUserService';
 import SearchForm from '../SearchForm/SearchForm';
 import usePublications from '../../hooks/usePublications';
 import './Footer.css';
+import { FaSearch } from 'react-icons/fa';
+import { MdAddCircle } from 'react-icons/md';
 
 const Footer = () => {
     const { token } = useAuth();
@@ -39,12 +39,22 @@ const Footer = () => {
                             onClick={() => setBuscadorActivo(!buscadorActivo)}
                         >
                             <NavLink to='/home'>
-                                <img src={lupa} alt='buscador' />
+                                <FaSearch
+                                    style={{
+                                        color: 'white',
+                                        fontSize: '2.5rem',
+                                    }}
+                                />
                             </NavLink>
                         </div>
                         <div className='logos-footer'>
                             <NavLink to='/message'>
-                                <img src={mas} alt='crear publicacion' />
+                                <MdAddCircle
+                                    style={{
+                                        color: 'white',
+                                        fontSize: '3rem',
+                                    }}
+                                />
                             </NavLink>
                         </div>
                         <div className='logos-footer'>
