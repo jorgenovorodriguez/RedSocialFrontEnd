@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { FaSearch } from 'react-icons/fa';
 
 const SearchForm = ({ searchParams, setSearchParams, loading }) => {
     const [keyword, setKeyword] = useState(searchParams.get('keyword') || '');
@@ -14,12 +15,12 @@ const SearchForm = ({ searchParams, setSearchParams, loading }) => {
                 }}
             >
                 <input
-                    placeholder='nombre de usuario...'
+                    placeholder='Buscar'
                     type='search'
                     value={keyword}
                     onChange={(e) => setKeyword(e.target.value)}
                 />
-                <button disabled={loading}>Buscar</button>
+                <button disabled={loading}>{<FaSearch />}</button>
             </form>
         </div>
     );
