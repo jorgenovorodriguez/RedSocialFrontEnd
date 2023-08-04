@@ -15,7 +15,7 @@ const RegisterForm = () => {
     const [passwordConfirm, setPasswordConfirm] = useState('');
     const [role, setRole] = useState('artista');
     const [confirmations, setConfirmations] = useState('');
-    const [errMsg, setErrorMsg] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
@@ -33,13 +33,13 @@ const RegisterForm = () => {
                 setConfirmations(
                     await registerService(username, email, password, role)
                 );
-
+                setErrorMessage(confirmations);
                 navigate('/activated');
             } else {
-                setErrorMsg('Las contraseñas no coinciden');
+                setErrorMessage('Las contraseñas no coinciden');
             }
-        } catch (err) {
-            setErrorMsg(err.msg);
+        } catch (error) {
+            setErrorMessage(error.message);
         } finally {
             setLoading(false);
         }
@@ -131,7 +131,7 @@ const RegisterForm = () => {
 
                 {loading && <p>Loading...</p>}
 
-                {errMsg && <ErrorMessage msg={errMsg} />}
+                {errorMessage && <ErrorMessage message={errorMessage} />}
                 <div className='button-container' onClick={handleSubmit}>
                     <div className='login-button'>Registrarme</div>
                 </div>

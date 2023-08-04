@@ -11,7 +11,7 @@ const DeleteComment = ({
 }) => {
     const { token } = useAuth();
     const [isDeleting, setIsDeleting] = useState(false);
-    const [errMsg, setErrMsg] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null);
     const [user, setUser] = useState('');
 
     useEffect(() => {
@@ -38,7 +38,7 @@ const DeleteComment = ({
                 window.location.reload();
             }
         } catch (error) {
-            setErrMsg('Error al eliminar el comentario', error);
+            setErrorMessage('Error al eliminar el comentario', error);
             setIsDeleting(false);
         }
     };
@@ -54,7 +54,7 @@ const DeleteComment = ({
                             Eliminar comentario
                         </button>
                     )}
-                    {errMsg && <p>{errMsg}</p>}
+                    {errorMessage && <p>{errorMessage}</p>}
                 </>
             )}
         </div>

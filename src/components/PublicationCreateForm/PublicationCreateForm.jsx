@@ -16,7 +16,7 @@ const PublicationCreateForm = ({ token }) => {
     const [pre, setPre] = useState(null);
     const [title, setTitle] = useState('');
     const [place, setPlace] = useState('');
-    const [errMsg, setErrMsg] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
     const [showResult, setShowResult] = useState(false);
 
@@ -47,8 +47,8 @@ const PublicationCreateForm = ({ token }) => {
 
             navigate('/home');
             setPre(null);
-        } catch (err) {
-            setErrMsg(err.msg);
+        } catch (error) {
+            setErrorMessage(error.message);
         } finally {
             setLoading(false);
         }
@@ -118,7 +118,7 @@ const PublicationCreateForm = ({ token }) => {
 
                 {loading && <p>loading...</p>}
 
-                {errMsg && <ErrorMessage msg={errMsg} />}
+                {errorMessage && <ErrorMessage message={errorMessage} />}
             </form>
         </div>
     );

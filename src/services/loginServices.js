@@ -13,7 +13,7 @@ const loginService = async (email, password) => {
     const body = await res.json();
 
     if (!res.ok) {
-        throw new Error(body.msg);
+        throw new Error(body.message);
     }
 
     return body.data.token;

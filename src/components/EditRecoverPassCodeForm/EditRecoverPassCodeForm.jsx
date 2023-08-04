@@ -8,7 +8,7 @@ const EditRecoverPassCodeForm = () => {
     const [recoverPassCode, setRecoverPassCode] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [newPasswordConfirm, setNewpasswordConfirm] = useState('');
-    const [errMsg, setErrorMsg] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
     const [confirmations, setConfirmations] = useState('');
 
@@ -18,35 +18,38 @@ const EditRecoverPassCodeForm = () => {
 
             setLoading(true);
 
-            if (
-                newPassword === newPasswordConfirm &&
-                newPassword.trim().length > 7
-            ) {
+            if (newPassword === newPasswordConfirm) {
                 const newPass = newPassword;
+
+                if (newPass === '') {
+                    throw new Error('Fallo con las contraseñas');
+                }
 
                 setConfirmations(
                     await editRecoverPassCodeService(recoverPassCode, newPass)
                 );
+
+                setErrorMessage(confirmations);
                 navigate('/login');
             } else {
-                alert('Las contraseñas no coinciden');
+                setErrorMessage('Las contraseñas no coinciden');
             }
-
-            alert(confirmations);
-        } catch (err) {
-            setErrorMsg(err.msg);
+        } catch (error) {
+            setErrorMessage(error.message);
         } finally {
             setLoading(false);
         }
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor='editRecoverPassCode'>
-                        Editar contraseña
-                    </label>
+        <div className='recover-card'>
+            <div className='imput2Recover'>
+                <form onSubmit={handleSubmit}>
+                    <div className='firstLabel'>
+                        <label htmlFor='editRecoverPassCode'>
+                            Editar contraseña
+                        </label>
+                    </div>
                     <div>
                         <label htmlFor='recoverPassCode'>
                             Código de recuperación:
@@ -85,14 +88,14 @@ const EditRecoverPassCodeForm = () => {
                             maxLength='60'
                         />
                     </div>
-                    <div onClick={handleSubmit}>
-                        <div>Confirmar cambio</div>
+                    <div className='buttonEdit' onClick={handleSubmit}>
+                        <button>Confirmar cambio</button>
                     </div>
                     {loading && <p>loading...</p>}
 
-                    {errMsg && <ErrorMessage msg={errMsg} />}
-                </div>
-            </form>
+                    {errorMessage && <ErrorMessage message={errorMessage} />}
+                </form>
+            </div>
         </div>
     );
 };

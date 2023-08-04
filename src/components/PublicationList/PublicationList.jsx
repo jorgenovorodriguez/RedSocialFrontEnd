@@ -5,13 +5,18 @@ import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Publication from '../Publication/Publication';
 
 const PublicationList = () => {
-    const { publications, toogleLike, deletePublication, errMsg, loading } =
-        usePublications();
+    const {
+        publications,
+        toogleLike,
+        deletePublication,
+        errorMessage,
+        loading,
+    } = usePublications();
 
     return (
         <>
             {loading && <p>Loading...</p>}
-            {errMsg && <ErrorMessage msg={errMsg} />}
+            {errorMessage && <ErrorMessage message={errorMessage} />}
 
             <ul className='aa'>
                 {publications.length > 0 ? (

@@ -10,7 +10,7 @@ import Avatar from '../../Avatar/Avatar';
 const CommentForm = ({ id, onAddComment }) => {
     const { token } = useAuth();
     const [text, setText] = useState('');
-    const [errMsg, setErrMsg] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
     const [userComment, setUserComment] = useState(null);
 
@@ -20,7 +20,10 @@ const CommentForm = ({ id, onAddComment }) => {
                 const userData = await onwerUserService(token);
                 setUserComment(userData);
             } catch (error) {
-                console.error('Error al obtener el usuario para comentar', error);
+                console.error(
+                    'Error al obtener el usuario para comentar',
+                    error
+                );
             }
         };
 
@@ -48,9 +51,12 @@ const CommentForm = ({ id, onAddComment }) => {
             // Limpia el campo de texto después de enviar el comentario
             setText('');
             window.location.reload();
-        } catch (err) {
-            setErrMsg(err.msg || 'Hubo un error al comentar, inténtelo de nuevo más tarde');
-            console.error(err);
+        } catch (error) {
+            setErrorMessage(
+                error.message ||
+                    'Hubo un error al comentar, inténtelo de nuevo más tarde'
+            );
+            console.error(error);
         } finally {
             setLoading(false);
         }
@@ -61,14 +67,24 @@ const CommentForm = ({ id, onAddComment }) => {
             <div>
                 {/* Comprobamos si userComment tiene datos antes de pasarlos a Avatar */}
                 {userComment && (
-                    <Avatar avatar={userComment.avatar} username={userComment.username} />
+                    <Avatar
+                        avatar={userComment.avatar}
+                        username={userComment.username}
+                    />
                 )}
             </div>
             <div>
-                <input type="text" placeholder="comentar..." value={text} onChange={(e) => setText(e.target.value)} />
-                <button onClick={handleSubmitComment} disabled={loading}>Enviar comentario</button>
+                <input
+                    type='text'
+                    placeholder='comentar...'
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                />
+                <button onClick={handleSubmitComment} disabled={loading}>
+                    Enviar comentario
+                </button>
                 {loading && <p>loading...</p>}
-                {errMsg && <ErrorMessage msg={errMsg} />}
+                {errorMessage && <ErrorMessage message={errorMessage} />}
             </div>
         </div>
     );

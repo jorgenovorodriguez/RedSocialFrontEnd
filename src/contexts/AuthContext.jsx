@@ -15,8 +15,8 @@ const AuthProvider = ({ children }) => {
                 const user = await userService(token);
 
                 setUser(user);
-            } catch (err) {
-                alert(err.msg);
+            } catch (error) {
+                alert(error.message);
             }
         };
 

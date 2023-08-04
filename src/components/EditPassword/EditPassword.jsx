@@ -5,7 +5,7 @@ import validatePasswordService from '../../services/validatePasswordService';
 const EditPassword = ({ token }) => {
     const [currentPass, setCurrentPass] = useState('');
     const [newPassword, setNewPassword] = useState('');
-    const [errMsg, setErrorMsg] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
     const [newPasswordCompare, setNewPasswordCompare] = useState('');
     const [confirmations, setConfirmations] = useState('');
@@ -22,12 +22,12 @@ const EditPassword = ({ token }) => {
                 setConfirmations(
                     await validatePasswordService(currentPass, newPass, token)
                 );
-                alert(confirmations);
+                setErrorMessage(confirmations);
             } else {
-                alert('Las contraseñas no coinciden');
+                setErrorMessage('Las contraseñas no coinciden');
             }
-        } catch (err) {
-            setErrorMsg(err.msg);
+        } catch (error) {
+            setErrorMessage(error.message);
         } finally {
             setLoading(false);
         }
@@ -82,7 +82,7 @@ const EditPassword = ({ token }) => {
 
                     {loading && <p>Loading...</p>}
 
-                    {errMsg && <ErrorMessage msg={errMsg} />}
+                    {errorMessage && <ErrorMessage message={errorMessage} />}
                 </div>
             </form>
         </div>

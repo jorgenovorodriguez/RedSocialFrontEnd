@@ -12,7 +12,7 @@ const deletePublicationService = async (publicationId, token) => {
     const body = await res.json();
 
     if (!res.ok) {
-        throw new Error(body.msg);
+        throw new Error(body.message);
     }
 };
 
