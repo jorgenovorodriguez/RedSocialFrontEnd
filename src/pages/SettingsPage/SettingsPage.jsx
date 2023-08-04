@@ -58,3 +58,4 @@ const SettingsPage = () => {
 };
 
 export default SettingsPage;
+/*mirar clases*/
