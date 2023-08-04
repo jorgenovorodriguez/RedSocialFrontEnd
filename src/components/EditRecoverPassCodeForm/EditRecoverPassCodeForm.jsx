@@ -18,21 +18,22 @@ const EditRecoverPassCodeForm = () => {
 
             setLoading(true);
 
-            if (
-                newPassword === newPasswordConfirm &&
-                newPassword.trim().length > 7
-            ) {
+            if (newPassword === newPasswordConfirm) {
                 const newPass = newPassword;
+
+                if (newPass === '') {
+                    throw new Error('Fallo con las contraseñas');
+                }
 
                 setConfirmations(
                     await editRecoverPassCodeService(recoverPassCode, newPass)
                 );
+
+                setErrorMessage(confirmations);
                 navigate('/login');
             } else {
-                alert('Las contraseñas no coinciden');
+                setErrorMessage('Las contraseñas no coinciden');
             }
-
-            alert(confirmations);
         } catch (error) {
             setErrorMessage(error.message);
         } finally {

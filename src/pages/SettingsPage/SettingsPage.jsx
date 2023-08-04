@@ -9,6 +9,8 @@ import EditPersonalInfo from '../../components/EditPersonalInfo/EditPersonalInfo
 import EditPlace from '../../components/EditPlace/EditPlace';
 import Footer from '../../components/Footer/Footer';
 
+import './SettingsPage.css'
+
 const SettingsPage = () => {
     const { token } = useAuth();
     const [user, setUser] = useState('');
@@ -28,22 +30,27 @@ const SettingsPage = () => {
     return (
         <>
             <main className='main-layout'>
+            <div className='settings-card'>
                 <h2>ajustes</h2>
+                <div className='settings-form'>
                 <div>
+                    <EditPersonalInfo token={token} />
+                </div>
+                <div className='avatar-settings'>
                     <Avatar avatar={user.avatar} username={user.username} />
                 </div>
                 <div>
                     <EditPlace token={token} places={user.place} />
                 </div>
-                <div>
-                    <EditPersonalInfo token={token} />
-                </div>
+                
                 <div>
                     <EditAvata token={token} />
                 </div>
                 <div>
                     <EditPassword token={token} />
                 </div>
+                </div>
+            </div>
             </main>
             <Footer />
         </>

@@ -51,9 +51,8 @@ const SinglePublicationPage = () => {
                             publicationOwner={publication.owner}
                         />
                     ) : (
-                        <p className='p'>
-                            ¿No hay comentarios? Anímate, haz el primero
-                        </p>
+                        <p className='pub-p'>¿No hay comentarios? Anímate, haz el primero</p>
+
                     )}
                 </div>
                 <div>

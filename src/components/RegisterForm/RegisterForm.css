@@ -24,21 +24,22 @@
     max-width: 300px; 
 }
 
-.check-artista,
-.check-estudio {
+.register-input h2{
+    color: white;
+    text-align: center;
+}
+.check-role{
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    
     margin-bottom: 0.5rem;
-    color: antiquewhite; 
+    color: antiquewhite;
+}
+/*para modificarlas se tendria que hacer separado*/
+.label-role{
+    margin:1rem;
 }
 
-.check-artista label{
-    margin-left: 1rem;
+.no-register{
+    color: white;
 }
-
-.check-estudio label {
-    margin-left: 1rem;
-}
-
-
-

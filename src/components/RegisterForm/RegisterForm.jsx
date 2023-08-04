@@ -33,7 +33,7 @@ const RegisterForm = () => {
                 setConfirmations(
                     await registerService(username, email, password, role)
                 );
-
+                setErrorMessage(confirmations);
                 navigate('/activated');
             } else {
                 setErrorMessage('Las contraseñas no coinciden');
@@ -55,7 +55,7 @@ const RegisterForm = () => {
 
             <form>
                 <div className='register-input'>
-                    <h2>Registro</h2>
+                    <h2 className='register-input h2'>Registro</h2>
                     <div className='imputsLab'>
                         <label htmlFor='username'>Nombre de usuario:</label>
                         <input
@@ -106,7 +106,7 @@ const RegisterForm = () => {
                         />
 
                         <label htmlFor='role'>Tipo de perfil:</label>
-
+                        <div className='check-role'>
                         <div>
                             <input
                                 type='checkbox'
@@ -114,16 +114,17 @@ const RegisterForm = () => {
                                 onChange={() => setRole('artista')}
                                 checked={role === 'artista'}
                             />
-                            <label htmlFor='role'>Artista</label>
+                            <label className='label-role' htmlFor='role'>Artista</label>
                         </div>
-                        <div className='check-estudio'>
+                        <div>
                             <input
                                 type='checkbox'
                                 id='estudio'
                                 onChange={() => setRole('estudio')}
                                 checked={role === 'estudio'}
                             />
-                            <label htmlFor='role'>Estudio</label>
+                            <label className='label-role' htmlFor='role'>Estudio</label>
+                        </div>
                         </div>
                     </div>
                 </div>
