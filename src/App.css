@@ -35,14 +35,17 @@ form {
 
 .logo-container {
     display: flex;
+    flex-direction: column;
     width: 8rem;
     min-height: 0.5rem;
     height: 8rem;
     min-width: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.524);
     border-radius: 50%;
     position: absolute;
-    bottom: 85%;
+    bottom: 90%;
+    align-items: center;
+    justify-content: center;
+    right: 35%;
 }
 
 .logo-container img {
@@ -154,4 +157,3 @@ form {
 a {
     text-decoration: none;
 }
-
