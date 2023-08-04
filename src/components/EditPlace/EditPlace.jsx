@@ -36,7 +36,6 @@ const EditPlace = ({ token, places }) => {
             setPlaceUser(city);
 
             await placeEditService(placeUser, token);
-            window.document.reload();
         } catch (error) {
             console.error('Error al obtener la ubicación:', error);
             setLoading(false);
@@ -44,7 +43,7 @@ const EditPlace = ({ token, places }) => {
             setLoading(false);
         }
     };
-    console.log(place);
+
     return (
         <div>
             <form onSubmit={handleSubmitPlace}>
