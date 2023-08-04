@@ -18,8 +18,8 @@ const PublicationFooter = ({
             e.target.classList.toggle('like');
 
             await toogleLike(e, publicationId, likedByMe);
-        } catch (err) {
-            alert(err.msg);
+        } catch (error) {
+            alert(error.message);
         }
     };
 
@@ -28,8 +28,8 @@ const PublicationFooter = ({
             if (confirm('¿Deseas eliminar la publicacion?')) {
                 deletePublication(publicationId);
             }
-        } catch (err) {
-            alert(err.msg);
+        } catch (error) {
+            alert(error.message);
         }
     };
 
@@ -47,8 +47,9 @@ const PublicationFooter = ({
                 <button
                     onClick={() => handleDeletePublication()}
                     disabled={loading}
+                    className='delete-button'
                 >
-                    Eliminar
+                    X
                 </button>
             )}
         </footer>

@@ -15,13 +15,13 @@ const personalInfoEditService = async (personalInfo, token) => {
         const body = await res.json();
 
         if (!res.ok) {
-            throw new Error(body.msg);
+            throw new Error(body.message);
         }
 
         return body.data && body.data.message;
     } catch (error) {
         throw new Error(error.message);
     }
-}
+};
 
 export default personalInfoEditService;

@@ -1,9 +1,12 @@
-.publication-container{
-    margin:auto;
-    display:flex;
+
+.publication-container {
+    margin: 0 auto;
+    display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 10rem;
     max-width: 30rem;
+
 }
 
 .avatar-container {
@@ -15,18 +18,17 @@
     height: 60px;
     overflow: hidden;
     border-radius: 50%;
-    border: 1px solid black;
+    
 }
 
-.correccion img{
+.correccion img {
     width: 100px;
     min-width: 1rem;
     height: 100px;
     min-height: 1rem;
 }
 
-.publication-header{
-    border: 1px solid black;
+.publication-header {
     display: flex;
     align-items: center;
     padding-left: 1rem;
@@ -34,54 +36,72 @@
     background-color: rgb(232, 231, 231);
     border-radius: 1.5rem 1.5rem 0 0;
     margin-top: 2rem;
-    height:6rem;
-    
+    height: 6rem;
 }
 
-
-
-.header-username{
+.header-username {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     justify-content: space-between;
     margin: 2rem 1rem 1rem 1rem;
-
-
+    color: black;
 }
 
-.header-username p{
+.header-username p {
     margin-top: 0;
     margin-bottom: 0.5rem;
-
 }
 
-
-.photo-info{
+.photo-info {
     max-width: 100%;
     height: auto;
-    margin: 0 auto; 
+    margin: 0 auto;
     text-align: center;
-    
-}
-
-.photo-info h3{
     background-color: rgb(232, 231, 231);
-    padding:1rem 0;
-    color:black;
-    text-decoration: none;
 
 }
 
-.photo-info img{
+.photo-info h3 {
+    padding: 1rem 0;
+    color: black;
+    text-decoration: none;
+    margin:1rem 1rem 0 1rem;
+}
+
+.photo-info p {
+    color: black;
+    text-align: center;
+    margin-bottom: 0;
+    word-wrap: break-word;
+    margin: 1rem 1rem 0 1rem;
+
+}
+
+.photo-info img {
     max-width: 100%;
     height: auto;
     object-fit: cover;
-
 }
 
-.footer-like{
+.footer-like {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: rgb(232, 231, 231);
+    border-radius: 0 0 1.5rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.heart {
+    background-color:rgb(255, 255, 255);
+    width:4rem;
+    border-radius: 0.3rem;
+}
+
+.delete-button{
+    background-color:rgb(255, 255, 255);
+    width:2rem;
+    border-radius: 0.3rem;
+    
 }

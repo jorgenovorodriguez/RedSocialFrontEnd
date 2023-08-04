@@ -7,6 +7,8 @@ import { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import Footer from '../../components/Footer/Footer';
 
+import './SinglePublicationPage.css';
+
 const SinglePublicationPage = () => {
     const { token } = useAuth();
     const {
@@ -14,7 +16,7 @@ const SinglePublicationPage = () => {
         toogleLike,
         deletePublication,
         deleteComment,
-        errMsg,
+        errorMessage,
         loading,
         setPublication,
     } = useSinglePublication();
@@ -29,7 +31,7 @@ const SinglePublicationPage = () => {
         <>
             <main className='main-layout'>
                 {loading && <p>Loading...</p>}
-                {errMsg && <ErrorMessage msg={errMsg} />}
+                {errorMessage && <ErrorMessage message={errorMessage} />}
                 {publication && (
                     <Publication
                         key={publication.id}
@@ -49,7 +51,9 @@ const SinglePublicationPage = () => {
                             publicationOwner={publication.owner}
                         />
                     ) : (
-                        <p>¿No hay comentarios? Anímate, haz el primero</p>
+                        <p className='p'>
+                            ¿No hay comentarios? Anímate, haz el primero
+                        </p>
                     )}
                 </div>
                 <div>

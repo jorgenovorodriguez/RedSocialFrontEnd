@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
-const ErrorMessage = ({ msg }) => {
-    return <p>Error: {msg}</p>;
+const ErrorMessage = ({ message }) => {
+    return <p>Error: {message}</p>;
 };
 
 ErrorMessage.propTypes = {
-    msg: PropTypes.string,
+    message: PropTypes.string,
 };
 
 export default ErrorMessage;

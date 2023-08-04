@@ -6,7 +6,7 @@ import './RecoverPassForm.css';
 
 const RecoverPassForm = ({ setShowEditForm }) => {
     const [email, setEmail] = useState('');
-    const [errMsg, setErrorMsg] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
@@ -17,8 +17,8 @@ const RecoverPassForm = ({ setShowEditForm }) => {
 
             await sendRecoverPassService(email);
             setShowEditForm(true);
-        } catch (err) {
-            setErrorMsg(err.message);
+        } catch (error) {
+            setErrorMessage(error.message);
         } finally {
             setLoading(false);
         }
@@ -31,6 +31,7 @@ const RecoverPassForm = ({ setShowEditForm }) => {
                     <Logo />
                 </div>
             </div>
+
             <div className='imputRecover'>
                 <form onSubmit={handleSubmit}>
                     <h2>RECUPERACION DE CONTRASEÑA</h2>
@@ -43,7 +44,7 @@ const RecoverPassForm = ({ setShowEditForm }) => {
                         required
                     />
                     {loading && <p>loading...</p>}
-                    {errMsg && <ErrorMessage msg={errMsg} />}
+                    {errorMessage && <ErrorMessage message={errorMessage} />}
 
                     <div className='buttonEdit'>
                         <button disabled={loading}>Enviar</button>

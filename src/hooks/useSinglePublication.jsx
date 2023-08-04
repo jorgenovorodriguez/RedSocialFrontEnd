@@ -10,7 +10,7 @@ const useSinglePublication = () => {
     const { id } = useParams();
 
     const [publication, setPublication] = useState();
-    const [errMsg, setErrMsg] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -28,12 +28,12 @@ const useSinglePublication = () => {
                 const body = await res.json();
 
                 if (!res.ok) {
-                    throw new Error(body.msg);
+                    throw new Error(body.message);
                 }
 
                 setPublication(body.data.publication);
-            } catch (err) {
-                setErrMsg(err.msg);
+            } catch (error) {
+                setErrorMessage(error.message);
             } finally {
                 setLoading(false);
             }
@@ -103,7 +103,7 @@ const useSinglePublication = () => {
         toogleLike,
         deletePublication,
         deleteComment,
-        errMsg,
+        errorMessage,
         loading,
     };
 };

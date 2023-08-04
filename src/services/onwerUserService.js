@@ -3,15 +3,15 @@ const onwerUserService = async (token) => {
         headers: {
             Authorization: token,
         },
-    })
+    });
 
     const body = await res.json();
 
     if (!res.ok) {
-        throw new Error(body.msg);
+        throw new Error(body.message);
     }
 
     return body.data.user;
-}
+};
 
 export default onwerUserService;

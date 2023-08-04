@@ -8,7 +8,7 @@ const EditRecoverPassCodeForm = () => {
     const [recoverPassCode, setRecoverPassCode] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [newPasswordConfirm, setNewpasswordConfirm] = useState('');
-    const [errMsg, setErrorMsg] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
     const [confirmations, setConfirmations] = useState('');
 
@@ -18,7 +18,10 @@ const EditRecoverPassCodeForm = () => {
 
             setLoading(true);
 
-            if (newPassword === newPasswordConfirm) {
+            if (
+                newPassword === newPasswordConfirm &&
+                newPassword.trim().length > 7
+            ) {
                 const newPass = newPassword;
 
                 setConfirmations(
@@ -30,8 +33,8 @@ const EditRecoverPassCodeForm = () => {
             }
 
             alert(confirmations);
-        } catch (err) {
-            setErrorMsg(err.msg);
+        } catch (error) {
+            setErrorMessage(error.message);
         } finally {
             setLoading(false);
         }
@@ -89,9 +92,10 @@ const EditRecoverPassCodeForm = () => {
                     </div>
                     {loading && <p>loading...</p>}
 
-                    {errMsg && <ErrorMessage msg={errMsg} />}
-                </form>
-            </div>
+
+                    {errorMessage && <ErrorMessage message={errorMessage} />}
+                </div>
+            </form>
         </div>
     );
 };

@@ -5,7 +5,7 @@ const useSingleUser = (userId) => {
     const { token } = useAuth();
 
     const [user, setUser] = useState({});
-    const [errMsg, setErrMsg] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -23,13 +23,13 @@ const useSingleUser = (userId) => {
                 const body = await res.json();
 
                 if (!res.ok) {
-                    throw new Error(body.msg);
+                    throw new Error(body.message);
                 }
 
                 setUser(body.data.user);
                 console.log(body.data.user);
-            } catch (err) {
-                setErrMsg(err.msg);
+            } catch (error) {
+                setErrorMessage(error.message);
             } finally {
                 setLoading(false);
             }
@@ -39,7 +39,7 @@ const useSingleUser = (userId) => {
 
     return {
         user,
-        errMsg,
+        errorMessage,
         loading,
     };
 };

@@ -5,15 +5,20 @@ import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Publication from '../Publication/Publication';
 
 const PublicationList = () => {
-    const { publications, toogleLike, deletePublication, errMsg, loading } =
-        usePublications();
+    const {
+        publications,
+        toogleLike,
+        deletePublication,
+        errorMessage,
+        loading,
+    } = usePublications();
 
     return (
-        <div>
+        <>
             {loading && <p>Loading...</p>}
-            {errMsg && <ErrorMessage msg={errMsg} />}
+            {errorMessage && <ErrorMessage message={errorMessage} />}
 
-            <ul>
+            <ul className='aa'>
                 {publications.length > 0 ? (
                     publications.map((publication) => (
                         <li key={publication.id}>
@@ -48,7 +53,7 @@ const PublicationList = () => {
                     <li>No hay publicaciones, haz la primera!</li>
                 )}
             </ul>
-        </div>
+        </>
     );
 };
 

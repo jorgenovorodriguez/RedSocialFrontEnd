@@ -5,7 +5,7 @@ import getGeolocationService from '../../services/getGeolocationService';
 const EditPlace = ({ token, places }) => {
     const [place, setPlace] = useState('');
     const [error, setError] = useState(null);
-    const [msg, setMsg] = useState(null);
+    const [message, setMessage] = useState(null);
     const [loading, setLoading] = useState(false);
 
     const handleSubmitPlace = async (e) => {
@@ -17,7 +17,7 @@ const EditPlace = ({ token, places }) => {
 
             setPlace('');
 
-            setMsg('Ubicación cambiada correctamente');
+            setMessage('Ubicación cambiada correctamente');
         } catch (error) {
             setError(error);
             console.log(error);
@@ -58,7 +58,7 @@ const EditPlace = ({ token, places }) => {
                 <div>
                     <p>{places}</p>
                 </div>
-                {msg && <p>{msg}</p>}
+                {message && <p>{message}</p>}
                 {loading && <p>loading...</p>}
                 {error && <p>{error.message}</p>}
             </form>

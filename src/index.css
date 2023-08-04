@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Helvetica, Arial, sans-serif;
+    list-style: none;
     
 }
 
@@ -37,8 +38,8 @@ body {
 
 .main-layout {
     grid-area: main-layout;
-    min-height: 80vh;
-    max-height: 80vh;
+    min-height: 70vh;
+    max-height: 90vh;
     width: 100vw;
 }
 
@@ -48,7 +49,7 @@ body {
     min-height: 0;
     background-color: black;
     color: white;
-    position: relative;
+    position: sticky;
     display: flex;
     flex-direction: row;
     justify-content:space-around;

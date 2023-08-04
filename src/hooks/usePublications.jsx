@@ -8,7 +8,7 @@ const usePublications = () => {
     const { token } = useAuth();
 
     const [publications, setPublications] = useState([]);
-    const [errMsg, setErrMsg] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [searchParams, setSearchParams] = useSearchParams();
     const [loading, setLoading] = useState(false);
 
@@ -27,13 +27,12 @@ const usePublications = () => {
                 const body = await res.json();
 
                 if (!res.ok) {
-                    throw new Error(body.msg);
+                    throw new Error(body.message);
                 }
 
                 setPublications(body.data.publications);
-
-            } catch (err) {
-                setErrMsg(err.msg);
+            } catch (error) {
+                setErrorMessage(error.message);
             } finally {
                 setLoading(false);
             }
@@ -92,7 +91,7 @@ const usePublications = () => {
         deletePublication,
         searchParams,
         setSearchParams,
-        errMsg,
+        errorMessage,
         loading,
     };
 };

@@ -145,3 +145,13 @@ form {
     object-fit: cover;
     border-radius: 50%;
 }
+
+.aa {
+    margin: 0;
+    padding: 0; /*NO TOCAR BAJO NINGUN CONCEPTO SIN CONSULTAR ANTES*/
+}
+
+a {
+    text-decoration: none;
+}
+
