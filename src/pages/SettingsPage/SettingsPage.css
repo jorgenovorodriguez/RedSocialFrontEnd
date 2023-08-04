@@ -1,23 +1,24 @@
 .settings-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
+    /* align-items: center; */
+    margin: auto;
     border: 0px none;
-    height: auto;
+    /* height: auto; */
     min-height: 1rem;
     max-width: 20rem;
     min-width: 1rem;
-    background-color: #000000ba;
+    background-color: #d8d8d8ba;
     border-radius: 1rem;
     position: relative;
-    margin-top: 5rem;
+    margin-top: 4.2rem;
 }
 
 .settings-card h2 {
-    font-size: 24px;
-    margin-top:6rem;
-    color: white;
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    color: black;
+    text-align: center;
 }
 
 .avatar-settings{
@@ -45,7 +46,34 @@
 
 .settings-form{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    
+}
+
+.edit-personalInfo{
+    width:auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.edit-personalInfo textarea{
+    background-color: white;
+    
+}
+
+.edit-personalInfo button{
+    width:60%;
+
+}
+.edit-place{
+
+}
+
+.edit-Avata{
+
+}
+
+.edit-pass{
+
 }
