@@ -93,10 +93,9 @@ const EditRecoverPassCodeForm = () => {
                     </div>
                     {loading && <p>loading...</p>}
 
-
                     {errorMessage && <ErrorMessage message={errorMessage} />}
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     );
 };
