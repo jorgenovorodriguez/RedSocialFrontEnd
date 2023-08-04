@@ -20,6 +20,8 @@
 }
 
 .ubication {
+    display: flex;
+    flex-direction: row;
     background-color: rgb(213, 213, 213);
     width: 6rem;
     border: 1px solid rgba(0, 0, 0, 0);

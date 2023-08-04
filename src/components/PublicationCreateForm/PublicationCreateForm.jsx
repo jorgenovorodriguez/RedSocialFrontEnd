@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import publicationCreateService from '../../services/PublicationCreateService';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { FaLocationDot } from 'react-icons/fa6';
+import { MdAddLocationAlt } from 'react-icons/md';
+import { BiSolidImageAdd } from 'react-icons/bi';
 
 import './PublicationCreateForm.css';
 
@@ -89,9 +91,8 @@ const PublicationCreateForm = ({ token }) => {
                             />
                         </div>
                     ) : (
-                        // Replace the icon here with your desired icon
                         <div className='fileIcon'>
-                            <img src={mas} alt='crear publicacion' />
+                            <BiSolidImageAdd style={{ fontSize: '7rem' }} />
                         </div>
                     )}
                 </label>
@@ -108,19 +109,20 @@ const PublicationCreateForm = ({ token }) => {
                     />
 
                     {showResult ? (
-                       <div>
-                        <FaLocationDot />
-                        <p>{place}</p>
-                    </div>
+                        <div>
+                            <FaLocationDot />
+                            <p>{place}</p>
+                        </div>
                     ) : (
-                        <button className='ubication' onClick={getPlace}>
-                            ubicación
-                        </button>
+                        <div className='ubication' onClick={getPlace}>
+                            <MdAddLocationAlt />
+                            <p>Ubicación</p>
+                        </div>
                     )}
 
                     <input
                         className='titleForm'
-                        placeholder='titulo'
+                        placeholder='Ponle título'
                         type='text'
                         onChange={(e) => setTitle(e.target.value)}
                         required
@@ -138,7 +140,7 @@ const PublicationCreateForm = ({ token }) => {
                     ></textarea>
 
                     <button className='buttonPublication' disabled={loading}>
-                        Enviar
+                        Publicar
                     </button>
 
                     {loading && <p>loading...</p>}
