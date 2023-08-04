@@ -1,45 +1,43 @@
-
 .reg-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
     border: 0px none;
-    height: auto; 
+    height: auto;
     width: 20rem;
     min-width: 1rem;
     background-color: #000000ba;
     border-radius: 1rem;
     position: relative;
     top: 100px;
-    padding: 1rem; 
-    
+    padding: 1rem;
 }
 
 .register-input {
-    margin-top: 3rem; 
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
-    width: 100%; 
-    max-width: 300px; 
+    width: 100%;
+    max-width: 300px;
 }
 
-.register-input h2{
+.register-input h2 {
     color: white;
     text-align: center;
 }
-.check-role{
+.check-role {
     display: flex;
     flex-direction: row;
-    
+
     margin-bottom: 0.5rem;
     color: antiquewhite;
 }
 /*para modificarlas se tendria que hacer separado*/
-.label-role{
-    margin:1rem;
+.label-role {
+    margin: 1rem;
 }
 
-.no-register{
+.no-register {
     color: white;
 }
