@@ -41,12 +41,14 @@ const EditRecoverPassCodeForm = () => {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor='editRecoverPassCode'>
-                        Editar contraseña
-                    </label>
+        <div className='recover-card'>
+            <div className='imput2Recover'>
+                <form onSubmit={handleSubmit}>
+                    <div className='firstLabel'>
+                        <label htmlFor='editRecoverPassCode'>
+                            Editar contraseña
+                        </label>
+                    </div>
                     <div>
                         <label htmlFor='recoverPassCode'>
                             Código de recuperación:
@@ -85,10 +87,11 @@ const EditRecoverPassCodeForm = () => {
                             maxLength='60'
                         />
                     </div>
-                    <div onClick={handleSubmit}>
-                        <div>Confirmar cambio</div>
+                    <div className='buttonEdit' onClick={handleSubmit}>
+                        <button>Confirmar cambio</button>
                     </div>
                     {loading && <p>loading...</p>}
+
 
                     {errorMessage && <ErrorMessage message={errorMessage} />}
                 </div>

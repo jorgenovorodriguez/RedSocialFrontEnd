@@ -25,7 +25,7 @@ form {
     border: 0px none;
     height: 26.25rem;
     min-height: 1rem;
-    width: 20rem;
+    max-width: 20rem;
     min-width: 1rem;
     background-color: #000000ba;
     border-radius: 1rem;
@@ -134,22 +134,16 @@ form {
 }
 
 .avatar-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .avatar-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.correccion {
-    min-height: auto;
-    max-height: 3rem;
-    background-color: aqua;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .aa {
@@ -160,3 +154,4 @@ form {
 a {
     text-decoration: none;
 }
+
