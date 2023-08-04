@@ -151,7 +151,7 @@ form {
 
 .aa {
     margin: 0;
-    padding: 0; /*NO TOCAR BAJO NINGUN CONCEPTO SIN CONSULTAR ANTES*/
+    padding: 0 0 8rem 0; /*NO TOCAR BAJO NINGUN CONCEPTO SIN CONSULTAR ANTES*/
 }
 
 a {
