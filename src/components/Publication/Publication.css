@@ -58,7 +58,8 @@
     margin: 0 auto;
     text-align: center;
     background-color: rgb(232, 231, 231);
-
+    word-wrap: break-word;
+    white-space: pre-line;
 }
 
 .photo-info h3 {
@@ -72,7 +73,7 @@
     color: black;
     text-align: center;
     margin-bottom: 0;
-    word-wrap: break-word;
+    
     margin: 1rem 1rem 0 1rem;
 
 }
