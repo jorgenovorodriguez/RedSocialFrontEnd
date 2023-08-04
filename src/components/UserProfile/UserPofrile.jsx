@@ -1,11 +1,26 @@
 import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 import UserProfilePublications from './UserProfilePublications/UserProfilePublications';
 import Avatar from '../Avatar/Avatar';
 import { NavLink } from 'react-router-dom';
-
+import onwerUserService from '../../services/onwerUserService';
 import './UserProfile.css';
 
 const UserProfile = ({ user, token }) => {
+    const [userOwner, setUserOwner] = useState('');
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                const userData = await onwerUserService(token);
+                setUserOwner(userData);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchUser();
+    }, [token]);
+    console.log(userOwner);
     return (
         <div>
             <div className='userProfile-card'>
@@ -17,7 +32,7 @@ const UserProfile = ({ user, token }) => {
                         <div className='role-role'>{user.role}</div>
                     </div>
                     <div className='settingsDiv'>
-                        {token && (
+                        {user.userId === userOwner.userId && (
                             <NavLink className='settings-button' to='/settings'>
                                 ajustes
                             </NavLink>
