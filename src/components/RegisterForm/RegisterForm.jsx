@@ -33,7 +33,7 @@ const RegisterForm = () => {
                 setConfirmations(
                     await registerService(username, email, password, role)
                 );
-
+                setErrorMessage(confirmations);
                 navigate('/activated');
             } else {
                 setErrorMessage('Las contraseñas no coinciden');

@@ -16,10 +16,10 @@ const registerService = async (username, email, password, role) => {
     console.log(body);
 
     if (!res.ok) {
-        return body.message;
+        throw new Error(body.message);
     }
 
-    return body.data.message;
+    return body.message;
 };
 
 export default registerService;
