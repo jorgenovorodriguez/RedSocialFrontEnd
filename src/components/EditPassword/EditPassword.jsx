@@ -64,7 +64,7 @@ const EditPassword = ({ token }) => {
                             maxLength='60'
                         />
                         <label htmlFor='newPasswordCompare'>
-                            Repita la contraseña:
+                            Repetir contraseña:
                         </label>
                         <input
                             type='password'

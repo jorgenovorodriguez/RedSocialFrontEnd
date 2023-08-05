@@ -12,6 +12,7 @@
     border-radius: 1rem;
     position: relative;
     margin-top: 4.2rem;
+    
 }
 
 .settings-card h2 {
@@ -21,7 +22,7 @@
     text-align: center;
 }
 
-.avatar-settings{
+.avatarsettings{
     display: flex;
     width: 8rem;
     min-height: 0.5rem;
@@ -36,7 +37,7 @@
 }
 
 
-.avatar-settings img {
+.avatarsettings img {
     min-height: 1rem;
     min-width: 1rem;
     width: 100%;
@@ -47,22 +48,66 @@
 .settings-form{
     display: flex;
     flex-direction: column;
-    
+    align-items: center;
+
 }
 
 .edit-personalInfo{
-    width:auto;
-    display: flex;
+    display:flex;
     flex-direction: column;
+    width: 95%;
+    
 
 }
-
+.edit-personalInfo button{
+    border-radius: 0.5rem;
+    width:25%;
+    align-self: flex-end;
+    margin-top: 0.25rem;
+}
 .edit-personalInfo textarea{
-    background-color: white;
+    border-radius: 0.5rem;
+    max-width: 100%;
+    width:100%;
+}
+.edit-place{
+    display:flex;
+    flex-direction: column;
+    width: 95%;
+    margin-bottom: -1rem;
+}
+.edit-place button{
+    border-radius: 0.5rem;
+    width:25%;
+    align-self: flex-end;
+    margin-top: 0.25rem;
+}
+.edit-place input{
+    border-radius: 0.5rem;
+    max-width: 100%;
+    width:100%;
+}
+
+.edit-Avata{
+
+}
+.edit-pass{
+    display: flex;
+    flex-direction: column;
+    width:95%;
+    margin-top:0.5rem;
+    
+
+}
+.edit-pass input{
+    border-radius: 0.5rem;
+    width:50%;
+    margin-left: 0.5rem;
     
 }
 
-.edit-personalInfo button{
-    width:60%;
-
+.edit-pass button{
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    align-self: flex-end;
 }

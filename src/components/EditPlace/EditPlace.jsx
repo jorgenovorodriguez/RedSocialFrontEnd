@@ -65,7 +65,7 @@ const EditPlace = ({ token, places }) => {
                 {loading && <p>loading...</p>}
                 {error && <p>{error.message}</p>}
             </form>
-            <button onClick={getPlace}>Pulsa para añadir tu ubicación</button>
+            <button onClick={getPlace}>Añadir ubicación</button>
         </div>
     );
 };

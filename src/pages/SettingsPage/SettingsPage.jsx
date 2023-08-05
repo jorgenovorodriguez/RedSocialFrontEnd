@@ -32,13 +32,14 @@ const SettingsPage = () => {
             <main className='main-layout'>
             <div className='settings-card'>
                 <h2>ajustes</h2>
+                <div className='avatarsettings'>
+                    <Avatar avatar={user.avatar} username={user.username} />
+                </div>
                 <div className='settings-form'>
                 <div className='edit-personalInfo'>
                     <EditPersonalInfo token={token} />
                 </div>
-                <div className='avatar-settings'>
-                    <Avatar avatar={user.avatar} username={user.username} />
-                </div>
+                
                 <div className='edit-place'>
                     <EditPlace token={token} places={user.place} />
                 </div>
