@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import useAuth from '../../../hooks/useAuth';
 import { MdDelete } from 'react-icons/md';
 import { AiFillHeart } from 'react-icons/ai';
+import { useNavigate } from 'react-router';
 
 const PublicationFooter = ({
     publicationId,
@@ -13,6 +14,7 @@ const PublicationFooter = ({
     loading,
 }) => {
     const { token } = useAuth();
+    const navigate = useNavigate();
 
     const handleLike = async (e) => {
         try {
@@ -28,6 +30,7 @@ const PublicationFooter = ({
         try {
             if (confirm('¿Deseas eliminar la publicacion?')) {
                 deletePublication(publicationId);
+                navigate('/home');
             }
         } catch (error) {
             alert(error.message);

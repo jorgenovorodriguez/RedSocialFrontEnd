@@ -105,3 +105,9 @@
     text-decoration: none;
     color: rgb(117, 117, 117);
 }
+
+.publication-profile video {
+    width: 110px;
+    height: 110px;
+    margin: 0.5rem 0.2rem;
+}

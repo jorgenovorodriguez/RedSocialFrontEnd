@@ -16,6 +16,7 @@ const PublicationCreateForm = ({ token }) => {
 
     const [description, setDescription] = useState('');
     const [photo, setPhoto] = useState(null);
+    const [video, setVideo] = useState(null);
     const [pre, setPre] = useState(null);
     const [title, setTitle] = useState('');
     const [place, setPlace] = useState('');
@@ -32,9 +33,31 @@ const PublicationCreateForm = ({ token }) => {
         }
     }, [photo]);
 
-    const handlePhotoChange = (e) => {
+    useEffect(() => {
+        if (video) {
+            const videoUrl = URL.createObjectURL(video);
+            setPre(videoUrl);
+        } else {
+            setPre(null);
+        }
+    }, [video]);
+
+    const handleFileChange = (e) => {
         const file = e.target.files[0];
-        setPhoto(file);
+        // Verificar el tipo de archivo (imagen o video) usando el tipo MIME
+        const isImage = file.type.startsWith('image/');
+        const isVideo = file.type.startsWith('video/');
+
+        // Almacenar el archivo en el estado correspondiente (photo o video)
+        if (isImage) {
+            setPhoto(file);
+            setVideo(null);
+        } else if (isVideo) {
+            setVideo(file);
+            setPhoto(null);
+        }
+        // Limpiar el input para que pueda cargar el mismo archivo nuevamente si es necesario
+        e.target.value = null;
     };
 
     const handleSubmit = async (e) => {
@@ -46,6 +69,7 @@ const PublicationCreateForm = ({ token }) => {
             await publicationCreateService(
                 description,
                 photo,
+                video,
                 title,
                 place,
                 token
@@ -84,11 +108,28 @@ const PublicationCreateForm = ({ token }) => {
                 <label htmlFor='fileInput'>
                     {pre ? (
                         <div>
-                            <img
-                                className='precarga'
-                                src={pre}
-                                alt='previsualizacion de imagen'
-                            />
+                            {photo && (
+                                <img
+                                    className='precarga'
+                                    src={pre}
+                                    alt='previsualizacion de imagen'
+                                />
+                            )}
+                            {video && (
+                                <video
+                                    className='precarga'
+                                    controls
+                                    autoPlay
+                                    muted
+                                    loop
+                                >
+                                    <source
+                                        src={URL.createObjectURL(video)}
+                                        type='video/mp4'
+                                    />
+                                    Tu navegador no admite el video.
+                                </video>
+                            )}
                         </div>
                     ) : (
                         <div className='fileIcon'>
@@ -102,10 +143,9 @@ const PublicationCreateForm = ({ token }) => {
                     <input
                         type='file'
                         id='fileInput'
-                        onChange={handlePhotoChange}
-                        accept='image/*'
+                        onChange={handleFileChange}
+                        accept='image/*,video/*' // Permitir cargar imágenes y videos
                         style={{ display: 'none' }}
-                        required
                     />
 
                     {showResult ? (
