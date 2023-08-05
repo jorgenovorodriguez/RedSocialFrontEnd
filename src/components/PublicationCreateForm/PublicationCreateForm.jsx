@@ -7,7 +7,6 @@ import { FaLocationDot } from 'react-icons/fa6';
 import { MdAddLocationAlt } from 'react-icons/md';
 import { BiSolidImageAdd } from 'react-icons/bi';
 
-
 import './PublicationCreateForm.css';
 
 import getGeolocationService from '../../services/getGeolocationService';
@@ -20,6 +19,7 @@ const PublicationCreateForm = ({ token }) => {
     const [video, setVideo] = useState(null);
     const [pre, setPre] = useState(null);
     const [title, setTitle] = useState('');
+    const [type, setType] = useState('Normal');
     const [place, setPlace] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
@@ -45,11 +45,10 @@ const PublicationCreateForm = ({ token }) => {
 
     const handleFileChange = (e) => {
         const file = e.target.files[0];
-        // Verificar el tipo de archivo (imagen o video) usando el tipo MIME
+
         const isImage = file.type.startsWith('image/');
         const isVideo = file.type.startsWith('video/');
 
-        // Almacenar el archivo en el estado correspondiente (photo o video)
         if (isImage) {
             setPhoto(file);
             setVideo(null);
@@ -57,7 +56,6 @@ const PublicationCreateForm = ({ token }) => {
             setVideo(file);
             setPhoto(null);
         }
-        // Limpiar el input para que pueda cargar el mismo archivo nuevamente si es necesario
         e.target.value = null;
     };
 
@@ -73,6 +71,7 @@ const PublicationCreateForm = ({ token }) => {
                 video,
                 title,
                 place,
+                type,
                 token
             );
 
@@ -83,6 +82,10 @@ const PublicationCreateForm = ({ token }) => {
         } finally {
             setLoading(false);
         }
+    };
+
+    const handleOptionType = (e) => {
+        setType(e.target.value);
     };
 
     const getPlace = async (e) => {
@@ -145,9 +148,22 @@ const PublicationCreateForm = ({ token }) => {
                         type='file'
                         id='fileInput'
                         onChange={handleFileChange}
-                        accept='image/*,video/*' // Permitir cargar imágenes y videos
+                        accept='image/*,video/*'
                         style={{ display: 'none' }}
                     />
+                    <div>
+                        <label htmlFor='options'>Tipo de publicación: </label>
+                        <select
+                            id='options'
+                            value={type}
+                            onChange={handleOptionType}
+                        >
+                            <option value='Normal'>No especificar</option>
+                            <option value='Alquiler'>Alquiler</option>
+                            <option value='Colaboración'>Colaboración</option>
+                            <option value='Empleo'>Empleo</option>
+                        </select>
+                    </div>
 
                     {showResult ? (
                         <div>

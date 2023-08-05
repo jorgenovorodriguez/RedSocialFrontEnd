@@ -4,6 +4,7 @@ const PublicationCreateService = async (
     video,
     title,
     place,
+    type,
     token
 ) => {
     const formData = new FormData();
@@ -13,6 +14,7 @@ const PublicationCreateService = async (
     formData.append('description', description);
     formData.append('title', title);
     formData.append('place', place);
+    formData.append('type', type);
 
     const res = await fetch('http://localhost:8000/publications', {
         method: 'post',
