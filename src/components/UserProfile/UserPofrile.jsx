@@ -4,6 +4,7 @@ import UserProfilePublications from './UserProfilePublications/UserProfilePublic
 import Avatar from '../Avatar/Avatar';
 import { NavLink } from 'react-router-dom';
 import onwerUserService from '../../services/onwerUserService';
+import { MdSettings } from 'react-icons/md';
 import './UserProfile.css';
 
 const UserProfile = ({ user, token }) => {
@@ -34,7 +35,9 @@ const UserProfile = ({ user, token }) => {
                     <div className='settingsDiv'>
                         {user.userId === userOwner.userId && (
                             <NavLink className='settings-button' to='/settings'>
-                                ajustes
+                                <MdSettings
+                                    style={{ color: 'black', fontSize: '2rem' }}
+                                />
                             </NavLink>
                         )}
                     </div>

@@ -82,7 +82,7 @@
     color: black;
     text-align: center;
     margin-bottom: 0;
-    
+
     margin: 1rem 1rem 0 1rem;
 }
 
@@ -116,3 +116,16 @@
     border: none;
 }
 
+/*Este es el estilo del div de los likes, hay que eliminar el que estaba antes
+/*con cuidado para que no afecte a nada más*/
+
+.toogle-like {
+    display: flex;
+    flex-direction: row;
+}
+
+.me-gusta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

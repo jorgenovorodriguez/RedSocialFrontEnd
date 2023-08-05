@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import useAuth from '../../../hooks/useAuth';
 import { MdDelete } from 'react-icons/md';
+import { AiFillHeart } from 'react-icons/ai';
 
 const PublicationFooter = ({
     publicationId,
@@ -35,13 +36,20 @@ const PublicationFooter = ({
 
     return (
         <footer className='footer-like'>
-            <div>
-                <button
-                    className={`heart ${likedByMe && 'like'}`}
-                    onClick={(e) => handleLike(e)}
-                >
-                    {likes} Like
-                </button>
+            <div className='toogle-like'>
+                {likedByMe ? (
+                    <AiFillHeart
+                        onClick={(e) => handleLike(e)}
+                        style={{ color: 'red', fontSize: '2rem' }}
+                    />
+                ) : (
+                    <AiFillHeart
+                        onClick={(e) => handleLike(e)}
+                        style={{ fontSize: '2rem' }}
+                    />
+                )}
+
+                <div className='me-gusta'>{likes} Me gusta</div>
             </div>
             {token && owner === 1 && (
                 <div
@@ -49,7 +57,7 @@ const PublicationFooter = ({
                     disabled={loading}
                     className='delete-button'
                 >
-                    <MdDelete style={{ fontSize: '1.5rem' }} />
+                    <MdDelete style={{ fontSize: '2rem' }} />
                 </div>
             )}
         </footer>
