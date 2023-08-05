@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import publicationCreateService from '../../services/PublicationCreateService';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { FaLocationDot } from 'react-icons/fa6';
+import mas from '../../assets/images/iconos/logoMas.png';
 
 import './PublicationCreateForm.css';
 
@@ -108,10 +109,10 @@ const PublicationCreateForm = ({ token }) => {
                     />
 
                     {showResult ? (
-                       <div>
-                        <FaLocationDot />
-                        <p>{place}</p>
-                    </div>
+                        <div>
+                            <FaLocationDot />
+                            <p>{place}</p>
+                        </div>
                     ) : (
                         <button className='ubication' onClick={getPlace}>
                             ubicación

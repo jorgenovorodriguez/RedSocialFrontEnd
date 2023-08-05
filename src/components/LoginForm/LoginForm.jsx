@@ -66,13 +66,17 @@ const LoginForm = ({ login }) => {
             <div className='button-container' onClick={handleSubmit}>
                 <div className='login-button'>Login</div>
             </div>
-            <div>
-                <NavLink to='/recover'>¿Has olvidado tu contraseña?</NavLink>
-            </div>
-            <div>
-                <NavLink to='/register'>
-                    ¿Aún no tienes cuenta? Regístrate.
-                </NavLink>
+            <div className='navLinkLogin'>
+                <div>
+                    <NavLink to='/recover'>
+                        ¿Has olvidado tu contraseña?
+                    </NavLink>
+                </div>
+                <div>
+                    <NavLink to='/register'>
+                        ¿Aún no tienes cuenta? Regístrate.
+                    </NavLink>
+                </div>
             </div>
         </div>
     );

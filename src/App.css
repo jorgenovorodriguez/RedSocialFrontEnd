@@ -80,28 +80,27 @@ form {
 
 .imputsLab label {
     font-size: 1rem;
-    color: antiquewhite;
-    margin-bottom: 0.3rem;
+    color: rgb(255, 255, 255);
 }
 
 .imputsLab input {
-    height: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.7rem;
     border-radius: 0.5rem;
 }
 
 .button-container {
-    margin-top: 0.6rem;
+    margin: 0.6rem 0;
     display: flex;
     flex-direction: column;
-    width: 12.5rem;
-    height: 6.25rem;
+
     align-items: flex-end;
     align-content: flex-end;
 }
 
 .login-button {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     background-color: rgb(190, 190, 190);
     width: 6rem;
     height: 2rem;
@@ -112,25 +111,42 @@ form {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.navLinkLogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
 /* corresonde al info-container*/
 .info-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     color: white;
-    padding: 5rem 2rem 0rem 2rem;
+    padding: 4rem 1rem 1rem 1rem;
     text-align: center;
 }
 
 .info-text {
     color: white;
     text-align: center;
-    padding: 0rem 2rem;
+    padding: 0rem 1rem;
+    font-size: 0.9rem;
+}
+.buttonsInfoContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
 .guest-button {
+    display: flex;
+    justify-content: center;
     color: blue;
     text-decoration: none;
-    margin-left: 7rem;
 }
 
 .avatar-container img {
