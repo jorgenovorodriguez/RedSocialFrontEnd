@@ -18,7 +18,7 @@ const EditAvata = ({ token }) => {
     return (
         <div>
             <form onSubmit={handleSubmitAvatar}>
-                <label htmlFor='avatar'>Cambiar Avatar</label>
+                <label htmlFor='avatar'>Cambiar Avatar:</label>
                 <input
                     type='file'
                     name='avatar'
