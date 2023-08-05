@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import personalInfoEditService from '../../services/personalInfoEditService';
+import { FaEdit } from 'react-icons/fa';
 
-const EditPersonalInfo = ({ token }) => {
+const EditPersonalInfo = ({ token, currentPersonalInfo }) => {
     const [personalInfo, setPersonalInfo] = useState('');
     const [error, setError] = useState(null);
     const [message, setMessage] = useState(null);
@@ -22,19 +23,28 @@ const EditPersonalInfo = ({ token }) => {
     };
 
     return (
-        <div>
+        <div className='edit-personalInfo'>
             <form onSubmit={handleSubmitUser}>
-                <label htmlFor='user'>Información de Interes:</label>
-                <textarea
-                    type='text'
-                    name='personalInfo'
-                    id='personalInfo'
-                    onChange={(e) => setPersonalInfo(e.target.value)}
-                    required
-                />
-                <button type='submit'>Cambiar</button>
-                {message && <p>{message}</p>}
-                {error && <p>{error.message}</p>}
+                <div className='container-form-info'>
+                    <label htmlFor='user' />
+                    <textarea
+                        type='text'
+                        name='personalInfo'
+                        id='personalInfo'
+                        onChange={(e) => setPersonalInfo(e.target.value)}
+                        required
+                        placeholder={
+                            currentPersonalInfo
+                                ? currentPersonalInfo
+                                : 'Editar información personal'
+                        }
+                    />
+                    <button type='submit'>
+                        <FaEdit style={{ fontSize: '1.5rem' }} />
+                    </button>
+                    {message && <p>{message}</p>}
+                    {error && <p>{error.message}</p>}
+                </div>
             </form>
         </div>
     );
