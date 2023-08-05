@@ -9,7 +9,7 @@ import EditPersonalInfo from '../../components/EditPersonalInfo/EditPersonalInfo
 import EditPlace from '../../components/EditPlace/EditPlace';
 import Footer from '../../components/Footer/Footer';
 
-import './SettingsPage.css'
+import './SettingsPage.css';
 
 const SettingsPage = () => {
     const { token } = useAuth();
@@ -30,28 +30,34 @@ const SettingsPage = () => {
     return (
         <>
             <main className='main-layout'>
-            <div className='settings-card'>
-                <h2>ajustes</h2>
-                <div className='avatar-settings'>
-                    <Avatar avatar={user.avatar} username={user.username} />
+                <div className='settings-card'>
+                    <h2>ajustes</h2>
+                    <div className='avatar-settings'>
+                        <Avatar avatar={user.avatar} username={user.username} />
+                    </div>
+                    <div className='settings-form'>
+                        <div className='edit-personalInfo'>
+                            <EditPersonalInfo
+                                token={token}
+                                currentPersonalInfo={user.personalInfo}
+                            />
+                        </div>
+
+                        <div className='edit-place'>
+                            <EditPlace
+                                token={token}
+                                currentPlace={user.place}
+                            />
+                        </div>
+
+                        <div className='edit-Avata'>
+                            <EditAvata token={token} />
+                        </div>
+                        <div className='edit-pass'>
+                            <EditPassword token={token} />
+                        </div>
+                    </div>
                 </div>
-                <div className='settings-form'>
-                <div className='edit-personalInfo'>
-                    <EditPersonalInfo token={token} />
-                </div>
-                
-                <div className='edit-place'>
-                    <EditPlace token={token} places={user.place} />
-                </div>
-                
-                <div className='edit-Avata'>
-                    <EditAvata token={token} />
-                </div>
-                <div className='edit-pass'>
-                    <EditPassword token={token} />
-                </div>
-                </div>
-            </div>
             </main>
             <Footer />
         </>

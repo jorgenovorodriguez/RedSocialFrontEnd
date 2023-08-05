@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import placeEditService from '../../services/placeEditService';
+import { FaEdit } from 'react-icons/fa';
 
-
-const EditPlace = ({ token, places }) => {
+const EditPlace = ({ token, currentPlace }) => {
     const [place, setPlace] = useState('');
     const [error, setError] = useState(null);
     const [message, setMessage] = useState(null);
@@ -27,26 +27,30 @@ const EditPlace = ({ token, places }) => {
     return (
         <div className='edit-placeInfo'>
             <form onSubmit={handleSubmitPlace}>
-                <label htmlFor='place'>Ubicación:</label>
-                <input
-                    type='text'
-                    name='place'
-                    id='place'
-                    onChange={(e) => setPlace(e.target.value)}
-                    required
-                />
-                <button type='submit' disabled={loading}>
-                    Cambiar
-                </button>
-                <div>
-                    <p>{places}</p>
+                <div className='container-form-place'>
+                    <label htmlFor='places' />
+                    <input
+                        type='text'
+                        name='places'
+                        id='place'
+                        onChange={(e) => setPlace(e.target.value)}
+                        required
+                        placeholder={
+                            currentPlace ? currentPlace : 'Editar ubicación'
+                        }
+                    />
+                    <button type='submit' disabled={loading}>
+                        <FaEdit style={{ fontSize: '1.5rem' }} />
+                    </button>
                 </div>
                 {message && <p>{message}</p>}
                 {loading && <p>loading...</p>}
                 {error && <p>{error.message}</p>}
             </form>
-         </div>
+        </div>
     );
 };
 
 export default EditPlace;
+
+//NO ELIMINAR EL DIV QUE HAY DEBAJO DEL BUTTON DE GUARDAR PLACE SI NO NO FUNCIONA

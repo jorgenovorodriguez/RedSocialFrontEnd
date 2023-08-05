@@ -39,9 +39,7 @@ const EditPassword = ({ token }) => {
                 <label htmlFor='editPassword'>Editar contraseña:</label>
                 <div>
                     <div className='edit-currentpass'>
-                        <label htmlFor='currentPassword'>
-                            Contraseña actual:
-                        </label>
+                        <label htmlFor='currentPassword' />
                         <input
                             type='password'
                             id='currentPassword'
@@ -50,10 +48,11 @@ const EditPassword = ({ token }) => {
                             minLength='8'
                             maxLength='60'
                             required
+                            placeholder='Contraseña actual'
                         />
                     </div>
                     <div className='edit-newpass'>
-                        <label htmlFor='newPassword'>Nueva contraseña:</label>
+                        <label htmlFor='newPassword' />
                         <input
                             type='password'
                             id='newPassword'
@@ -62,10 +61,11 @@ const EditPassword = ({ token }) => {
                             required
                             minLength='8'
                             maxLength='60'
+                            placeholder='Nueva contraseña'
                         />
                     </div>
                     <div className='edit-repeatpass'>
-                        <label htmlFor='newPasswordCompare'>Repetir contraseña:</label>
+                        <label htmlFor='newPasswordCompare' />
                         <input
                             type='password'
                             id='newPasswordCompare'
@@ -76,14 +76,17 @@ const EditPassword = ({ token }) => {
                             required
                             minLength='8'
                             maxLength='60'
+                            placeholder='Confirmar contraseña'
                         />
                     </div>
                     <div className='edit-actualizar'>
-                    <button>Actualizar</button>
+                        <button>Guardar</button>
 
-                    {loading && <p>Loading...</p>}
+                        {loading && <p>Loading...</p>}
 
-                    {errorMessage && <ErrorMessage message={errorMessage} />}
+                        {errorMessage && (
+                            <ErrorMessage message={errorMessage} />
+                        )}
                     </div>
                 </div>
             </form>
