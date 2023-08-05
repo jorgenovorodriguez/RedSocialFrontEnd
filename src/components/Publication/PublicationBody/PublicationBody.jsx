@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const PublicationBody = ({ title, photoName, description }) => {
+const PublicationBody = ({ title, photoName, videoName, description }) => {
     return (
         <div className='photo-info'>
             {photoName && (
@@ -9,8 +9,17 @@ const PublicationBody = ({ title, photoName, description }) => {
                     alt='Imagen de la publicación'
                 />
             )}
-            <h3>{title}</h3>
-            <p>{description}</p>
+            {videoName && (
+                <video controls>
+                    <source
+                        src={`http://localhost:8000/${videoName}`}
+                        type='video/mp4'
+                    />
+                    Tu navegador no admite el video.
+                </video>
+            )}
+            {title && <h3>{title}</h3>}
+            {description && <p>{description}</p>}
         </div>
     );
 };
@@ -18,6 +27,7 @@ const PublicationBody = ({ title, photoName, description }) => {
 PublicationBody.propTypes = {
     title: PropTypes.string,
     photoName: PropTypes.string,
+    videoName: PropTypes.string,
     description: PropTypes.string,
 };
 

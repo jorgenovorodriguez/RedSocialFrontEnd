@@ -13,7 +13,7 @@ const PublicationList = () => {
         errorMessage,
         loading,
     } = usePublications();
-
+    console.log(publications);
     return (
         <>
             {loading && <p>Loading...</p>}

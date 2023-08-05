@@ -1,13 +1,15 @@
 const PublicationCreateService = async (
     description,
     photo,
+    video,
     title,
     place,
     token
 ) => {
     const formData = new FormData();
-    console.log(photo, '---------------');
+
     formData.append('photo', photo);
+    formData.append('video', video);
     formData.append('description', description);
     formData.append('title', title);
     formData.append('place', place);

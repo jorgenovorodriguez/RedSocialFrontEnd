@@ -13,7 +13,7 @@ const Publication = ({
     loading,
 }) => {
     return (
-        <div  className='publication-container'>
+        <div className='publication-container'>
             <Link to={`/users/${publication.authorId}`}>
                 <PublicationHeader
                     avatar={publication.authorAvatar}
@@ -26,6 +26,7 @@ const Publication = ({
                 <PublicationBody
                     title={publication.title}
                     photoName={publication.photoName}
+                    videoName={publication.videoName}
                     description={publication.description}
                 />
             </Link>

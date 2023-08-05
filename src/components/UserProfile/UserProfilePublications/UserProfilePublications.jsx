@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import PublicationBody from '../../Publication/PublicationBody/PublicationBody';
 
 const UserProfilePublications = ({ publications }) => {
-    console.log(publications);
     return (
         <div>
             <ul>
@@ -20,6 +19,7 @@ const UserProfilePublications = ({ publications }) => {
                                     <PublicationBody
                                         key={publication.id}
                                         photoName={publication.photoName}
+                                        videoName={publication.videoName}
                                     />
                                 </Link>
                             </div>
