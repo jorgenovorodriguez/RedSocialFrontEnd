@@ -22,7 +22,7 @@
     text-align: center;
 }
 
-.avatarsettings{
+.avatar-settings{
     display: flex;
     width: 8rem;
     min-height: 0.5rem;
@@ -37,7 +37,7 @@
 }
 
 
-.avatarsettings img {
+.avatar-settings img {
     min-height: 1rem;
     min-width: 1rem;
     width: 100%;
@@ -49,9 +49,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    
 }
-
+/*personal info*/
 .edit-personalInfo{
     display:flex;
     flex-direction: column;
@@ -63,13 +63,18 @@
     border-radius: 0.5rem;
     width:25%;
     align-self: flex-end;
-    margin-top: 0.25rem;
+    margin-top: 0.3rem;
+    border:none;
 }
 .edit-personalInfo textarea{
     border-radius: 0.5rem;
     max-width: 100%;
     width:100%;
+    border:none;
 }
+
+/*edit place*/
+
 .edit-place{
     display:flex;
     flex-direction: column;
@@ -81,16 +86,42 @@
     width:25%;
     align-self: flex-end;
     margin-top: 0.25rem;
+    border:none;
 }
 .edit-place input{
     border-radius: 0.5rem;
     max-width: 100%;
     width:100%;
+    border:none;
 }
+
+.edit-place p{
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    
+}
+
+
+/*edit avatar*/
 
 .edit-Avata{
 
 }
+.edit-Avata input{
+display: flex;
+       
+}
+
+.edit-Avata button{
+    border-radius: 0.5rem;
+    width:25%;
+    align-self: flex-end;
+    margin-top: 0.25rem;
+    border:none;
+}
+/*edit password*/
+
 .edit-pass{
     display: flex;
     flex-direction: column;
@@ -103,11 +134,46 @@
     border-radius: 0.5rem;
     width:50%;
     margin-left: 0.5rem;
+    border:none;
     
 }
 
+.edit-actualizar{
+    display: flex;
+    justify-content: flex-end;
+
+}
 .edit-pass button{
     border-radius: 0.5rem;
     margin-bottom: 1rem;
-    align-self: flex-end;
+    margin-top:0.25rem;
+    border:none;
+    text-align: center;
+    width:5rem;
+}
+
+.edit-currentpass{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.25rem;
+    
+
+}
+.edit-currentpass input{
+    margin-left: 0.7rem;
+}
+.edit-newpass{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.25rem;
+}
+
+.edit-newpass input{
+    margin-left: 0.7rem;
+}
+
+.edit-repeatpass{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.25rem;
 }

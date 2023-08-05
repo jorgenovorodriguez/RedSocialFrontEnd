@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import placeEditService from '../../services/placeEditService';
-import getGeolocationService from '../../services/getGeolocationService';
+
 
 const EditPlace = ({ token, places }) => {
-    const [placeUser, setPlaceUser] = useState('');
     const [place, setPlace] = useState('');
     const [error, setError] = useState(null);
     const [message, setMessage] = useState(null);
@@ -25,27 +24,8 @@ const EditPlace = ({ token, places }) => {
         }
     };
 
-    const getPlace = async (e) => {
-        try {
-            e.preventDefault();
-
-            setLoading(true);
-
-            const city = await getGeolocationService(setPlaceUser);
-
-            setPlaceUser(city);
-
-            await placeEditService(placeUser, token);
-        } catch (error) {
-            console.error('Error al obtener la ubicación:', error);
-            setLoading(false);
-        } finally {
-            setLoading(false);
-        }
-    };
-
     return (
-        <div>
+        <div className='edit-placeInfo'>
             <form onSubmit={handleSubmitPlace}>
                 <label htmlFor='place'>Ubicación:</label>
                 <input
@@ -65,8 +45,7 @@ const EditPlace = ({ token, places }) => {
                 {loading && <p>loading...</p>}
                 {error && <p>{error.message}</p>}
             </form>
-            <button onClick={getPlace}>Añadir ubicación</button>
-        </div>
+         </div>
     );
 };
 

@@ -38,7 +38,7 @@ const EditPassword = ({ token }) => {
             <form onSubmit={handlesubmitEditPassword}>
                 <label htmlFor='editPassword'>Editar contraseña:</label>
                 <div>
-                    <div>
+                    <div className='edit-currentpass'>
                         <label htmlFor='currentPassword'>
                             Contraseña actual:
                         </label>
@@ -52,7 +52,7 @@ const EditPassword = ({ token }) => {
                             required
                         />
                     </div>
-                    <div>
+                    <div className='edit-newpass'>
                         <label htmlFor='newPassword'>Nueva contraseña:</label>
                         <input
                             type='password'
@@ -63,9 +63,9 @@ const EditPassword = ({ token }) => {
                             minLength='8'
                             maxLength='60'
                         />
-                        <label htmlFor='newPasswordCompare'>
-                            Repetir contraseña:
-                        </label>
+                    </div>
+                    <div className='edit-repeatpass'>
+                        <label htmlFor='newPasswordCompare'>Repetir contraseña:</label>
                         <input
                             type='password'
                             id='newPasswordCompare'
@@ -78,11 +78,13 @@ const EditPassword = ({ token }) => {
                             maxLength='60'
                         />
                     </div>
-                    <button>Actualizar...</button>
+                    <div className='edit-actualizar'>
+                    <button>Actualizar</button>
 
                     {loading && <p>Loading...</p>}
 
                     {errorMessage && <ErrorMessage message={errorMessage} />}
+                    </div>
                 </div>
             </form>
         </div>

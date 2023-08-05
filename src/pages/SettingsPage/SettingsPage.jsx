@@ -32,7 +32,7 @@ const SettingsPage = () => {
             <main className='main-layout'>
             <div className='settings-card'>
                 <h2>ajustes</h2>
-                <div className='avatarsettings'>
+                <div className='avatar-settings'>
                     <Avatar avatar={user.avatar} username={user.username} />
                 </div>
                 <div className='settings-form'>
