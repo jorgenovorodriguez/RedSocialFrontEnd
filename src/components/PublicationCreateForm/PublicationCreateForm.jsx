@@ -7,6 +7,7 @@ import { FaLocationDot } from 'react-icons/fa6';
 import { MdAddLocationAlt } from 'react-icons/md';
 import { BiSolidImageAdd } from 'react-icons/bi';
 
+
 import './PublicationCreateForm.css';
 
 import getGeolocationService from '../../services/getGeolocationService';

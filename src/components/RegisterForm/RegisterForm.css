@@ -15,7 +15,7 @@
 }
 
 .register-input {
-    margin-top: 3rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -26,16 +26,19 @@
     color: white;
     text-align: center;
 }
+.check-role input {
+    margin-bottom: 0;
+  
 .check-role {
     display: flex;
     flex-direction: row;
-
+    align-items: center;
     margin-bottom: 0.5rem;
     color: antiquewhite;
 }
 /*para modificarlas se tendria que hacer separado*/
 .label-role {
-    margin: 1rem;
+    margin: 0.7rem 1rem 0 0.4rem;
 }
 
 .no-register {

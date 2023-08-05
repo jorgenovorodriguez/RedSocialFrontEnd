@@ -29,15 +29,17 @@ const InfoContainer = () => {
                         formar parte de TattoArt..
                     </p>
                 </div>
-                <div onClick={handleSubmit}>
-                    <NavLink className='login-button' to='/register'>
-                        Registro
-                    </NavLink>
-                </div>
-                <div onClick={handleSubmit}>
-                    <NavLink className='login-button' to='/login'>
-                        Login
-                    </NavLink>
+                <div className='buttonsInfoContainer'>
+                    <div onClick={handleSubmit}>
+                        <NavLink className='login-button' to='/register'>
+                            Registro
+                        </NavLink>
+                    </div>
+                    <div onClick={handleSubmit}>
+                        <NavLink className='login-button' to='/login'>
+                            Login
+                        </NavLink>
+                    </div>
                 </div>
                 <div onClick={handleSubmit}>
                     <NavLink className='guest-button' to='/home'>
