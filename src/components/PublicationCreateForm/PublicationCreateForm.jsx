@@ -154,6 +154,7 @@ const PublicationCreateForm = ({ token }) => {
                     <div>
                         <label htmlFor='options'>Tipo de publicación: </label>
                         <select
+                            className='select-type'
                             id='options'
                             value={type}
                             onChange={handleOptionType}
@@ -171,7 +172,7 @@ const PublicationCreateForm = ({ token }) => {
                             <p>{place}</p>
                         </div>
                     ) : (
-                        <div className='ubication' onClick={getPlace}>
+                        <div className='ubication-pub' onClick={getPlace}>
                             <MdAddLocationAlt />
                             <p>Ubicación</p>
                         </div>
@@ -189,6 +190,7 @@ const PublicationCreateForm = ({ token }) => {
                     />
 
                     <textarea
+                        className='text-area-field'
                         placeholder='Añade una descripcion a tu imagen'
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}

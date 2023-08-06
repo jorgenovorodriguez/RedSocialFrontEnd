@@ -45,12 +45,11 @@
     text-align: left;
     color: rgb(0, 0, 0);
     padding-left: 1rem;
-    }
+}
 
-.userPersonalInfo p{
+.userPersonalInfo p {
     word-wrap: break-word;
     white-space: pre-line;
-
 }
 
 .role {
@@ -110,4 +109,10 @@
     width: 110px;
     height: 110px;
     margin: 0.5rem 0.2rem;
+}
+
+.profile-location {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
