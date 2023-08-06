@@ -10,6 +10,7 @@
 html {
     height: 100vh;
     width: 100vw;
+    
 }
 
 body {
@@ -31,6 +32,7 @@ body {
     grid-area: header-layout;
     height: 10vh;
     width: 100vw;
+    position: fixed;
     background-color: black;
     display: flex;
     justify-content:space-between;
@@ -38,9 +40,10 @@ body {
 
 .main-layout {
     grid-area: main-layout;
-    min-height: 70vh;
-    max-height: 90vh;
+    position: relative;
+    height: 90vh;
     width: 100vw;
+    
 }
 
 .footer-layout {
@@ -49,12 +52,14 @@ body {
     min-height: 0;
     background-color: black;
     color: white;
-    position: sticky;
+    position: static;
     display: flex;
     flex-direction: row;
     justify-content:space-around;
     align-items: center;
     width: 100vw;
+    z-index: 2;
+    margin: 1.5rem auto;
 }
 
 .logos-footer img {
@@ -64,3 +69,4 @@ body {
     width: 40px;
     min-width: 0.5px;
 }
+

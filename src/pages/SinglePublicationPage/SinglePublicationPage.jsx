@@ -41,28 +41,33 @@ const SinglePublicationPage = () => {
                         loading={loading}
                     />
                 )}
-                <div>
-                    {Array.isArray(publication?.comments) &&
-                    publication.comments.length > 0 ? (
-                        <Comment
-                            comments={publication.comments.slice().reverse()}
-                            deleteComment={deleteComment}
-                            publicationId={publication.id}
-                            publicationOwner={publication.owner}
-                        />
-                    ) : (
-                        <p className='pub-p'>¿No hay comentarios? Anímate, haz el primero</p>
-
-                    )}
-                </div>
-                <div>
-                    {publication && publication.id && token && (
-                        <CommentForm
-                            id={publication.id}
-                            onAddComment={handleAddComment}
-                            setPublication={setPublication}
-                        />
-                    )}
+                <div className='comentarios'>
+                    <div className=''>
+                        {Array.isArray(publication?.comments) &&
+                        publication.comments.length > 0 ? (
+                            <Comment
+                                comments={publication.comments
+                                    .slice()
+                                    .reverse()}
+                                deleteComment={deleteComment}
+                                publicationId={publication.id}
+                                publicationOwner={publication.owner}
+                            />
+                        ) : (
+                            <p className='pub-p'>
+                                ¿No hay comentarios? Anímate, haz el primero
+                            </p>
+                        )}
+                    </div>
+                    <div className='ajuste'>
+                        {publication && publication.id && token && (
+                            <CommentForm
+                                id={publication.id}
+                                onAddComment={handleAddComment}
+                                setPublication={setPublication}
+                            />
+                        )}
+                    </div>
                 </div>
             </main>
             <Footer />

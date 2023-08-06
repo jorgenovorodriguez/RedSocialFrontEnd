@@ -155,7 +155,7 @@ form {
     object-fit: cover;
 }
 
-.avatar-image {
+.avatar-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -163,7 +163,7 @@ form {
 }
 
 .aa {
-    margin: 0;
+    margin: 0 auto;
     padding: 0 0 8rem 0; /*NO TOCAR BAJO NINGUN CONCEPTO SIN CONSULTAR ANTES*/
 }
 
@@ -171,3 +171,133 @@ a {
     text-decoration: none;
 }
 /*mirar card*/
+
+.ul {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -.6rem;
+    overflow: scroll;
+    height: 6rem;
+    position: relative;
+    width: 22rem;
+   
+}
+
+.li {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    width: 18rem;
+}
+
+.ajuste {
+    margin: 0 auto 2.2rem auto; /*############ NO TOCAR ##############*/
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    width: 20rem;
+    height: 2.8rem;
+    border: 1px solid black;
+    position: relative;
+    flex-wrap: nowrap;
+    z-index: 1;
+}
+
+.ajuste button {
+    height: 1.6rem;
+    width: 2rem;
+}
+
+.ajuste-comment {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    width: 8rem;
+    height: 6rem;
+    border: 1px solid black;
+}
+
+.ajuste-comment div img {
+    height: 1.4rem;
+}
+
+.ajuste-comment p {
+    font-size: .8rem;
+    margin: 0;
+}
+
+.ajuste img {
+    border-radius: 50%;
+    height: 2.2rem;
+}
+
+.ajuste input {
+    height: 1.6rem;
+    margin: 0 auto;
+}
+
+.comment-header {
+    border: 1px solid black;
+    width: 12rem;
+    height: 3.6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-content {
+    border: 1px solid black;
+    height: 2rem;
+    width: 10rem;
+    margin-left: 1.4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.comment-content button {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.comment-text {
+    display: flex;
+    justify-content: flex-start;
+    width: 8rem;
+    font-size: .8rem;
+}
+
+.comment-text p {
+    margin-left: 1.8rem;
+    font-size: .9rem;
+}
+
+.delete-commnet {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: .6rem;
+}
+
+.comment-time {
+    display: flex;
+    width: 10rem;
+    font-size: .6rem;
+}
+
+.comentarios {
+    border: 1px solid black;
+    height: 25vh;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 auto;
+    overflow: hidden;
+    height: auto;
+     
+  
+}
+

@@ -63,30 +63,26 @@ const CommentForm = ({ id, onAddComment }) => {
     };
 
     return (
-        <div>
-            <div>
-                {/* Comprobamos si userComment tiene datos antes de pasarlos a Avatar */}
-                {userComment && (
-                    <Avatar
-                        avatar={userComment.avatar}
-                        username={userComment.username}
-                    />
-                )}
-            </div>
-            <div>
-                <input
-                    type='text'
-                    placeholder='comentar...'
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
+        <>
+            {userComment && (
+                <Avatar
+                    avatar={userComment.avatar}
+                    username={userComment.username}
                 />
-                <button onClick={handleSubmitComment} disabled={loading}>
-                    Enviar comentario
-                </button>
-                {loading && <p>loading...</p>}
-                {errorMessage && <ErrorMessage message={errorMessage} />}
-            </div>
-        </div>
+            )}
+
+            <input
+                type='text'
+                placeholder='comentar...'
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+            />
+            <button onClick={handleSubmitComment} disabled={loading}>
+                Env
+            </button>
+            {loading && <p>loading...</p>}
+            {errorMessage && <ErrorMessage message={errorMessage} />}
+        </>
     );
 };
 
