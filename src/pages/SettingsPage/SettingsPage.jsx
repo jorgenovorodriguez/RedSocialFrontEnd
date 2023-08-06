@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
 import Avatar from '../../components/Avatar/Avatar';
-import EditAvata from '../../components/EditAvata/EditAvata';
 import EditPassword from '../../components/EditPassword/EditPassword';
-
 import useAuth from '../../hooks/useAuth';
 import onwerUserService from '../../services/onwerUserService';
 import EditPersonalInfo from '../../components/EditPersonalInfo/EditPersonalInfo';
 import EditPlace from '../../components/EditPlace/EditPlace';
 import Footer from '../../components/Footer/Footer';
-
+import avatarEditService from '../../services/avatarEditService';
 import './SettingsPage.css';
 
 const SettingsPage = () => {
     const { token } = useAuth();
     const [user, setUser] = useState('');
+    const [avatar, setAvatar] = useState(null);
+    const [pre, setPre] = useState(null);
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -27,13 +27,48 @@ const SettingsPage = () => {
         fetchUser();
     }, [token]);
 
+    useEffect(() => {
+        if (avatar) {
+            const photoUrl = URL.createObjectURL(avatar);
+            setPre(photoUrl);
+        } else {
+            setPre(null);
+        }
+    }, [avatar]);
+
+    const handleSubmitAvatar = async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData();
+        formData.append('avatar', avatar);
+
+        await avatarEditService(formData, token);
+
+        window.location.reload();
+    };
+
     return (
         <>
             <main className='main-layout'>
                 <div className='settings-card'>
                     <h2>ajustes</h2>
                     <div className='avatar-settings'>
-                        <Avatar avatar={user.avatar} username={user.username} />
+                        {pre ? (
+                            <div>
+                                {pre && (
+                                    <img
+                                        src={pre}
+                                        alt='previsualicacion de avatar'
+                                        className='precarga'
+                                    />
+                                )}
+                            </div>
+                        ) : (
+                            <Avatar
+                                avatar={user.avatar}
+                                username={user.username}
+                            />
+                        )}
                     </div>
                     <div className='settings-form'>
                         <div className='edit-personalInfo'>
@@ -51,7 +86,23 @@ const SettingsPage = () => {
                         </div>
 
                         <div className='edit-Avata'>
-                            <EditAvata token={token} />
+                            <div>
+                                <form onSubmit={handleSubmitAvatar}>
+                                    <label htmlFor='avatar'>
+                                        Cambiar Avatar:
+                                    </label>
+                                    <input
+                                        type='file'
+                                        name='avatar'
+                                        id='avatar'
+                                        onChange={(e) =>
+                                            setAvatar(e.target.files[0])
+                                        }
+                                        required
+                                    />
+                                    <button type='submit'>Cambiar</button>
+                                </form>
+                            </div>
                         </div>
                         <div className='edit-pass'>
                             <EditPassword token={token} />
