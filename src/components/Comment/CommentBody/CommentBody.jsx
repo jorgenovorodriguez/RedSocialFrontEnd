@@ -1,12 +1,5 @@
-
-
 const CommentBody = ({ text }) => {
-
-    return (
-        <div>
-            <p>{text}</p>
-        </div>
-    )
-}
+    return <p>{text}</p>;
+};
 
 export default CommentBody;

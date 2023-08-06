@@ -19,13 +19,13 @@ const Comment = ({
                             commenter={comment.commenter}
                             commenterAvatar={comment.commenterAvatar}
                         />
-                    </div>
-                    <div className='comment-content'>
                         <div className='comment-text'>
                             <CommentBody text={comment.text} />
                         </div>
-                        {comment.createdAt && (
+                    </div>
 
+                    <div className='comment-content'>
+                        {comment.createdAt && (
                             <time className='comment-time'>
                                 {new Date(comment.createdAt).toLocaleDateString(
                                     'es-ES',
@@ -47,7 +47,6 @@ const Comment = ({
                             commentOwner={comment.commenter}
                             publicationOwner={publicationOwner}
                         />
-
                     </div>
                 </li>
             ))}

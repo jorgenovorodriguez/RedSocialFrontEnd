@@ -2,3 +2,9 @@
     text-align: center;
     color: black;
 }
+
+.classP {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

@@ -8,5 +8,6 @@
 
 .fijo {
     position: fixed;
-    top: 90vh; 
+    top: 88vh;
+    z-index: 1; 
 }

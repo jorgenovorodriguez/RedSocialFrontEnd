@@ -44,15 +44,13 @@ const DeleteComment = ({
     };
 
     return (
-        <div>
+        <div className='delete-commnet'>
             {isAuthor && (
                 <>
                     {isDeleting ? (
                         <p>Eliminando comentario...</p>
                     ) : (
-                        <button onClick={handleDeleteComment}>
-                            Eliminar comentario
-                        </button>
+                        <button onClick={handleDeleteComment}>Eli</button>
                     )}
                     {errorMessage && <p>{errorMessage}</p>}
                 </>
