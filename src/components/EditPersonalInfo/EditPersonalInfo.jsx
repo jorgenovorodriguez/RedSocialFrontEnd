@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import personalInfoEditService from '../../services/personalInfoEditService';
-import { FaEdit } from 'react-icons/fa';
+import { FaSave } from 'react-icons/fa';
 
 const EditPersonalInfo = ({ token, currentPersonalInfo }) => {
     const [personalInfo, setPersonalInfo] = useState('');
@@ -40,7 +40,7 @@ const EditPersonalInfo = ({ token, currentPersonalInfo }) => {
                         }
                     />
                     <button type='submit'>
-                        <FaEdit style={{ fontSize: '1.5rem' }} />
+                        <FaSave style={{ fontSize: '1.5rem' }} />
                     </button>
                     {message && <p>{message}</p>}
                     {error && <p>{error.message}</p>}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import placeEditService from '../../services/placeEditService';
-import { FaEdit } from 'react-icons/fa';
+import { FaSave } from 'react-icons/fa';
 
 const EditPlace = ({ token, currentPlace }) => {
     const [place, setPlace] = useState('');
@@ -40,7 +40,7 @@ const EditPlace = ({ token, currentPlace }) => {
                         }
                     />
                     <button type='submit' disabled={loading}>
-                        <FaEdit style={{ fontSize: '1.5rem' }} />
+                        <FaSave style={{ fontSize: '1.5rem' }} />
                     </button>
                 </div>
                 {message && <p>{message}</p>}
