@@ -13,7 +13,7 @@ const RegisterForm = () => {
     const [email, setEmail] = useState('');
     const [firstPassword, setFirstPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
-    const [role, setRole] = useState('artista');
+    const [role, setRole] = useState('Artista');
     const [confirmations, setConfirmations] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
@@ -107,24 +107,28 @@ const RegisterForm = () => {
 
                         <label htmlFor='role'>Tipo de perfil:</label>
                         <div className='check-role'>
-                        <div>
-                            <input
-                                type='checkbox'
-                                id='artista'
-                                onChange={() => setRole('artista')}
-                                checked={role === 'artista'}
-                            />
-                            <label className='label-role' htmlFor='role'>Artista</label>
-                        </div>
-                        <div>
-                            <input
-                                type='checkbox'
-                                id='estudio'
-                                onChange={() => setRole('estudio')}
-                                checked={role === 'estudio'}
-                            />
-                            <label className='label-role' htmlFor='role'>Estudio</label>
-                        </div>
+                            <div>
+                                <input
+                                    type='checkbox'
+                                    id='Artista'
+                                    onChange={() => setRole('Artista')}
+                                    checked={role === 'Artista'}
+                                />
+                                <label className='label-role' htmlFor='role'>
+                                    Artista
+                                </label>
+                            </div>
+                            <div>
+                                <input
+                                    type='checkbox'
+                                    id='Estudio'
+                                    onChange={() => setRole('Estudio')}
+                                    checked={role === 'Estudio'}
+                                />
+                                <label className='label-role' htmlFor='role'>
+                                    Estudio
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
