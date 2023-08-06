@@ -21,10 +21,12 @@ const PublicationHeader = ({ username, createdAt, place, avatar }) => {
                         year: '2-digit',
                     })}
                 </time>
-                <div className='publication-location'>
-                    <FaLocationDot />
-                    <p>{place}</p>
-                </div>
+                {place && (
+                    <div className='publication-location'>
+                        <FaLocationDot />
+                        <p>{place}</p>
+                    </div>
+                )}
             </div>
         </header>
     );

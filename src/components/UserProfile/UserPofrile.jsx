@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import onwerUserService from '../../services/onwerUserService';
 import { MdSettings } from 'react-icons/md';
 import './UserProfile.css';
+import { FaLocationDot } from 'react-icons/fa6';
 
 const UserProfile = ({ user, token }) => {
     const [userOwner, setUserOwner] = useState('');
@@ -44,7 +45,10 @@ const UserProfile = ({ user, token }) => {
                 </div>
                 <div className='userName'>
                     <h2>@{user.username}</h2>
-                    <p>{user.place}</p>
+                    <div className='profile-location'>
+                        <FaLocationDot />
+                        <p>{user.place}</p>
+                    </div>
                 </div>
 
                 <div className='userPersonalInfo'>
