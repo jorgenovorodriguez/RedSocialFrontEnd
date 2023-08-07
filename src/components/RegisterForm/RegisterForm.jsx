@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import Modal from '../Modal/Modal';
 import registerService from '../../services/registerServices';
 import { useNavigate, NavLink } from 'react-router-dom';
 import Logo from '../Logo/Logo';
+import Loader from '../Loader/Loader';
 
 import './RegisterForm.css';
 
@@ -17,6 +18,12 @@ const RegisterForm = () => {
     const [confirmations, setConfirmations] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
+    const handleCloseModal = (e) => {
+        e.preventDefault();
+        setShowModal(false);
+    };
 
     const handleSubmit = async (e) => {
         try {
@@ -34,12 +41,15 @@ const RegisterForm = () => {
                     await registerService(username, email, password, role)
                 );
                 setErrorMessage(confirmations);
+                setShowModal(true);
                 navigate('/activated');
             } else {
                 setErrorMessage('Las contraseñas no coinciden');
+                setShowModal(true);
             }
         } catch (error) {
             setErrorMessage(error.message);
+            setShowModal(true);
         } finally {
             setLoading(false);
         }
@@ -133,9 +143,14 @@ const RegisterForm = () => {
                     </div>
                 </div>
 
-                {loading && <p>Loading...</p>}
+                {loading && <Loader />}
 
-                {errorMessage && <ErrorMessage message={errorMessage} />}
+                {showModal && (
+                    <Modal
+                        errorMessage={errorMessage}
+                        onClose={handleCloseModal}
+                    />
+                )}
                 <div className='button-container' onClick={handleSubmit}>
                     <div className='login-button'>Registrarme</div>
                 </div>
