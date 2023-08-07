@@ -1,15 +1,21 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import loginService from '../../services/loginServices';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import PropTypes from 'prop-types';
 import Logo from '../Logo/Logo';
+import Modal from '../Modal/Modal';
 
 const LoginForm = ({ login }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
+    const handleCloseModal = (e) => {
+        e.preventDefault();
+        setShowModal(false);
+    };
 
     const handleSubmit = async (e) => {
         try {
@@ -22,6 +28,7 @@ const LoginForm = ({ login }) => {
             login(token);
         } catch (error) {
             setErrorMessage(error.message);
+            setShowModal(true);
         } finally {
             setLoading(false);
         }
@@ -60,8 +67,12 @@ const LoginForm = ({ login }) => {
                 </div>
 
                 {loading && <p>loading...</p>}
-
-                {errorMessage && <ErrorMessage message={errorMessage} />}
+                {showModal && (
+                    <Modal
+                        errorMessage={errorMessage}
+                        onClose={handleCloseModal}
+                    />
+                )}
             </form>
             <div className='button-container' onClick={handleSubmit}>
                 <div className='login-button'>Login</div>

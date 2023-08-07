@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import publicationCreateService from '../../services/PublicationCreateService';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { FaLocationDot } from 'react-icons/fa6';
 import { MdAddLocationAlt } from 'react-icons/md';
 import { BiSolidImageAdd } from 'react-icons/bi';
+import Modal from '../Modal/Modal';
 
 import './PublicationCreateForm.css';
 
@@ -24,6 +24,12 @@ const PublicationCreateForm = ({ token }) => {
     const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
     const [showResult, setShowResult] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
+    const handleCloseModal = (e) => {
+        e.preventDefault();
+        setShowModal(false);
+    };
 
     useEffect(() => {
         if (photo) {
@@ -79,6 +85,7 @@ const PublicationCreateForm = ({ token }) => {
             setPre(null);
         } catch (error) {
             setErrorMessage(error.message);
+            setShowModal(true);
         } finally {
             setLoading(false);
         }
@@ -99,7 +106,8 @@ const PublicationCreateForm = ({ token }) => {
             setPlace(city);
             setShowResult(true);
         } catch (error) {
-            console.error('Error al obtener la ubicación:', error);
+            setErrorMessage('Error al obtener la ubicación:', error);
+            setShowModal(true);
             setLoading(false);
         } finally {
             setLoading(false);
@@ -204,7 +212,12 @@ const PublicationCreateForm = ({ token }) => {
 
                     {loading && <p>loading...</p>}
 
-                    {errorMessage && <ErrorMessage message={errorMessage} />}
+                    {showModal && (
+                        <Modal
+                            errorMessage={errorMessage}
+                            onClose={handleCloseModal}
+                        />
+                    )}
                 </form>
             </div>
         </>
