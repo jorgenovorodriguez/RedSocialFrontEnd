@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import Modal from '../Modal/Modal';
 import editRecoverPassCodeService from '../../services/EditRecoverPassCodeService';
 
 const EditRecoverPassCodeForm = () => {
@@ -11,6 +11,12 @@ const EditRecoverPassCodeForm = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
     const [confirmations, setConfirmations] = useState('');
+    const [showModal, setShowModal] = useState(false);
+
+    const handleCloseModal = (e) => {
+        e.preventDefault();
+        setShowModal(false);
+    };
 
     const handleSubmit = async (e) => {
         try {
@@ -30,12 +36,14 @@ const EditRecoverPassCodeForm = () => {
                 );
 
                 setErrorMessage(confirmations);
+                setShowModal(true);
                 navigate('/login');
             } else {
                 setErrorMessage('Las contraseñas no coinciden');
             }
         } catch (error) {
             setErrorMessage(error.message);
+            setShowModal(true);
         } finally {
             setLoading(false);
         }
@@ -93,7 +101,12 @@ const EditRecoverPassCodeForm = () => {
                     </div>
                     {loading && <p>loading...</p>}
 
-                    {errorMessage && <ErrorMessage message={errorMessage} />}
+                    {showModal && (
+                        <Modal
+                            errorMessage={errorMessage}
+                            onClose={handleCloseModal}
+                        />
+                    )}
                 </form>
             </div>
         </div>

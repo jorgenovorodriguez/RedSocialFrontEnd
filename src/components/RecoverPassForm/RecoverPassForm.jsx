@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Logo from '../Logo/Logo';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import Modal from '../Modal/Modal';
 import sendRecoverPassService from '../../services/sendRecoverPassService';
 import './RecoverPassForm.css';
 
@@ -8,6 +8,12 @@ const RecoverPassForm = ({ setShowEditForm }) => {
     const [email, setEmail] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
+    const handleCloseModal = (e) => {
+        e.preventDefault();
+        setShowModal(false);
+    };
 
     const handleSubmit = async (e) => {
         try {
@@ -19,6 +25,7 @@ const RecoverPassForm = ({ setShowEditForm }) => {
             setShowEditForm(true);
         } catch (error) {
             setErrorMessage(error.message);
+            setShowModal(true);
         } finally {
             setLoading(false);
         }
@@ -44,7 +51,13 @@ const RecoverPassForm = ({ setShowEditForm }) => {
                         required
                     />
                     {loading && <p>loading...</p>}
-                    {errorMessage && <ErrorMessage message={errorMessage} />}
+
+                    {showModal && (
+                        <Modal
+                            errorMessage={errorMessage}
+                            onClose={handleCloseModal}
+                        />
+                    )}
 
                     <div className='buttonEdit'>
                         <button disabled={loading}>Enviar</button>
