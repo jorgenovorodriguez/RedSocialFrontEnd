@@ -6,7 +6,7 @@ import './PublicationHeader.css';
 const PublicationHeader = ({ username, createdAt, place, avatar }) => {
     return (
         <header className='publication-header'>
-            <div className='avatar-container'>
+            <div className='pubavatar-container'>
                 <Avatar avatar={avatar} username={username} />
             </div>
             <div className='header-username'>
