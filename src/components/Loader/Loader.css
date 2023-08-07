@@ -1,6 +1,18 @@
-.loader {
-    width: 60px;
-    height: 60px;
+.lodaer-container {
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-content {
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
     border: 3px solid white;
     border-top-color: transparent;
