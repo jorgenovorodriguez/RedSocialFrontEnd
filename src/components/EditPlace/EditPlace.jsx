@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import placeEditService from '../../services/placeEditService';
 import { FaSave } from 'react-icons/fa';
+import Loader from '../Loader/Loader';
 
 const EditPlace = ({ token, currentPlace }) => {
     const [place, setPlace] = useState('');
@@ -44,7 +45,7 @@ const EditPlace = ({ token, currentPlace }) => {
                     </button>
                 </div>
                 {message && <p>{message}</p>}
-                {loading && <p>loading...</p>}
+                {loading && <Loader />}
                 {error && <p>{error.message}</p>}
             </form>
         </div>

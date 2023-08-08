@@ -6,6 +6,7 @@ import CommentForm from '../../components/Comment/CommentForm/CommentForm';
 import { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import Footer from '../../components/Footer/Footer';
+import Loader from '../../components/Loader/Loader';
 
 import './SinglePublicationPage.css';
 
@@ -30,7 +31,7 @@ const SinglePublicationPage = () => {
     return (
         <>
             <main className='main-layout'>
-                {loading && <p>Loading...</p>}
+                {loading && <Loader />}
                 {errorMessage && <ErrorMessage message={errorMessage} />}
                 {publication && (
                     <Publication

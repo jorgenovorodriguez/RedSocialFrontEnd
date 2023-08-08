@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Modal from '../Modal/Modal';
 import editRecoverPassCodeService from '../../services/EditRecoverPassCodeService';
+import Loader from '../Loader/Loader';
 
 const EditRecoverPassCodeForm = () => {
     const navigate = useNavigate();
@@ -99,7 +100,7 @@ const EditRecoverPassCodeForm = () => {
                     <div className='buttonEdit' onClick={handleSubmit}>
                         <button>Confirmar cambio</button>
                     </div>
-                    {loading && <p>loading...</p>}
+                    {loading && <Loader />}
 
                     {showModal && (
                         <Modal

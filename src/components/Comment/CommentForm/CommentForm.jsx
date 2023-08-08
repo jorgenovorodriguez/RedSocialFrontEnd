@@ -6,6 +6,7 @@ import onwerUserService from '../../../services/onwerUserService';
 import ErrorMessage from '../../ErrorMessage/ErrorMessage';
 import commentCreateService from '../../../services/commentCreateService';
 import Avatar from '../../Avatar/Avatar';
+import Loader from '../../Loader/Loader';
 
 const CommentForm = ({ id, onAddComment }) => {
     const { token } = useAuth();
@@ -80,7 +81,7 @@ const CommentForm = ({ id, onAddComment }) => {
             <button onClick={handleSubmitComment} disabled={loading}>
                 Env
             </button>
-            {loading && <p>loading...</p>}
+            {loading && <Loader />}
             {errorMessage && <ErrorMessage message={errorMessage} />}
         </>
     );
