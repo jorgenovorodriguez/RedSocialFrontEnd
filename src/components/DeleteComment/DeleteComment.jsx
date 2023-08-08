@@ -50,7 +50,7 @@ const DeleteComment = ({
                     {isDeleting ? (
                         <p>Eliminando comentario...</p>
                     ) : (
-                        <button onClick={handleDeleteComment}>Eli</button>
+                        <button onClick={handleDeleteComment}>X</button>
                     )}
                     {errorMessage && <p>{errorMessage}</p>}
                 </>
