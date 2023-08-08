@@ -60,13 +60,13 @@ form {
     width: 12.5rem;
 }
 .login-input h2 {
-    color: white;
+    color: var(--primerColor);
     text-align: center;
     margin-bottom: 1.5rem;
 }
 
 .login-input p {
-    color: blanchedalmond;
+    color: var(--primerColor);
     text-align: center;
     font-size: 1rem;
     min-height: 1rem;
@@ -80,7 +80,7 @@ form {
 
 .imputsLab label {
     font-size: 1rem;
-    color: rgb(255, 255, 255);
+    color: var(--primerColor);
 }
 
 .imputsLab input {
@@ -101,14 +101,14 @@ form {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    background-color: rgb(190, 190, 190);
+    background-color: var(--tercerColor);
     width: 6rem;
     height: 2rem;
     border-radius: 0.5rem;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: white;
+    color: var(--quintoColor);
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -122,13 +122,13 @@ form {
 .info-title {
     font-size: 1rem;
     font-weight: bold;
-    color: white;
+    color: var(--primerColor);
     padding: 4rem 1rem 1rem 1rem;
     text-align: center;
 }
 
 .info-text {
-    color: white;
+    color: var(--primerColor);
     text-align: center;
     padding: 0rem 1rem;
     font-size: 0.9rem;
@@ -145,7 +145,7 @@ form {
 .guest-button {
     display: flex;
     justify-content: center;
-    color: blue;
+    color: var(--primerColor);
     text-decoration: none;
 }
 
@@ -166,34 +166,39 @@ a {
 }
 
 .ul {
+    list-style: none;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: -.6rem;
+    margin-bottom: -0.6rem;
     overflow: scroll;
-    height: 6rem;
     position: relative;
-    width: 22rem;
-   
+    width: 20rem;
+    padding: 0.7rem 0 0 0;
 }
 
 .li {
-    margin: 0;
     display: flex;
     flex-direction: row;
-    width: 18rem;
+    flex-wrap: nowrap;
+    width: 20rem;
+    align-items: stretch;
+    align-content: flex-start;
+    justify-content: center;
 }
 
 .ajuste {
-    margin: 0 auto 2.2rem auto; /*############ NO TOCAR ##############*/
+    margin: 0.7rem auto 2.2rem auto;
     display: flex;
     flex-direction: row;
-    align-items: start;
-    width: 20rem;
-    height: 2.8rem;
-    border: 1px solid black;
+    align-items: center;
     position: relative;
     flex-wrap: nowrap;
     z-index: 1;
+    background-color: grey;
+    border-radius: 20px;
+    height: 2rem;
+
+    width: 15rem;
 }
 
 .ajuste button {
@@ -202,50 +207,48 @@ a {
 }
 
 .ajuste-comment {
-    margin: 0 auto;
     display: flex;
     flex-direction: row;
-    align-items: start;
-    width: 8rem;
-    height: 6rem;
-    border: 1px solid black;
 }
 
 .ajuste-comment div img {
     height: 1.4rem;
+    width: 1.4rem;
 }
 
 .ajuste-comment p {
-    font-size: .8rem;
+    font-size: 0.8rem;
     margin: 0;
 }
 
 .ajuste img {
     border-radius: 50%;
-    height: 2.2rem;
+    height: 1.4rem;
+    width: 1.4rem;
 }
 
 .ajuste input {
     height: 1.6rem;
     margin: 0 auto;
+    border: none;
+    background-color: grey;
 }
 
 .comment-header {
-    border: 1px solid black;
     width: 12rem;
     height: 3.6rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .comment-content {
-    border: 1px solid black;
-    height: 2rem;
-    width: 10rem;
-    margin-left: 1.4rem;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+
+    align-content: flex-end;
+    align-items: center;
+
+    padding-left: 1.7rem;
 }
 
 .comment-content button {
@@ -255,41 +258,48 @@ a {
 
 .comment-text {
     display: flex;
-    justify-content: flex-start;
     width: 8rem;
-    font-size: .8rem;
+    font-size: 0.8rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 0.4rem;
+    margin-left: 0.7rem;
 }
 
 .comment-text p {
-    margin-left: 1.8rem;
-    font-size: .9rem;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.comment-text :first-child {
+    font-weight: 700;
 }
 
 .delete-commnet {
     display: flex;
     flex-direction: row-reverse;
-    margin-right: .6rem;
+
+    width: 4rem;
 }
 
+.delete-commnet button {
+    border: none;
+    background-color: rgba(240, 248, 255, 0);
+}
 .comment-time {
     display: flex;
-    width: 10rem;
-    font-size: .6rem;
+
+    font-size: 0.7rem;
 }
 
 .comentarios {
-    border: 1px solid black;
-    height: 25vh;
     width: 20rem;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-content: center;
-    justify-content: flex-end;
+
     align-items: center;
     margin: 0 auto;
     overflow: hidden;
-    height: auto;
-     
-  
 }

@@ -4,8 +4,6 @@ const CommentHeader = ({ commenter, commenterAvatar }) => {
     return (
         <div className='ajuste-comment'>
             <Avatar avatar={commenterAvatar} username={commenter} />
-
-            <p>{commenter}</p>
         </div>
     );
 };

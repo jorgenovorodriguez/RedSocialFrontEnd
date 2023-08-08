@@ -79,7 +79,7 @@ const CommentForm = ({ id, onAddComment }) => {
                 onChange={(e) => setText(e.target.value)}
             />
             <button onClick={handleSubmitComment} disabled={loading}>
-                Env
+                Enviar
             </button>
             {loading && <Loader />}
             {errorMessage && <ErrorMessage message={errorMessage} />}
