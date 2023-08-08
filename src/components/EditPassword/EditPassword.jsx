@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import validatePasswordService from '../../services/validatePasswordService';
+import Loader from '../Loader/Loader';
 
 const EditPassword = ({ token }) => {
     const [currentPass, setCurrentPass] = useState('');
@@ -82,7 +83,7 @@ const EditPassword = ({ token }) => {
                     <div className='edit-actualizar'>
                         <button>Guardar</button>
 
-                        {loading && <p>Loading...</p>}
+                        {loading && <Loader />}
 
                         {errorMessage && (
                             <ErrorMessage message={errorMessage} />
