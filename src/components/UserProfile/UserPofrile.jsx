@@ -44,7 +44,7 @@ const UserProfile = ({ user, token }) => {
                     </div>
                 </div>
                 <div className='userName'>
-                    <h2>@{user.username}</h2>
+                    <h2>{user.username}</h2>
                     <div className='profile-location'>
                         <FaLocationDot />
                         <p>{user.place}</p>
