@@ -53,8 +53,12 @@ const UserProfile = ({ user, token }) => {
                     <div className='userName'>
                         <h2>{user.username}</h2>
                         <div className='profile-location'>
-                            <FaLocationDot />
-                            <p>{user.place}</p>
+                            {user.place && (
+                                <div className='publication-location'>
+                                    <FaLocationDot />
+                                    <p>{user.place}</p>
+                                </div>
+                            )}
                         </div>
                     </div>
 

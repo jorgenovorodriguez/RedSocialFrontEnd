@@ -1,5 +1,3 @@
-// CommentForm.js
-
 import { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 import onwerUserService from '../../../services/onwerUserService';
@@ -7,7 +5,7 @@ import ErrorMessage from '../../ErrorMessage/ErrorMessage';
 import commentCreateService from '../../../services/commentCreateService';
 import Avatar from '../../Avatar/Avatar';
 import Loader from '../../Loader/Loader';
-import { FaComment } from 'react-icons/Fa';
+import { FaComment } from 'react-icons/fa';
 
 const CommentForm = ({ id, onAddComment }) => {
     const { token } = useAuth();
@@ -39,7 +37,6 @@ const CommentForm = ({ id, onAddComment }) => {
 
             await commentCreateService(text, id, token);
 
-            // Obtén los datos actualizados del usuario y crea un nuevo comentario con esa información
             const updatedUserComment = await onwerUserService(token);
             const newComment = {
                 avatar: updatedUserComment.avatar,
@@ -47,10 +44,8 @@ const CommentForm = ({ id, onAddComment }) => {
                 text,
             };
 
-            // Agrega el nuevo comentario a la lista de comentarios utilizando la función de callback
             onAddComment(newComment);
 
-            // Limpia el campo de texto después de enviar el comentario
             setText('');
             window.location.reload();
         } catch (error) {

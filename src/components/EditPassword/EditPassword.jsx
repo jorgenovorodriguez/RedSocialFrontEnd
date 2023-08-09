@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
+
 import validatePasswordService from '../../services/validatePasswordService';
 import Loader from '../Loader/Loader';
+import Modal from '../Modal/Modal';
 
 const EditPassword = ({ token }) => {
     const [currentPass, setCurrentPass] = useState('');
@@ -10,6 +11,12 @@ const EditPassword = ({ token }) => {
     const [loading, setLoading] = useState(false);
     const [newPasswordCompare, setNewPasswordCompare] = useState('');
     const [confirmations, setConfirmations] = useState('');
+    const [showModal, setShowModal] = useState(false);
+
+    const handleCloseModal = (e) => {
+        e.preventDefault();
+        setShowModal(false);
+    };
 
     const handlesubmitEditPassword = async (e) => {
         try {
@@ -24,11 +31,14 @@ const EditPassword = ({ token }) => {
                     await validatePasswordService(currentPass, newPass, token)
                 );
                 setErrorMessage(confirmations);
+                setShowModal(true);
             } else {
                 setErrorMessage('Las contraseñas no coinciden');
+                setShowModal(true);
             }
         } catch (error) {
             setErrorMessage(error.message);
+            setShowModal(true);
         } finally {
             setLoading(false);
         }
@@ -85,8 +95,11 @@ const EditPassword = ({ token }) => {
 
                         {loading && <Loader />}
 
-                        {errorMessage && (
-                            <ErrorMessage message={errorMessage} />
+                        {showModal && (
+                            <Modal
+                                errorMessage={errorMessage}
+                                onClose={handleCloseModal}
+                            />
                         )}
                     </div>
                 </div>

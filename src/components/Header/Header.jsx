@@ -86,15 +86,6 @@ const Header = () => {
 
                             {token && (
                                 <>
-                                    <li className='nav-item'>
-                                        <a
-                                            className='nav-link active text-white'
-                                            aria-current='page'
-                                            href='/message'
-                                        >
-                                            Nueva Publicación
-                                        </a>
-                                    </li>
                                     <li
                                         className='nav-item'
                                         onClick={() => logout()}

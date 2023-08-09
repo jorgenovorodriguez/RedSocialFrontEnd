@@ -8,7 +8,7 @@ const EditAvata = ({ token }) => {
         e.preventDefault();
 
         const formData = new FormData();
-        formData.append('avatar', avatar); // Asegúrate de que avatar contenga el archivo seleccionado
+        formData.append('avatar', avatar);
 
         await avatarEditService(formData, token);
 
