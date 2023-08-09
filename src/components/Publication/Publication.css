@@ -142,3 +142,11 @@
     height: auto;
     object-fit: cover;
 }
+
+.photo-info video::-webkit-media-controls {
+    display: none;
+}
+
+.photo-info video::-webkit-media-controls-enclosure {
+    display: none;
+}

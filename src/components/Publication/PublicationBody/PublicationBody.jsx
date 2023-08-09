@@ -10,7 +10,13 @@ const PublicationBody = ({ title, photoName, videoName, description }) => {
                 />
             )}
             {videoName && (
-                <video controls>
+                <video
+                    controls
+                    controlsList='nodownload noremoteplayback'
+                    loop
+                    autoPlay
+                    muted
+                >
                     <source
                         src={`http://localhost:8000/${videoName}`}
                         type='video/mp4'
