@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import Avatar from '../../components/Avatar/Avatar';
 import EditAvata from '../../components/EditAvata/EditAvata';
 import EditPassword from '../../components/EditPassword/EditPassword';
-
 import useAuth from '../../hooks/useAuth';
 import onwerUserService from '../../services/onwerUserService';
 import EditPersonalInfo from '../../components/EditPersonalInfo/EditPersonalInfo';
@@ -31,7 +30,10 @@ const SettingsPage = () => {
         <>
             <main className='main-layout'>
                 <div className='settings-card'>
-                    <h2>ajustes</h2>
+                    <h2>Ajustes</h2>
+                    <div className='edit-Avata'>
+                        <EditAvata token={token} />
+                    </div>
                     <div className='avatar-settings'>
                         <Avatar avatar={user.avatar} username={user.username} />
                     </div>
@@ -50,9 +52,6 @@ const SettingsPage = () => {
                             />
                         </div>
 
-                        <div className='edit-Avata'>
-                            <EditAvata token={token} />
-                        </div>
                         <div className='edit-pass'>
                             <EditPassword token={token} />
                         </div>

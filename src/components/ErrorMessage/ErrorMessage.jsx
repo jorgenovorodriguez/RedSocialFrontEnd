@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const ErrorMessage = ({ message }) => {
-    return <p>Error: {message}</p>;
+    return <p>{message}</p>;
 };
 
 ErrorMessage.propTypes = {

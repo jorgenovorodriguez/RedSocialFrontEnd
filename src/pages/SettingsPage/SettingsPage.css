@@ -42,10 +42,9 @@
     height: 8rem;
     object-fit: cover;
     border-radius: 50%;
-
 }
 
-.seetings-form{
+.seetings-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,7 +56,7 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
-    
+    margin-bottom: 1rem;
 }
 .edit-personalInfo button {
     border-radius: 0.5rem;
@@ -66,7 +65,7 @@
     margin-top: 0.8rem;
     border: none;
     margin-bottom: 0.5rem;
-    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);
 }
 .edit-personalInfo textarea {
     border-radius: 0.5rem;
@@ -74,9 +73,9 @@
     width: 18rem;
     border: none;
     align-self: center;
-    height:5rem;
+    height: 5rem;
     text-align: center;
-    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);
 }
 
 /*edit place*/
@@ -86,7 +85,6 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
-    
 }
 .edit-place button {
     border-radius: 0.5rem;
@@ -94,7 +92,7 @@
     align-self: flex-end;
     margin-top: 0.8rem;
     border: none;
-    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);
 }
 .edit-place input {
     border-radius: 0.5rem;
@@ -102,28 +100,29 @@
     width: 18rem;
     border: none;
     text-align: center;
-    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);
 }
 
 /*edit avatar*/
 
-.edit-Avata{
+.edit-Avata {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem; 
+    margin-bottom: 1rem;
 }
 
-.edit-Avata button{
+.edit-Avata button {
     border-radius: 0.5rem;
     width: 5rem;
     align-self: flex-end;
     margin-top: 0.3rem;
     border: none;
     margin-right: 0.7rem;
-    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);
 }
-.edit-Avata label,.edit-Avata input{
+.edit-Avata label,
+.edit-Avata input {
     margin-left: 0.5rem;
 }
 
@@ -140,13 +139,11 @@
     width: 95%;
     border: none;
     text-align: center;
-    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);;
-    
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);
 }
 
-.edit-pass label{
+.edit-pass label {
     margin-left: 0.8rem;
-    
 }
 
 .edit-actualizar {
@@ -160,7 +157,7 @@
     border: none;
     text-align: center;
     width: 10rem;
-    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);
 }
 
 .edit-currentpass {
@@ -168,24 +165,16 @@
     flex-direction: row;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
-    
 }
 
 .edit-newpass {
     display: flex;
     flex-direction: row;
     margin-bottom: 0.5rem;
-
 }
 
 .edit-repeatpass {
     display: flex;
     flex-direction: row;
     margin-bottom: 0.25rem;
-    
 }
-
-    
-
-    
-

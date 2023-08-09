@@ -1,53 +1,66 @@
 import { useState } from 'react';
 import placeEditService from '../../services/placeEditService';
 import Loader from '../Loader/Loader';
+import Modal from '../Modal/Modal';
 
 const EditPlace = ({ token, currentPlace }) => {
     const [place, setPlace] = useState('');
-    const [error, setError] = useState(null);
-    const [message, setMessage] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
+    const handleCloseModal = (e) => {
+        e.preventDefault();
+        setShowModal(false);
+    };
 
     const handleSubmitPlace = async (e) => {
-        e.preventDefault();
         try {
+            e.preventDefault();
+
+            setLoading(true);
+
             await placeEditService(place, token);
 
             window.location.reload();
 
             setPlace('');
-
-            setMessage('Ubicación cambiada correctamente');
         } catch (error) {
-            setError(error);
-            console.log(error);
+            setErrorMessage(error.message);
+            setShowModal(true);
+        } finally {
+            setLoading(false);
         }
     };
 
     return (
         <div className='edit-placeInfo'>
             <form onSubmit={handleSubmitPlace}>
-                <label htmlFor='place'></label> 
-                     <input
-                        type='text'
-                        name='place'
-                        id='place'
-                        onChange={(e) => setPlace(e.target.value)}
-                        required
-                        placeholder={
-                            currentPlace ? currentPlace : 'Editar ubicación'
-                        }
-                    />
-                    <button type='submit' disabled={loading}>Guardar</button>                                           
-                
-                {message && <p>{message}</p>}
+                <label htmlFor='place'></label>
+                <input
+                    type='text'
+                    name='place'
+                    id='place'
+                    onChange={(e) => setPlace(e.target.value)}
+                    required
+                    placeholder={
+                        currentPlace ? currentPlace : 'Editar ubicación'
+                    }
+                />
+                <button type='submit' disabled={loading}>
+                    Guardar
+                </button>
+
                 {loading && <Loader />}
-                {error && <p>{error.message}</p>}
+                {showModal && (
+                    <Modal
+                        errorMessage={errorMessage}
+                        onClose={handleCloseModal}
+                    />
+                )}
             </form>
         </div>
     );
 };
 
 export default EditPlace;
-
-
