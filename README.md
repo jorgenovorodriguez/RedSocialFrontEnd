@@ -1,50 +1,29 @@
 # tatooArt
 
-- App para tatuadores.
+-   App para tatuadores.
 
-- Se trata de una web donde los usuarios tienen dos roles (artista o estudio), ambos perfiles pueden crear publicaciones.
+Se trata de una red social donde los usuarios se pueden registrar con dos tipos de perfil, artista o estudio. Independientemente del tipo de perfil, cualquier usuario puede hacer publicaciones con la intención de mostrar su trabajo o sus intereses y así ponerse en contacto con los demás usuarios.
 
-- Cada publicación tiene un título, descripción, lugar y una foto asignada.
+Cada publicación consta de un título, descripción y foto o vídeo. A mayores se les puede añadir una ubicación y una categoría de publicación, es decir podrán especificar cual es la finalidad de la misma. Por ejemplo, si un estudio quiere ofertar sus instalaciones para alquilar puede indicarlo mediante estas categorías, o si un tatuador quiere mostrar su trabajo e indicar que está buscando empleo también puede hacer uso de ellas. Las publicaciones pueden ser comentadas por los demás usuarios y valoradas con likes.
 
-- Cada publicación puede ser valorada con un like.
+La app cuenta con un buscador de publicaciones donde los usuarios podrán usar filtros basados en el tipo de publicación, nombre del autor, ubicación, o contenido de la descripción. Tambien existe un buscador de usuarios que permite obtener un listado de todos ellos, o solamente de los que pertenezcan a uno de los dos roles (artista o estudio).
 
-- Cada publicación puede ser comentada por los demás usuarios registrados, independientemente de su rol.
+Los usuarios registrados disponen de una sección de ajustes donde podrán modificar la información personal que se muestra al resto de miembros de la App, además sólo ellos pueden participar en la interacción (publicar, comentar likes...). Los usuarios anónimos únicamente podrán entrar como invitados y ver el contenido de la App.
 
-- La finalidad es poner encontacto a los artistas con los estudios.
+## Instalación backend
 
-- Sólo los usuarios registrados pueden acceder a los datos de contacto de los demás usuarios e interactuar con ellos.
+-   Instalar dependencias mediante el comando **`npm install`** o **`npm i`**.
 
-## Base de datos
+-   Guardar el archivo **`.env.example`** como .**`.env`** y cubrir los datos necesarios.
 
-- **`users:`** id, email, password, username, role, avatar, personalInfo, active, registrationCode, recoverPassCode, createdAt, modifiedAt.
+-   Ejecutar **`npm run initDB`** para crear la base de datos necesaria con todas sus tablas.
 
-- **`publications:`** id, title, photoName, description, place, userId, createdAt.
+-   Ejecutar **`npm run dev`** para lanzar el servidor.
 
-- **`Likes:`** id, publicationId, userId, createdAt, modifiedAt.
+## Instalación frontend
 
-- **`Comments:`** id, text, publicationId, userId, createdAt.
+-   Instalar dependencias mediante el comando **`npm install`** o **`npm i`**.
 
-## Endpoints del usuario
+-   Ejecutar **`npm run dev`** para lanzar el cliente.
 
-- **POST** - [`/users`] - Crea un usuario pendiente de validar.
-- **PUT** - [`/users/validate/:regCode`] - Valida a un usuario recién registrado para darle acceso.
-- **POST** - [`/users/login`] - Logea a un usuario retornando un token.
-- **GET** - [`/users/:userId`] - Retorna información de un usuario concreto.
-- **GET** - [`/users/owner`] - Retorna información del usuario del token. ➡️ `Token`
-- **GET** - [`/users`] - Retorna un listado de usuarios y nos permite filtrar la búsqueda.
-- **PUT** - [`/users/avatar`] - Permite actualizar el avatar del usuario. ➡️ `Token`
-- **POST** - [`/users/password/recover`] - Envía al usuario un correo de recuperación de contraseña.
-- **PUT** - [`/users/password/recover`] - Permite actualizar la contraseña mediante la recuperación.
-- **PUT** - [`/users/password`] - Resetea la contraseña de un usuario.➡️ `Token`
-- **DELETE** - [`/users/:userId`] - Elimina a un usuario en concreto. -> `Token`
-
-## Endpoints de las publicaciones
-
-- **POST** - [`/publications`] - Crea una publicación. ➡️ `Token`
-- **GET** - [`/publications`] - Retorna un listado de publicaciones y nos permite filtrar la búsqueda.
-- **GET** - [`/publications/:publicationId`] - Retorna una publicación en concreto.
-- **POST** - [`/publications/:publicationId/likes`] - Agrega un like a una publicación. ➡️ `Token`
-- **DELETE** - [`/publications/:publicationId/likes`] - Retira un like a una publicación. ➡️ `Token`
-- **POST** - [`/publications/:publicationId/comments`] - Agrega un comentario a una publicación concreta. ➡️ `Token`
-- **DELETE** - [`/publications/:publicationId/comments/:commentId`] - Elimina un comentario en concreto. -> `Token`
-- **DELETE** - [`/publications/:publicationId`] - Eliminar una publicación propia junto con sus likes y comentarios. ➡️ `Token`
+-   Abrir en el navegador la **`URL`** con el puerto correspondiente.
