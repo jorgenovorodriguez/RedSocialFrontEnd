@@ -4,6 +4,7 @@ import Comment from '../Comment/Comment';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Publication from '../Publication/Publication';
 import './PublicationList.css';
+import Loader from '../Loader/Loader';
 
 const PublicationList = () => {
     const {
@@ -15,7 +16,7 @@ const PublicationList = () => {
     } = usePublications();
     return (
         <>
-            {loading && <p>Loading...</p>}
+            {loading && <Loader />}
             {errorMessage && <ErrorMessage message={errorMessage} />}
 
             <ul className='aa'>

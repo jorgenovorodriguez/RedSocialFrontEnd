@@ -116,6 +116,14 @@
     margin: 0.5rem 0.2rem;
 }
 
+.publication-profile video::-webkit-media-controls {
+    display: none;
+}
+
+.publication-profile video::-webkit-media-controls-enclosure {
+    display: none;
+}
+
 .profile-location {
     display: flex;
     flex-direction: row;

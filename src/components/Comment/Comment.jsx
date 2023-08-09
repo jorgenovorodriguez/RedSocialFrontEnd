@@ -20,7 +20,10 @@ const Comment = ({
                             commenterAvatar={comment.commenterAvatar}
                         />
                         <div className='comment-text'>
-                            <CommentBody text={comment.text} />
+                            <CommentBody
+                                text={comment.text}
+                                commenter={comment.commenter}
+                            />
                         </div>
                     </div>
 

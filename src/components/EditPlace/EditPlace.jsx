@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import placeEditService from '../../services/placeEditService';
-
+import Loader from '../Loader/Loader';
 
 const EditPlace = ({ token, currentPlace }) => {
     const [place, setPlace] = useState('');
@@ -41,7 +41,7 @@ const EditPlace = ({ token, currentPlace }) => {
                     <button type='submit' disabled={loading}>Guardar</button>                                           
                 
                 {message && <p>{message}</p>}
-                {loading && <p>loading...</p>}
+                {loading && <Loader />}
                 {error && <p>{error.message}</p>}
             </form>
         </div>

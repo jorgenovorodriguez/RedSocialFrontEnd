@@ -4,6 +4,7 @@ import loginService from '../../services/loginServices';
 import PropTypes from 'prop-types';
 import Logo from '../Logo/Logo';
 import Modal from '../Modal/Modal';
+import Loader from '../Loader/Loader';
 
 const LoginForm = ({ login }) => {
     const [email, setEmail] = useState('');
@@ -66,7 +67,7 @@ const LoginForm = ({ login }) => {
                     </div>
                 </div>
 
-                {loading && <p>loading...</p>}
+                {loading && <Loader />}
                 {showModal && (
                     <Modal
                         errorMessage={errorMessage}

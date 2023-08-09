@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const UserListItem = ({ user }) => {
     return (
-        <li className='userListItem'>
-            <Link to={`/users/${user.id}`}>
+        <Link to={`/users/${user.id}`}>
+            <li className='userListItem'>
                 <img
                     src={
                         user.avatar
@@ -19,8 +19,8 @@ const UserListItem = ({ user }) => {
                     <div>{user.role}</div>
                     <div>{user.place}</div>
                 </div>
-            </Link>
-        </li>
+            </li>
+        </Link>
     );
 };
 

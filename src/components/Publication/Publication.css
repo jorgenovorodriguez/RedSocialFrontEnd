@@ -19,7 +19,7 @@
     border-radius: 50%;
 }
 
-.pubavatar-container img{
+.pubavatar-container img {
     object-fit: cover;
     width: 60px;
     min-width: 1rem;
@@ -80,10 +80,9 @@
 }
 
 .photo-info h3 {
-    padding: 1rem 0;
     color: black;
     text-decoration: none;
-    margin: 1rem 1rem 0 1rem;
+    margin: 0.6rem 1rem 0 1rem;
 }
 
 .photo-info p {
@@ -91,7 +90,7 @@
     text-align: center;
     margin-bottom: 0;
 
-    margin: 1rem 1rem 0 1rem;
+    margin: 0.5rem 1rem 0 1rem;
 }
 
 .photo-info img {
@@ -142,4 +141,12 @@
     max-width: 100%;
     height: auto;
     object-fit: cover;
+}
+
+.photo-info video::-webkit-media-controls {
+    display: none;
+}
+
+.photo-info video::-webkit-media-controls-enclosure {
+    display: none;
 }

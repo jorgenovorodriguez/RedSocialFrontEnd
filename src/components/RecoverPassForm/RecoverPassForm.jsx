@@ -3,6 +3,7 @@ import Logo from '../Logo/Logo';
 import Modal from '../Modal/Modal';
 import sendRecoverPassService from '../../services/sendRecoverPassService';
 import './RecoverPassForm.css';
+import Loader from '../Loader/Loader';
 
 const RecoverPassForm = ({ setShowEditForm }) => {
     const [email, setEmail] = useState('');
@@ -50,7 +51,7 @@ const RecoverPassForm = ({ setShowEditForm }) => {
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                    {loading && <p>loading...</p>}
+                    {loading && <Loader />}
 
                     {showModal && (
                         <Modal
