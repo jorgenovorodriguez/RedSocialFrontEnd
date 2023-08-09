@@ -30,7 +30,7 @@ body {
         'main-layout'
         'footer-layout';
 
-    background-color: white;
+    background-color: var(--segundoColor);
     top: 0;
     left: 0;
 }
@@ -40,7 +40,7 @@ body {
     height: 10vh;
     width: 100vw;
     position: fixed;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     display: flex;
     justify-content: space-between;
 }
@@ -58,7 +58,7 @@ body {
     grid-area: footer-layot;
     height: 10vh;
     min-height: 0;
-    background-color: black;
+    background-color: var(--quintoColor);
     color: white;
     position: static;
     display: flex;

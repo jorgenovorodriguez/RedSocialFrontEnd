@@ -7,6 +7,7 @@ import ErrorMessage from '../../ErrorMessage/ErrorMessage';
 import commentCreateService from '../../../services/commentCreateService';
 import Avatar from '../../Avatar/Avatar';
 import Loader from '../../Loader/Loader';
+import { FaComment } from 'react-icons/Fa';
 
 const CommentForm = ({ id, onAddComment }) => {
     const { token } = useAuth();
@@ -79,7 +80,7 @@ const CommentForm = ({ id, onAddComment }) => {
                 onChange={(e) => setText(e.target.value)}
             />
             <button onClick={handleSubmitComment} disabled={loading}>
-                Enviar
+                <FaComment style={{ fontSize: '1rem' }} />
             </button>
             {loading && <Loader />}
             {errorMessage && <ErrorMessage message={errorMessage} />}

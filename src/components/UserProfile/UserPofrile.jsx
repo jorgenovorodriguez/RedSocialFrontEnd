@@ -24,42 +24,50 @@ const UserProfile = ({ user, token }) => {
     }, [token]);
     console.log(userOwner);
     return (
-        <div>
+        <div className='fullProfileCard'>
             <div className='userProfile-card'>
-                <div className='headerProfile'>
-                    <div className='avatarProfile'>
-                        <Avatar avatar={user.avatar} username={user.username} />
-                    </div>
-                    <div className='role'>
-                        <div className='role-role'>{user.role}</div>
-                    </div>
-                    <div className='settingsDiv'>
-                        {user.userId === userOwner.userId && (
-                            <NavLink className='settings-button' to='/settings'>
-                                <MdSettings
-                                    style={{ color: 'black', fontSize: '2rem' }}
-                                />
-                            </NavLink>
-                        )}
-                    </div>
+                <div className='avatarProfile'>
+                    <Avatar avatar={user.avatar} username={user.username} />
                 </div>
-                <div className='userName'>
-                    <h2>@{user.username}</h2>
-                    <div className='profile-location'>
-                        <FaLocationDot />
-                        <p>{user.place}</p>
+                <div className='headerProfile2'>
+                    <div className='headerProfile'>
+                        <div className='role'>
+                            <div className='role-role'>{user.role}</div>
+                        </div>
+                        <div className='settingsDiv'>
+                            {user.userId === userOwner.userId && (
+                                <NavLink
+                                    className='settings-button'
+                                    to='/settings'
+                                >
+                                    <MdSettings
+                                        style={{
+                                            color: 'black',
+                                            fontSize: '2rem',
+                                        }}
+                                    />
+                                </NavLink>
+                            )}
+                        </div>
                     </div>
-                </div>
+                    <div className='userName'>
+                        <h2>{user.username}</h2>
+                        <div className='profile-location'>
+                            <FaLocationDot />
+                            <p>{user.place}</p>
+                        </div>
+                    </div>
 
-                <div className='userPersonalInfo'>
-                    <p>{user.personalInfo}</p>
+                    <div className='userPersonalInfo'>
+                        <p>{user.personalInfo}</p>
+                    </div>
                 </div>
             </div>
             <div className='publication-profile'>
                 {Array.isArray(user?.publications) ? (
                     <UserProfilePublications publications={user.publications} />
                 ) : (
-                    <p>No hay publicationes</p>
+                    <p></p>
                 )}
             </div>
         </div>

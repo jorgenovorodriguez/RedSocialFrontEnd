@@ -1,4 +1,12 @@
 .publication-location {
     display: flex;
     flex-direction: row;
+    /* justify-content: center; */
+    align-content: space-around;
+    align-items: baseline;
+}
+
+.publication-location p {
+    color: rgba(58, 58, 205, 0.842);
+    margin-left: 0.3rem;
 }

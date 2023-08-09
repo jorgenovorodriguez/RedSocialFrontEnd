@@ -10,23 +10,26 @@ const PublicationHeader = ({ username, createdAt, place, avatar }) => {
                 <Avatar avatar={avatar} username={username} />
             </div>
             <div className='header-username'>
-                <p>{username}</p>
-
-                <time>
-                    {new Date(createdAt).toLocaleDateString('es-ES', {
-                        hour: '2-digit',
-                        minute: '2-digit',
-                        day: '2-digit',
-                        month: '2-digit',
-                        year: '2-digit',
-                    })}
-                </time>
-                {place && (
-                    <div className='publication-location'>
-                        <FaLocationDot />
-                        <p>{place}</p>
-                    </div>
-                )}
+                <p className='user-name'>{username}</p>
+                <div>
+                    <time>
+                        {new Date(createdAt).toLocaleDateString('es-ES', {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            day: '2-digit',
+                            month: '2-digit',
+                            year: '2-digit',
+                        })}
+                    </time>
+                </div>
+                <div className='location2'>
+                    {place && (
+                        <div className='publication-location'>
+                            <FaLocationDot />
+                            <p>{place}</p>
+                        </div>
+                    )}
+                </div>
             </div>
         </header>
     );

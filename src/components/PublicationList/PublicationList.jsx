@@ -41,10 +41,7 @@ const PublicationList = () => {
                                                 .reverse()}
                                         />
                                     ) : (
-                                        <p className='pub-p'>
-                                            ¿No hay comentarios? Anímate, haz el
-                                            primero
-                                        </p>
+                                        <p className='pub-p'></p>
                                     )}
                                 </Link>
                             </div>

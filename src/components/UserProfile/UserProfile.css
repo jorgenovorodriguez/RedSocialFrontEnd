@@ -8,7 +8,7 @@
     min-height: 1rem;
     width: 22rem;
     min-width: 1rem;
-    background-color: #d8d8d8ba;
+    background-color: var(--primerColor);
     border-radius: 1rem 1rem 0 0;
     position: relative;
 }
@@ -42,14 +42,18 @@
 }
 .userPersonalInfo {
     padding-top: 2rem;
-    text-align: left;
+    text-align: center;
     color: rgb(0, 0, 0);
-    padding-left: 1rem;
+
+    width: 22rem;
+    min-width: 1rem;
 }
 
 .userPersonalInfo p {
     word-wrap: break-word;
     white-space: pre-line;
+    margin: 0 1rem 0 1rem;
+    height: auto;
 }
 
 .role {
@@ -93,11 +97,14 @@
     justify-content: start;
     margin: 0 auto;
     flex-direction: row-reverse;
+    padding-left: 0;
+    width: 22rem;
+    max-width: 22rem;
 }
 .publication-profile img {
-    width: 110px;
-    height: 110px;
-    margin: 0.5rem 0.2rem;
+    width: 114px;
+    height: 114px;
+    margin: 0.1rem 0.1rem;
 }
 
 .settings-button {
@@ -115,4 +122,18 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+}
+
+.profile-location svg {
+    height: 1.4rem;
+}
+.profile-location p {
+    font-size: 1.1rem;
+    margin-left: 0.2rem;
+    margin-bottom: 0;
+}
+
+.headerProfile2 {
+    height: 15rem;
 }

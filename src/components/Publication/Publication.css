@@ -38,7 +38,7 @@
     align-items: center;
     padding-left: 1rem;
     list-style-type: none;
-    background-color: rgb(232, 231, 231);
+    background-color: var(--primerColor);
     border-radius: 1.5rem 1.5rem 0 0;
     margin-top: 2rem;
     height: 6rem;
@@ -48,25 +48,27 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 2rem 1rem 1rem 1rem;
-    color: black;
+    margin: 1.5rem 1rem 1rem 1rem;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 16px;
 }
 
 .header-username :nth-child(1) {
     color: rgb(0, 0, 0);
-    font-weight: 600;
+
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 0;
 }
-.header-username :nth-child(2) {
+.header-username time {
     color: black;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-.header-username :nth-child(3) {
-    color: rgba(33, 103, 200, 0.851);
-    font-family: Arial, Helvetica, sans-serif;
+.location2 {
+    height: 2rem;
 }
 
 .photo-info {
@@ -74,23 +76,29 @@
     height: auto;
     margin: 0 auto;
     text-align: center;
-    background-color: rgb(232, 231, 231);
+
     word-wrap: break-word;
     white-space: pre-line;
 }
 
 .photo-info h3 {
-    color: black;
+    color: var(--quintoColor);
+    background-color: var(--primerColor);
     text-decoration: none;
-    margin: 0.6rem 1rem 0 1rem;
+    padding-top: 0.6rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0;
 }
 
 .photo-info p {
-    color: black;
+    color: var(--quintoColor);
+    background-color: var(--primerColor);
     text-align: center;
     margin-bottom: 0;
-
-    margin: 0.5rem 1rem 0 1rem;
+    padding: 0.6rem;
+    font-size: 1rem;
+    font-weight: 300;
 }
 
 .photo-info img {
@@ -104,20 +112,18 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem;
-    background-color: rgb(232, 231, 231);
+    background-color: var(--primerColor);
     border-radius: 0 auto 1.5rem 1.5rem;
     margin-bottom: 1rem;
 }
 
 .heart {
-    background-color: rgb(255, 255, 255);
     width: 4rem;
     border-radius: 0.3rem;
     border: none;
 }
 
 .delete-button {
-    background-color: rgba(255, 255, 255, 0);
     width: 2rem;
     border-radius: 0.3rem;
     border: none;
