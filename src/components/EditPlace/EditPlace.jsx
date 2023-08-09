@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import placeEditService from '../../services/placeEditService';
-import { FaSave } from 'react-icons/fa';
 import Loader from '../Loader/Loader';
 
 const EditPlace = ({ token, currentPlace }) => {
@@ -28,11 +27,10 @@ const EditPlace = ({ token, currentPlace }) => {
     return (
         <div className='edit-placeInfo'>
             <form onSubmit={handleSubmitPlace}>
-                <div className='container-form-place'>
-                    <label htmlFor='places' />
-                    <input
+                <label htmlFor='place'></label> 
+                     <input
                         type='text'
-                        name='places'
+                        name='place'
                         id='place'
                         onChange={(e) => setPlace(e.target.value)}
                         required
@@ -40,10 +38,8 @@ const EditPlace = ({ token, currentPlace }) => {
                             currentPlace ? currentPlace : 'Editar ubicación'
                         }
                     />
-                    <button type='submit' disabled={loading}>
-                        <FaSave style={{ fontSize: '1.5rem' }} />
-                    </button>
-                </div>
+                    <button type='submit' disabled={loading}>Guardar</button>                                           
+                
                 {message && <p>{message}</p>}
                 {loading && <Loader />}
                 {error && <p>{error.message}</p>}
@@ -54,4 +50,4 @@ const EditPlace = ({ token, currentPlace }) => {
 
 export default EditPlace;
 
-//NO ELIMINAR EL DIV QUE HAY DEBAJO DEL BUTTON DE GUARDAR PLACE SI NO NO FUNCIONA
+

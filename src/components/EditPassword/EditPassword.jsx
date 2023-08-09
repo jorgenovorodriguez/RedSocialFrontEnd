@@ -81,7 +81,7 @@ const EditPassword = ({ token }) => {
                         />
                     </div>
                     <div className='edit-actualizar'>
-                        <button>Guardar</button>
+                        <button>Modificar contraseña</button>
 
                         {loading && <Loader />}
 

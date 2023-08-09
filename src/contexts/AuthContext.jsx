@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import { createContext, useEffect, useState } from 'react';
+import {useNavigate} from 'react-router-dom'
 
 import userService from '../services/userServices.js';
 
 const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
+    const navigate = useNavigate();
     const [token, setToken] = useState(localStorage.getItem('token'));
     const [user, setUser] = useState(null);
 
@@ -33,6 +35,7 @@ const AuthProvider = ({ children }) => {
 
         setToken(null);
         setUser(null);
+        navigate('/login');
     };
 
     return (

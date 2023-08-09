@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import Avatar from '../../components/Avatar/Avatar';
 import EditAvata from '../../components/EditAvata/EditAvata';
 import EditPassword from '../../components/EditPassword/EditPassword';
-import './SettingsPage.css';
+
 import useAuth from '../../hooks/useAuth';
 import onwerUserService from '../../services/onwerUserService';
 import EditPersonalInfo from '../../components/EditPersonalInfo/EditPersonalInfo';
 import EditPlace from '../../components/EditPlace/EditPlace';
 import Footer from '../../components/Footer/Footer';
+
+import './SettingsPage.css';
 
 const SettingsPage = () => {
     const { token } = useAuth();
