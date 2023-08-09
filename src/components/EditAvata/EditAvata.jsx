@@ -26,7 +26,7 @@ const EditAvata = ({ token }) => {
                     onChange={(e) => setAvatar(e.target.files[0])}
                     required
                 />
-                <button type='submit'>Cambiar</button>
+                <button type='submit'>Guardar</button>
             </form>
         </div>
     );

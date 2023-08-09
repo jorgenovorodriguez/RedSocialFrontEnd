@@ -44,7 +44,6 @@
     padding-top: 2rem;
     text-align: center;
     color: rgb(0, 0, 0);
-
     width: 22rem;
     min-width: 1rem;
 }
@@ -54,6 +53,7 @@
     white-space: pre-line;
     margin: 0 1rem 0 1rem;
     height: auto;
+
 }
 
 .role {
@@ -116,6 +116,14 @@
     width: 110px;
     height: 110px;
     margin: 0.5rem 0.2rem;
+}
+
+.publication-profile video::-webkit-media-controls {
+    display: none;
+}
+
+.publication-profile video::-webkit-media-controls-enclosure {
+    display: none;
 }
 
 .profile-location {

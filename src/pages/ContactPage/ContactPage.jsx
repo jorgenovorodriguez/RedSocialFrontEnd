@@ -2,7 +2,7 @@ import Contact from '../../components/Contact/Contact';
 
 const ContactPage = () => {
     return (
-        <div>
+        <div className='intro'>
             <main className='main-layout'>
                 <Contact />
             </main>

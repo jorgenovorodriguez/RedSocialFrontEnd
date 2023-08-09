@@ -1,0 +1,19 @@
+.contact-title{
+    text-align: center;
+    margin-top: 5rem;
+    color: white;
+    margin-bottom: -2rem;
+}
+
+.contact-h3{
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.contact-info{
+    text-align: center;
+    padding: 0rem 1rem;
+    font-size: 0.9rem;
+    color: blue;
+}
