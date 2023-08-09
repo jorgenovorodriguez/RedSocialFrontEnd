@@ -42,14 +42,19 @@
 }
 .userPersonalInfo {
     padding-top: 2rem;
-    text-align: left;
     color: rgb(0, 0, 0);
-    padding-left: 1rem;
+    text-align: center;
+    /*ajuste al userprofile card para que texto no se salga*/
+    width: 22rem;
+    min-width: 1rem;
+    
 }
 
 .userPersonalInfo p {
     word-wrap: break-word;
     white-space: pre-line;
+    /* ajuste p dentro de card*/
+    margin:0 1rem 0 1rem;
 }
 
 .role {

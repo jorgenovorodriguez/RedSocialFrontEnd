@@ -45,135 +45,88 @@
 
 }
 
-.settings-form {
+.seetings-form{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/*personal info*/
 .edit-personalInfo {
     display: flex;
     flex-direction: column;
-    width: 95%;
+    width: 100%;
+    align-items: center;
+    
 }
 .edit-personalInfo button {
     border-radius: 0.5rem;
-    width: 10%;
+    width: 5rem;
     align-self: flex-end;
-    margin-top: 0.3rem;
+    margin-top: 0.8rem;
     border: none;
+    margin-bottom: 0.5rem;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);;
 }
 .edit-personalInfo textarea {
     border-radius: 0.5rem;
-    width: 10rem;
-    border: none;
-    height: 2.6rem;
-}
-*/
-.edit-personalInfo {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.container-form-info {
-    display: flex;
-}
-
-.edit-personalInfo textarea {
-    border-radius: 0.5rem 0 0 0.5rem;
     max-width: 100%;
-    width: 100%;
-    border: 1px solid rgb(255, 255, 255);
-    padding: 0.5rem;
-    padding-right: 0.3rem;
-    outline: none;
-}
-.edit-personalInfo button {
-    background-color: rgb(182, 182, 182);
-    padding: 0.5rem;
-    border: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    border-radius: 0 0.5rem 0.5rem 0;
-    cursor: pointer;
-    width: 25%;
+    width: 18rem;
+    border: none;
+    align-self: center;
+    height:5rem;
+    text-align: center;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);;
 }
 
 /*edit place*/
 
 .edit-place {
-    margin: 1rem 0 1rem 0;
-    width: 95%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.container-form-place {
-    display: flex;
-}
-
-.edit-place input {
-    border-radius: 0.5rem 0 0 0.5rem;
-    max-width: 100%;
-    width: 100%;
-
-    border: 1px solid rgb(255, 255, 255);
-    padding: 0.5rem;
-    padding-right: 0.3rem;
-    outline: none;
-}
-.edit-place button {
-    background-color: rgb(182, 182, 182);
-    padding: 0.5rem;
-    border: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    border-radius: 0 0.5rem 0.5rem 0;
-    cursor: pointer;
-    width: 25%;
-}
-
-.edit-place {
     display: flex;
     flex-direction: column;
-    width: 95%;
-    margin-bottom: -1rem;
+    width: 100%;
+    align-items: center;
+    
 }
 .edit-place button {
     border-radius: 0.5rem;
-    width: 10%;
+    width: 5rem;
     align-self: flex-end;
-    margin-top: 0.25rem;
+    margin-top: 0.8rem;
     border: none;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);;
 }
 .edit-place input {
     border-radius: 0.5rem;
     max-width: 100%;
-    width: 100%;
+    width: 18rem;
     border: none;
+    text-align: center;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);;
 }
-*/
 
 /*edit avatar*/
 
-.edit-Avata input {
+.edit-Avata{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem; 
 }
 
-.edit-Avata button {
+.edit-Avata button{
     border-radius: 0.5rem;
-    width: 25%;
+    width: 5rem;
     align-self: flex-end;
-    margin-top: 0.25rem;
+    margin-top: 0.3rem;
     border: none;
+    margin-right: 0.7rem;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);;
 }
+.edit-Avata label,.edit-Avata input{
+    margin-left: 0.5rem;
+}
+
 /*edit password*/
 
 .edit-pass {
@@ -184,9 +137,16 @@
 }
 .edit-pass input {
     border-radius: 0.5rem;
-    width: 50%;
-    margin-left: 0.5rem;
+    width: 95%;
     border: none;
+    text-align: center;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);;
+    
+}
+
+.edit-pass label{
+    margin-left: 0.8rem;
+    
 }
 
 .edit-actualizar {
@@ -199,29 +159,33 @@
     margin-top: 0.25rem;
     border: none;
     text-align: center;
-    width: 5rem;
+    width: 10rem;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);;
 }
 
 .edit-currentpass {
     display: flex;
     flex-direction: row;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    
 }
-.edit-currentpass input {
-    margin-left: 0.7rem;
-}
+
 .edit-newpass {
     display: flex;
     flex-direction: row;
-    margin-bottom: 0.25rem;
-}
+    margin-bottom: 0.5rem;
 
-.edit-newpass input {
-    margin-left: 0.7rem;
 }
 
 .edit-repeatpass {
     display: flex;
     flex-direction: row;
     margin-bottom: 0.25rem;
+    
 }
+
+    
+
+    
+

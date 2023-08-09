@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import personalInfoEditService from '../../services/personalInfoEditService';
-import { FaSave } from 'react-icons/fa';
+
 
 const EditPersonalInfo = ({ token, currentPersonalInfo }) => {
     const [personalInfo, setPersonalInfo] = useState('');
@@ -23,9 +23,9 @@ const EditPersonalInfo = ({ token, currentPersonalInfo }) => {
     };
 
     return (
-        <div className='edit-personalInfo'>
+        <div>
             <form onSubmit={handleSubmitUser}>
-                <div className='container-form-info'>
+                
                     <label htmlFor='user' />
                     <textarea
                         type='text'
@@ -39,12 +39,10 @@ const EditPersonalInfo = ({ token, currentPersonalInfo }) => {
                                 : 'Editar información personal'
                         }
                     />
-                    <button type='submit'>
-                        <FaSave style={{ fontSize: '1.5rem' }} />
-                    </button>
+                    <button type='submit'>Guardar</button>                                     
                     {message && <p>{message}</p>}
                     {error && <p>{error.message}</p>}
-                </div>
+                
             </form>
         </div>
     );
