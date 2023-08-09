@@ -176,13 +176,24 @@ const PublicationCreateForm = ({ token }) => {
                     </div>
 
                     {showResult ? (
-                        <div>
-                            <FaLocationDot />
+                        <div className='ubication-pub'>
+                            <FaLocationDot
+                                style={{
+                                    fontSize: '1rem',
+                                    marginRight: '0.2rem',
+                                    paddingLeft: '0.3rem',
+                                }}
+                            />
                             <p>{place}</p>
                         </div>
                     ) : (
                         <div className='ubication-pub' onClick={getPlace}>
-                            <MdAddLocationAlt />
+                            <MdAddLocationAlt
+                                style={{
+                                    fontSize: '1.3rem',
+                                    paddingLeft: '0.2rem',
+                                }}
+                            />
                             <p>Ubicación</p>
                         </div>
                     )}

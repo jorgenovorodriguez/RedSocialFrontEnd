@@ -5,7 +5,7 @@
     width: 20rem;
     min-height: 1rem;
     min-width: 1rem;
-    background-color: #d6d6d6ba;
+    background-color: var(--primerColor);
     border-radius: 0 0 1rem 1rem;
 }
 
@@ -22,9 +22,9 @@
 .ubication-pub {
     display: flex;
     flex-direction: row;
-    background-color: rgb(213, 213, 213);
-    width: 6rem;
-    border: 1px solid rgba(0, 0, 0, 0);
+    background-color: var(--tercerColor);
+    width: 7rem;
+    align-items: center;
     border-radius: 1rem;
 }
 .titleForm {
@@ -32,6 +32,7 @@
     width: 9rem;
     border-radius: 1rem;
     border: none;
+    background-color: var(--tercerColor);
 }
 
 .publicationForm textarea {
@@ -40,6 +41,7 @@
     height: 5rem;
     max-height: 5rem;
     border: none;
+    background-color: var(--tercerColor);
 }
 
 .text-area-field {
@@ -47,7 +49,7 @@
 }
 
 .buttonPublication {
-    background-color: white;
+    background-color: var(--tercerColor);
     border: none;
     width: 6rem;
     border-radius: 1rem;

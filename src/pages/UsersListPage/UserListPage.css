@@ -1,12 +1,12 @@
 .userList {
-    margin-top: 2remrem;
+    margin-top: 2rem;
 }
 .userListItem {
     display: flex;
     align-items: center;
     padding-left: 1rem;
     list-style-type: none;
-    background-color: rgb(232, 231, 231);
+    background-color: var(--primerColor);
     border-radius: 1.5rem;
     margin-bottom: 0.7rem;
     margin-right: 2rem;
@@ -35,7 +35,7 @@
     color: #3c8dbc;
 }
 .userInfoList :nth-child(1) {
-    color: rgb(0, 0, 0);
+    color: var(--quintoColor);
     font-weight: 600;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
@@ -62,8 +62,9 @@
     background-color: rgb(182, 182, 182);
     border-radius: 0.5rem 0 0 0.5rem;
     width: auto;
-    width: 18rem;
-    border: 1px solid rgb(255, 255, 255);
+    min-width: 20rem;
+    border: 1px solid var(--tercerColor);
+
     padding: 0.5rem;
     padding-right: 0.3rem;
     outline: none;
