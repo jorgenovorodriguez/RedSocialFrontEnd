@@ -31,9 +31,7 @@ const SettingsPage = () => {
             <main className='main-layout'>
                 <div className='settings-card'>
                     <h2>Ajustes</h2>
-                    <div className='edit-Avata'>
-                        <EditAvata token={token} />
-                    </div>
+
                     <div className='avatar-settings'>
                         <Avatar avatar={user.avatar} username={user.username} />
                     </div>
@@ -50,6 +48,9 @@ const SettingsPage = () => {
                                 token={token}
                                 currentPlace={user.place}
                             />
+                        </div>
+                        <div className='edit-Avata'>
+                            <EditAvata token={token} />
                         </div>
 
                         <div className='edit-pass'>
