@@ -145,6 +145,11 @@ form {
     text-decoration: none;
 }
 
+.first-user {
+    display: flex;
+    justify-content: center;
+}
+
 .avatar-image img {
     width: 8rem;
     height: 8rem;

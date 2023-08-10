@@ -12,10 +12,11 @@ const UserList = () => {
                         return <UserListItem key={user.id} user={user} />;
                     })
                 ) : (
-                    <li>
-                        Todavía no hay usuarios registrados, enhorabuena por ser
-                        el primero.
-                    </li>
+                    <div className='first-user'>
+                        <li>
+                            Aún no hay usuarios. ¡Regístrate y sé el primero!
+                        </li>
+                    </div>
                 )}
             </ul>
         </div>

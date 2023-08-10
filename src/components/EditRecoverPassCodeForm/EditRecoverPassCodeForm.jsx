@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Modal from '../Modal/Modal';
+import ErrorModal from '../Modals/ErrorModal/ErrorModal';
 import editRecoverPassCodeService from '../../services/EditRecoverPassCodeService';
 import Loader from '../Loader/Loader';
 
@@ -103,7 +103,7 @@ const EditRecoverPassCodeForm = () => {
                     {loading && <Loader />}
 
                     {showModal && (
-                        <Modal
+                        <ErrorModal
                             errorMessage={errorMessage}
                             onClose={handleCloseModal}
                         />

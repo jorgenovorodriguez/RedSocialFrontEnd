@@ -1,9 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FaSearch } from 'react-icons/fa';
 
 const SearchForm = ({ searchParams, setSearchParams, loading }) => {
     const [keyword, setKeyword] = useState(searchParams.get('keyword') || '');
+    const buscadorRef = useRef(null);
+
+    useEffect(() => {
+        if (buscadorRef.current) {
+            buscadorRef.current.focus();
+        }
+    }, []);
 
     return (
         <div className='searchForm'>
@@ -15,6 +22,7 @@ const SearchForm = ({ searchParams, setSearchParams, loading }) => {
                 }}
             >
                 <input
+                    ref={buscadorRef}
                     placeholder='Buscar'
                     type='search'
                     value={keyword}

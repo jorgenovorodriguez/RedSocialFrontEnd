@@ -1,48 +1,63 @@
 import { useState } from 'react';
 import personalInfoEditService from '../../services/personalInfoEditService';
-
+import ErrorModal from '../Modals/ErrorModal/ErrorModal';
+import Loader from '../Loader/Loader';
 
 const EditPersonalInfo = ({ token, currentPersonalInfo }) => {
     const [personalInfo, setPersonalInfo] = useState('');
-    const [error, setError] = useState(null);
-    const [message, setMessage] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
+    const handleCloseModal = (e) => {
+        e.preventDefault();
+        setShowModal(false);
+    };
 
     const handleSubmitUser = async (e) => {
-        e.preventDefault();
         try {
+            e.preventDefault();
+
+            setLoading(true);
+
             await personalInfoEditService(personalInfo, token);
 
             window.location.reload();
 
             setPersonalInfo('');
-
-            setMessage('Información cambiada correctamente');
         } catch (error) {
-            setError(error);
+            setErrorMessage(error.message);
+            setShowModal(true);
+        } finally {
+            setLoading(false);
         }
     };
 
     return (
         <div>
             <form onSubmit={handleSubmitUser}>
-                
-                    <label htmlFor='user' />
-                    <textarea
-                        type='text'
-                        name='personalInfo'
-                        id='personalInfo'
-                        onChange={(e) => setPersonalInfo(e.target.value)}
-                        required
-                        placeholder={
-                            currentPersonalInfo
-                                ? currentPersonalInfo
-                                : 'Editar información personal'
-                        }
+                <label htmlFor='user' />
+                <textarea
+                    type='text'
+                    name='personalInfo'
+                    id='personalInfo'
+                    onChange={(e) => setPersonalInfo(e.target.value)}
+                    required
+                    placeholder={
+                        currentPersonalInfo
+                            ? currentPersonalInfo
+                            : 'Añadir información personal'
+                    }
+                />
+                <button type='submit'>Guardar</button>
+
+                {loading && <Loader />}
+                {showModal && (
+                    <ErrorModal
+                        errorMessage={errorMessage}
+                        onClose={handleCloseModal}
                     />
-                    <button type='submit'>Guardar</button>                                     
-                    {message && <p>{message}</p>}
-                    {error && <p>{error.message}</p>}
-                
+                )}
             </form>
         </div>
     );

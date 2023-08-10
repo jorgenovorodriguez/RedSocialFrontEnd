@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Modal from '../Modal/Modal';
+import ErrorModal from '../Modals/ErrorModal/ErrorModal';
 import registerService from '../../services/registerServices';
 import { useNavigate, NavLink } from 'react-router-dom';
 import Logo from '../Logo/Logo';
@@ -146,7 +146,7 @@ const RegisterForm = () => {
                 {loading && <Loader />}
 
                 {showModal && (
-                    <Modal
+                    <ErrorModal
                         errorMessage={errorMessage}
                         onClose={handleCloseModal}
                     />
