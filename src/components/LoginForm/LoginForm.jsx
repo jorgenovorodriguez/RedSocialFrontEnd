@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import loginService from '../../services/loginServices';
 import PropTypes from 'prop-types';
 import Logo from '../Logo/Logo';
-import Modal from '../Modal/Modal';
+import ErrorModal from '../Modals/ErrorModal/ErrorModal';
 import Loader from '../Loader/Loader';
 
 const LoginForm = ({ login }) => {
@@ -69,7 +69,7 @@ const LoginForm = ({ login }) => {
 
                 {loading && <Loader />}
                 {showModal && (
-                    <Modal
+                    <ErrorModal
                         errorMessage={errorMessage}
                         onClose={handleCloseModal}
                     />

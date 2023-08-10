@@ -3,6 +3,8 @@ import useAuth from '../../../hooks/useAuth';
 import { MdDelete } from 'react-icons/md';
 import { AiFillHeart } from 'react-icons/ai';
 import { useNavigate } from 'react-router';
+import DeleteConfirmationModal from '../../Modals/DeleteConfirmationModal/DeleteConfirmationModal';
+import { useState } from 'react';
 
 const PublicationFooter = ({
     publicationId,
@@ -15,6 +17,7 @@ const PublicationFooter = ({
 }) => {
     const { token } = useAuth();
     const navigate = useNavigate();
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
 
     const handleLike = async (e) => {
         try {
@@ -27,16 +30,17 @@ const PublicationFooter = ({
     };
 
     const handleDeletePublication = async () => {
+        setShowDeleteModal(true);
+    };
+
+    const handleConfirmDelete = async () => {
         try {
-            if (confirm('¿Deseas eliminar la publicacion?')) {
-                deletePublication(publicationId);
-                navigate('/home');
-            }
+            deletePublication(publicationId);
+            navigate('/home');
         } catch (error) {
             alert(error.message);
         }
     };
-
     return (
         <footer className='footer-like'>
             <div className='toogle-like'>
@@ -62,6 +66,13 @@ const PublicationFooter = ({
                 >
                     <MdDelete style={{ fontSize: '2rem' }} />
                 </div>
+            )}
+            {showDeleteModal && (
+                <DeleteConfirmationModal
+                    objetive='esta publicación'
+                    onConfirm={handleConfirmDelete}
+                    onClose={() => setShowDeleteModal(false)}
+                />
             )}
         </footer>
     );

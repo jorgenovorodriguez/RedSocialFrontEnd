@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import validatePasswordService from '../../services/validatePasswordService';
 import Loader from '../Loader/Loader';
-import Modal from '../Modal/Modal';
+import ErrorModal from '../Modals/ErrorModal/ErrorModal';
 
 const EditPassword = ({ token }) => {
     const [currentPass, setCurrentPass] = useState('');
@@ -96,7 +96,7 @@ const EditPassword = ({ token }) => {
                         {loading && <Loader />}
 
                         {showModal && (
-                            <Modal
+                            <ErrorModal
                                 errorMessage={errorMessage}
                                 onClose={handleCloseModal}
                             />
