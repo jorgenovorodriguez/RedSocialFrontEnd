@@ -60,6 +60,9 @@
     height: 16px;
     width: 79px;
 }
+.role-role{
+    text-align: center;
+}
 
 .label .role {
     color: #000000;
