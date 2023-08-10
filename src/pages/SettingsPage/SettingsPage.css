@@ -1,14 +1,14 @@
 .settings-card {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+
     margin: auto;
     border: 0px none;
-    /* height: auto; */
+
     min-height: 1rem;
     max-width: 20rem;
     min-width: 1rem;
-    background-color: #d8d8d8ba;
+    background-color: var(--primerColor);
     border-radius: 1rem;
     position: relative;
     margin-top: 6rem;
@@ -76,6 +76,7 @@
     height: 5rem;
     text-align: center;
     box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);
+    background-color: var(--tercerColor);
 }
 
 /*edit place*/
@@ -101,6 +102,7 @@
     border: none;
     text-align: center;
     box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);
+    background-color: var(--tercerColor);
 }
 
 /*edit avatar*/
@@ -140,6 +142,7 @@
     border: none;
     text-align: center;
     box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);
+    background-color: var(--tercerColor);
 }
 
 .edit-pass label {
@@ -163,18 +166,18 @@
 .edit-currentpass {
     display: flex;
     flex-direction: row;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
     margin-top: 0.5rem;
 }
 
 .edit-newpass {
     display: flex;
     flex-direction: row;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.7rem;
 }
 
 .edit-repeatpass {
     display: flex;
     flex-direction: row;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
 }
