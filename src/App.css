@@ -178,6 +178,9 @@ a {
     padding: 0.7rem 0 0 0;
     background-color: white;
     border-radius: 0 0 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .li {
@@ -243,8 +246,12 @@ a {
 .comment-header {
     width: 12rem;
     height: 3.6rem;
-    display: flex;
     flex-direction: row;
+    width: 12rem;
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .comment-content {
@@ -263,13 +270,14 @@ a {
 }
 
 .comment-text {
-    display: flex;
-    width: 8rem;
-    font-size: 0.8rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 0.4rem;
-    margin-left: 0.7rem;
+   
+        width: 8rem;
+        font-size: 0.8rem;
+        white-space: pre-wrap; 
+        word-break: break-word; 
+        overflow: hidden;
+    
+    
 }
 
 .comment-text p {
@@ -308,4 +316,5 @@ a {
     margin: 0 auto;
     overflow: hidden;
     border-radius: 0 0 2rem 2rem;
+    padding-bottom: 2rem;
 }
