@@ -1,4 +1,5 @@
 import defaultAvatar from '../../assets/images/defaultAvatar.jpg';
+import PropTypes from 'prop-types';
 
 const Avatar = ({ avatar, username }) => {
     return (
@@ -9,6 +10,11 @@ const Avatar = ({ avatar, username }) => {
             />
         </div>
     );
+};
+
+Avatar.propTypes = {
+    avatar: PropTypes.any,
+    username: PropTypes.string,
 };
 
 export default Avatar;

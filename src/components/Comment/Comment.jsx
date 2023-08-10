@@ -2,13 +2,13 @@ import CommentHeader from './CommentHeader/CommentHeader';
 import CommentBody from './CommentBody/CommentBody';
 import './comment.css';
 import DeleteComment from '../DeleteComment/DeleteComment';
+import PropTypes from 'prop-types';
 
 const Comment = ({
     comments,
     deleteComment,
     publicationId,
     publicationOwner,
-    token,
 }) => {
     return (
         <ul className='ul'>
@@ -40,6 +40,13 @@ const Comment = ({
             ))}
         </ul>
     );
+};
+
+Comment.propTypes = {
+    comments: PropTypes.object,
+    deleteComment: PropTypes.func,
+    publicationId: PropTypes.number,
+    publicationOwner: PropTypes.number,
 };
 
 export default Comment;

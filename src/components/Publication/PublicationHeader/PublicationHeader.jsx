@@ -39,6 +39,7 @@ PublicationHeader.propTypes = {
     username: PropTypes.string,
     createdAt: PropTypes.string,
     place: PropTypes.string,
+    avatar: PropTypes.any,
 };
 
 export default PublicationHeader;

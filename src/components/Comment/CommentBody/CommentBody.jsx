@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const CommentBody = ({ commenter, text }) => {
     return (
         <>
@@ -5,6 +7,11 @@ const CommentBody = ({ commenter, text }) => {
             <p>{text}</p>
         </>
     );
+};
+
+CommentBody.propTypes = {
+    commenter: PropTypes.string,
+    text: PropTypes.string,
 };
 
 export default CommentBody;

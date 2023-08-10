@@ -5,6 +5,7 @@ import commentCreateService from '../../../services/commentCreateService';
 import Avatar from '../../Avatar/Avatar';
 import Loader from '../../Loader/Loader';
 import { FaComment } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 import ErrorModal from '../../Modals/ErrorModal/ErrorModal';
 
 const CommentForm = ({ id, onAddComment }) => {
@@ -87,6 +88,11 @@ const CommentForm = ({ id, onAddComment }) => {
             )}
         </>
     );
+};
+
+CommentForm.propTypes = {
+    id: PropTypes.number,
+    onAddComment: PropTypes.func,
 };
 
 export default CommentForm;
