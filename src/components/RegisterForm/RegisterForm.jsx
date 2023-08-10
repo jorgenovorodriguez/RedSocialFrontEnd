@@ -57,8 +57,8 @@ const RegisterForm = () => {
 
     return (
         <div className='reg-card'>
-            <div className='logo-container'>
-                <div className='logo-image'>
+            <div className='reglogo-container'>
+                <div className='reglogo-image'>
                     <Logo />
                 </div>
             </div>

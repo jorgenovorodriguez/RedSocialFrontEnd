@@ -34,8 +34,8 @@ const RecoverPassForm = ({ setShowEditForm }) => {
 
     return (
         <div className='recover-card'>
-            <div className='logo-container'>
-                <div className='logo-image'>
+            <div className='reclogo-container'>
+                <div className='reclogo-image'>
                     <Logo />
                 </div>
             </div>

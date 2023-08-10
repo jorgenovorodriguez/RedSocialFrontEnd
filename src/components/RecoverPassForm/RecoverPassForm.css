@@ -16,6 +16,30 @@
     top: 100px;
 }
 
+.reclogo-container img {
+    background-color: white;
+    border-radius: 50%;
+    min-height: 1rem;
+    min-width: 1rem;
+    width: 8rem;
+    height: 8rem;
+}
+
+.reclogo-container {
+    display: flex;
+    flex-direction: column;
+    width: 8rem;
+    min-height: 0.5rem;
+    height: 8rem;
+    min-width: 0.5rem;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 87%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
 .imputRecover {
     display: flex;
     flex-direction: column;

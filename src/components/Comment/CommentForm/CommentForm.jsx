@@ -7,7 +7,7 @@ import ErrorMessage from '../../ErrorMessage/ErrorMessage';
 import commentCreateService from '../../../services/commentCreateService';
 import Avatar from '../../Avatar/Avatar';
 import Loader from '../../Loader/Loader';
-import { FaComment } from 'react-icons/Fa';
+import { FaComment } from 'react-icons/fa';
 
 const CommentForm = ({ id, onAddComment }) => {
     const { token } = useAuth();

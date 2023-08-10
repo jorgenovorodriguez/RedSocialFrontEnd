@@ -31,7 +31,7 @@ const SettingsPage = () => {
         <>
             <main className='main-layout'>
                 <div className='settings-card'>
-                    <h2>ajustes</h2>
+                    <h2>Ajustes</h2>
                     <div className='avatar-settings'>
                         <Avatar avatar={user.avatar} username={user.username} />
                     </div>
