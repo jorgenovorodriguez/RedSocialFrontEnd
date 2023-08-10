@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import onwerUserService from '../../services/onwerUserService';
 import useAuth from '../../hooks/useAuth';
+import { MdDelete } from 'react-icons/md';
+import DeleteConfirmationModal from '../Modals/DeleteConfirmationModal/DeleteConfirmationModal';
+
 //VersionDeControl
 const DeleteComment = ({
     publicationId,
@@ -11,8 +14,8 @@ const DeleteComment = ({
 }) => {
     const { token } = useAuth();
     const [isDeleting, setIsDeleting] = useState(false);
-    const [errorMessage, setErrorMessage] = useState(null);
     const [user, setUser] = useState('');
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -31,15 +34,20 @@ const DeleteComment = ({
 
     const handleDeleteComment = async () => {
         try {
-            if (confirm('¿Deseas eliminar el comentario?')) {
-                setIsDeleting(true);
-                await deleteComment(publicationId, commentId);
-                setIsDeleting(false);
-                window.location.reload();
-            }
+            setShowDeleteModal(true);
         } catch (error) {
-            setErrorMessage('Error al eliminar el comentario', error);
+            alert('Error al eliminar el comentario', error);
             setIsDeleting(false);
+        }
+    };
+
+    const handleConfirmDelete = async () => {
+        try {
+            deleteComment(publicationId, commentId);
+            setIsDeleting(false);
+            window.location.reload();
+        } catch (error) {
+            alert(error.message);
         }
     };
 
@@ -50,9 +58,17 @@ const DeleteComment = ({
                     {isDeleting ? (
                         <p>Eliminando comentario...</p>
                     ) : (
-                        <button onClick={handleDeleteComment}>X</button>
+                        <button onClick={handleDeleteComment}>
+                            <MdDelete style={{ fontSize: '1.2rem' }} />
+                        </button>
                     )}
-                    {errorMessage && <p>{errorMessage}</p>}
+                    {showDeleteModal && (
+                        <DeleteConfirmationModal
+                            objetive='este comentario'
+                            onConfirm={handleConfirmDelete}
+                            onClose={() => setShowDeleteModal(false)}
+                        />
+                    )}
                 </>
             )}
         </div>
