@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Logo from '../Logo/Logo';
-import Modal from '../Modal/Modal';
+import ErrorModal from '../Modals/ErrorModal/ErrorModal';
 import sendRecoverPassService from '../../services/sendRecoverPassService';
 import './RecoverPassForm.css';
 import Loader from '../Loader/Loader';
@@ -54,7 +54,7 @@ const RecoverPassForm = ({ setShowEditForm }) => {
                     {loading && <Loader />}
 
                     {showModal && (
-                        <Modal
+                        <ErrorModal
                             errorMessage={errorMessage}
                             onClose={handleCloseModal}
                         />

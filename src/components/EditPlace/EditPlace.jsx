@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import placeEditService from '../../services/placeEditService';
 import Loader from '../Loader/Loader';
-import Modal from '../Modal/Modal';
+import ErrorModal from '../Modals/ErrorModal/ErrorModal';
 
 const EditPlace = ({ token, currentPlace }) => {
     const [place, setPlace] = useState('');
@@ -53,7 +53,7 @@ const EditPlace = ({ token, currentPlace }) => {
 
                 {loading && <Loader />}
                 {showModal && (
-                    <Modal
+                    <ErrorModal
                         errorMessage={errorMessage}
                         onClose={handleCloseModal}
                     />

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import personalInfoEditService from '../../services/personalInfoEditService';
-import Modal from '../Modal/Modal';
+import ErrorModal from '../Modals/ErrorModal/ErrorModal';
 import Loader from '../Loader/Loader';
 
 const EditPersonalInfo = ({ token, currentPersonalInfo }) => {
@@ -53,7 +53,7 @@ const EditPersonalInfo = ({ token, currentPersonalInfo }) => {
 
                 {loading && <Loader />}
                 {showModal && (
-                    <Modal
+                    <ErrorModal
                         errorMessage={errorMessage}
                         onClose={handleCloseModal}
                     />

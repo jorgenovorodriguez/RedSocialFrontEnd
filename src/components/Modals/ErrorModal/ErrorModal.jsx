@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
-import './Modal.css';
+import ErrorMessage from '../../ErrorMessage/ErrorMessage';
+import '../Modal.css';
 import { IoCloseCircleSharp } from 'react-icons/io5';
 
-const Modal = ({ errorMessage, onClose }) => {
+const ErrorModal = ({ errorMessage, onClose }) => {
     return (
         <div className='modal-container'>
             <div className='modal-content'>
@@ -18,9 +18,9 @@ const Modal = ({ errorMessage, onClose }) => {
     );
 };
 
-Modal.propTypes = {
+ErrorModal.propTypes = {
     errorMessage: PropTypes.string,
     onClose: PropTypes.func,
 };
 
-export default Modal;
+export default ErrorModal;

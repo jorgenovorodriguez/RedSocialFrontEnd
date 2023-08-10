@@ -5,7 +5,7 @@ import publicationCreateService from '../../services/PublicationCreateService';
 import { FaLocationDot } from 'react-icons/fa6';
 import { MdAddLocationAlt } from 'react-icons/md';
 import { BiSolidImageAdd } from 'react-icons/bi';
-import Modal from '../Modal/Modal';
+import ErrorModal from '../Modals/ErrorModal/ErrorModal';
 import Loader from '../Loader/Loader';
 
 import './PublicationCreateForm.css';
@@ -225,7 +225,7 @@ const PublicationCreateForm = ({ token }) => {
                     {loading && <Loader />}
 
                     {showModal && (
-                        <Modal
+                        <ErrorModal
                             errorMessage={errorMessage}
                             onClose={handleCloseModal}
                         />
