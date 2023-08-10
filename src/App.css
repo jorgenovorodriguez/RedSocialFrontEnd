@@ -19,7 +19,6 @@
     bottom: 90%;
     align-items: center;
     justify-content: center;
-    
 }
 
 form {
@@ -82,7 +81,7 @@ form {
 .imputsLab input {
     margin-bottom: 0.7rem;
     border-radius: 0.5rem;
-    padding:0 0.5rem 0 0.5rem;
+    padding: 0 0.5rem 0 0.5rem;
 }
 
 .button-container {
@@ -239,15 +238,14 @@ a {
     border: none;
     width: 11rem;
     background-color: var(--tercerColor);
-    padding:0 0.5rem 0 0.5rem;
-
+    padding: 0 0.5rem 0 0.5rem;
 }
 
 .comment-header {
     width: 12rem;
     height: 3.6rem;
     flex-direction: row;
-    width: 12rem;
+    width: 14rem;
     display: flex;
     height: auto;
     flex-direction: row;
@@ -257,11 +255,8 @@ a {
 .comment-content {
     display: flex;
     flex-direction: column;
-
     align-content: flex-end;
-    align-items: center;
-
-    padding-left: 1.7rem;
+    align-items: end;
 }
 
 .comment-content button {
@@ -270,23 +265,24 @@ a {
 }
 
 .comment-text {
-   
-        width: 8rem;
-        font-size: 0.8rem;
-        white-space: pre-wrap; 
-        word-break: break-word; 
-        overflow: hidden;
-    
-    
+    width: 8rem;
+    font-size: 0.8rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow: hidden;
 }
 
 .comment-text p {
     font-size: 0.9rem;
     margin-bottom: 0;
+    margin-left: 0.5rem;
+    text-align: left;
 }
 
 .comment-text :first-child {
     font-weight: 700;
+    display: flex;
+    margin-left: 0.5rem;
 }
 
 .delete-commnet {

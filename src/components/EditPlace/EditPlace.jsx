@@ -44,7 +44,7 @@ const EditPlace = ({ token, currentPlace }) => {
                     onChange={(e) => setPlace(e.target.value)}
                     required
                     placeholder={
-                        currentPlace ? currentPlace : 'Editar ubicación'
+                        currentPlace ? currentPlace : 'Añadir ubicación'
                     }
                 />
                 <button type='submit' disabled={loading}>

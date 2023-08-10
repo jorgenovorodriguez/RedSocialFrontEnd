@@ -1,6 +1,7 @@
 .classP p {
-    text-align: center;
+    text-align: left;
     color: black;
+    margin-left: 0.5rem;
 }
 
 .classP {
