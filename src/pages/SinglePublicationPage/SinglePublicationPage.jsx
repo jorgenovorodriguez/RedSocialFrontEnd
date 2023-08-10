@@ -43,7 +43,7 @@ const SinglePublicationPage = () => {
                     />
                 )}
                 <div className='comentarios'>
-                    <div className=''>
+                    <div className='container-comment'>
                         {Array.isArray(publication?.comments) &&
                         publication.comments.length > 0 ? (
                             <Comment
