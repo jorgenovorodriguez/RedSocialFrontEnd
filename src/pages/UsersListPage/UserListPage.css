@@ -1,6 +1,10 @@
 .userList {
     margin-top: 2rem;
 }
+
+.userList ul {
+    padding-left: 0;
+}
 .userListItem {
     display: flex;
     align-items: center;
@@ -9,6 +13,7 @@
     background-color: var(--primerColor);
     border-radius: 1.5rem;
     margin-bottom: 0.7rem;
+    margin: 2rem 2rem 0.7rem 2rem;
     margin-right: 2rem;
     box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);
 }
@@ -56,6 +61,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding: 0 1rem;
 }
 
 .searchForm input {

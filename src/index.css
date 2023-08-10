@@ -58,8 +58,8 @@ body {
     grid-area: footer-layot;
     height: 10vh;
     min-height: 0;
-    background-color: var(--quintoColor);
-    color: white;
+    background-color: var(--primerColor);
+    color: rgb(0, 0, 0);
     position: static;
     display: flex;
     flex-direction: row;

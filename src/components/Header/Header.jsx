@@ -8,7 +8,7 @@ const Header = () => {
 
     return (
         <header>
-            <nav className='navbar navbar-expand-lg bg-dark '>
+            <nav className='navbar navbar-expand-lg bg-white '>
                 <div className='container-fluid'>
                     <NavLink to='/home'>
                         <div className='logo-navbar'>
@@ -34,7 +34,7 @@ const Header = () => {
                         <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                             <li className='nav-item'>
                                 <a
-                                    className='nav-link active text-white'
+                                    className='nav-link active text-dark'
                                     aria-current='page'
                                     href='/home'
                                 >
@@ -45,7 +45,7 @@ const Header = () => {
                                 <>
                                     <li className='nav-item'>
                                         <a
-                                            className='nav-link active text-white'
+                                            className='nav-link active text-dark'
                                             aria-current='page'
                                             href='/register'
                                         >
@@ -54,7 +54,7 @@ const Header = () => {
                                     </li>
                                     <li className='nav-item '>
                                         <a
-                                            className='nav-link active text-white'
+                                            className='nav-link active text-dark'
                                             aria-current='page'
                                             href='/login'
                                         >
@@ -66,7 +66,7 @@ const Header = () => {
 
                             <li className='nav-item'>
                                 <a
-                                    className='nav-link active text-white'
+                                    className='nav-link active text-dark'
                                     aria-current='page'
                                     href='/users'
                                 >
@@ -76,7 +76,7 @@ const Header = () => {
 
                             <li className='nav-item'>
                                 <a
-                                    className='nav-link active text-white'
+                                    className='nav-link active text-dark'
                                     aria-current='page'
                                     href='/contact'
                                 >
@@ -90,7 +90,7 @@ const Header = () => {
                                         className='nav-item'
                                         onClick={() => logout()}
                                     >
-                                        <a className='nav-link active text-white'>
+                                        <a className='nav-link active text-dark'>
                                             Cerrar Sesión
                                         </a>
                                     </li>
