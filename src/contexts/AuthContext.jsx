@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { createContext, useEffect, useState } from 'react';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 import userService from '../services/userServices.js';
 
@@ -18,7 +18,7 @@ const AuthProvider = ({ children }) => {
 
                 setUser(user);
             } catch (error) {
-                alert(error.message);
+                console.error(error.message);
             }
         };
 
