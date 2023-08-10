@@ -3,8 +3,6 @@ import useAuth from '../../hooks/useAuth';
 import { NavLink } from 'react-router-dom';
 import Avatar from '../Avatar/Avatar';
 import onwerUserService from '../../services/onwerUserService';
-import SearchForm from '../SearchForm/SearchForm';
-import usePublications from '../../hooks/usePublications';
 import './Footer.css';
 import { FaSearch } from 'react-icons/fa';
 import { MdAddCircle } from 'react-icons/md';
@@ -12,7 +10,6 @@ import { MdAddCircle } from 'react-icons/md';
 const Footer = () => {
     const { token } = useAuth();
     const [user, setUser] = useState('');
-    const { searchParams, setSearchParams, loading } = usePublications();
     const [buscadorActivo, setBuscadorActivo] = useState(false);
 
     useEffect(() => {
@@ -65,15 +62,6 @@ const Footer = () => {
                                 />
                             </NavLink>
                         </div>
-                        {buscadorActivo && (
-                            <div className=''>
-                                <SearchForm
-                                    setSearchParams={setSearchParams}
-                                    searchParams={searchParams}
-                                    loading={loading}
-                                />
-                            </div>
-                        )}
                     </>
                 ) : (
                     <div>
