@@ -6,6 +6,7 @@ import commentCreateService from '../../../services/commentCreateService';
 import Avatar from '../../Avatar/Avatar';
 import Loader from '../../Loader/Loader';
 import { FaComment } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 
 const CommentForm = ({ id, onAddComment }) => {
     const { token } = useAuth();
@@ -81,6 +82,11 @@ const CommentForm = ({ id, onAddComment }) => {
             {errorMessage && <ErrorMessage message={errorMessage} />}
         </>
     );
+};
+
+CommentForm.propTypes = {
+    id: PropTypes.number,
+    onAddComment: PropTypes.func,
 };
 
 export default CommentForm;

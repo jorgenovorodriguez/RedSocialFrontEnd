@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 import PublicationBody from '../../Publication/PublicationBody/PublicationBody';
 
 const UserProfilePublications = ({ publications }) => {
@@ -31,6 +31,10 @@ const UserProfilePublications = ({ publications }) => {
             </ul>
         </div>
     );
+};
+
+UserProfilePublications.propTypes = {
+    publications: PropTypes.array,
 };
 
 export default UserProfilePublications;

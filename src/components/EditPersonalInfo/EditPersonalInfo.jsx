@@ -2,6 +2,7 @@ import { useState } from 'react';
 import personalInfoEditService from '../../services/personalInfoEditService';
 import ErrorModal from '../Modals/ErrorModal/ErrorModal';
 import Loader from '../Loader/Loader';
+import PropTypes from 'prop-types';
 
 const EditPersonalInfo = ({ token, currentPersonalInfo }) => {
     const [personalInfo, setPersonalInfo] = useState('');
@@ -61,6 +62,11 @@ const EditPersonalInfo = ({ token, currentPersonalInfo }) => {
             </form>
         </div>
     );
+};
+
+EditPersonalInfo.propTypes = {
+    token: PropTypes.any,
+    currentPersonalInfo: PropTypes.string,
 };
 
 export default EditPersonalInfo;

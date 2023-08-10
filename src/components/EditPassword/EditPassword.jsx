@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import PropTypes from 'prop-types';
 import validatePasswordService from '../../services/validatePasswordService';
 import Loader from '../Loader/Loader';
 import ErrorModal from '../Modals/ErrorModal/ErrorModal';
@@ -106,6 +106,10 @@ const EditPassword = ({ token }) => {
             </form>
         </div>
     );
+};
+
+EditPassword.propTypes = {
+    token: PropTypes.any,
 };
 
 export default EditPassword;
