@@ -1,23 +1,17 @@
 import { Link } from 'react-router-dom';
 import usePublications from '../../hooks/usePublications';
 import Comment from '../Comment/Comment';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
+
 import Publication from '../Publication/Publication';
 import './PublicationList.css';
 import Loader from '../Loader/Loader';
 
 const PublicationList = () => {
-    const {
-        publications,
-        toogleLike,
-        deletePublication,
-        errorMessage,
-        loading,
-    } = usePublications();
+    const { publications, toogleLike, deletePublication, loading } =
+        usePublications();
     return (
         <>
             {loading && <Loader />}
-            {errorMessage && <ErrorMessage message={errorMessage} />}
 
             <ul className='aa'>
                 {publications.length > 0 ? (
@@ -48,7 +42,11 @@ const PublicationList = () => {
                         </li>
                     ))
                 ) : (
-                    <li>No hay publicaciones, haz la primera!</li>
+                    <div className='first-user'>
+                        <li>
+                            Aún no hay publicaciones. ¡Animate y haz la primera!
+                        </li>
+                    </div>
                 )}
             </ul>
         </>
