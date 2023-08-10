@@ -82,6 +82,7 @@ form {
 .imputsLab input {
     margin-bottom: 0.7rem;
     border-radius: 0.5rem;
+    padding:0 0.5rem 0 0.5rem;
 }
 
 .button-container {
@@ -235,6 +236,8 @@ a {
     border: none;
     width: 11rem;
     background-color: var(--tercerColor);
+    padding:0 0.5rem 0 0.5rem;
+
 }
 
 .comment-header {
