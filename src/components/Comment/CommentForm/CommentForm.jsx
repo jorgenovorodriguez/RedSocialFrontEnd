@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 import onwerUserService from '../../../services/onwerUserService';
-import ErrorMessage from '../../ErrorMessage/ErrorMessage';
 import commentCreateService from '../../../services/commentCreateService';
 import Avatar from '../../Avatar/Avatar';
 import Loader from '../../Loader/Loader';
 import { FaComment } from 'react-icons/fa';
 import PropTypes from 'prop-types';
+import ErrorModal from '../../Modals/ErrorModal/ErrorModal';
 
 const CommentForm = ({ id, onAddComment }) => {
     const { token } = useAuth();
@@ -14,6 +14,12 @@ const CommentForm = ({ id, onAddComment }) => {
     const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
     const [userComment, setUserComment] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+
+    const handleCloseModal = (e) => {
+        e.preventDefault();
+        setShowModal(false);
+    };
 
     useEffect(() => {
         const fetchUserComment = async () => {
@@ -21,10 +27,8 @@ const CommentForm = ({ id, onAddComment }) => {
                 const userData = await onwerUserService(token);
                 setUserComment(userData);
             } catch (error) {
-                console.error(
-                    'Error al obtener el usuario para comentar',
-                    error
-                );
+                setErrorMessage(error.message);
+                setShowModal(true);
             }
         };
 
@@ -50,11 +54,8 @@ const CommentForm = ({ id, onAddComment }) => {
             setText('');
             window.location.reload();
         } catch (error) {
-            setErrorMessage(
-                error.message ||
-                    'Hubo un error al comentar, inténtelo de nuevo más tarde'
-            );
-            console.error(error);
+            setErrorMessage(error.message);
+            setShowModal(true);
         } finally {
             setLoading(false);
         }
@@ -79,7 +80,12 @@ const CommentForm = ({ id, onAddComment }) => {
                 <FaComment style={{ fontSize: '1rem' }} />
             </button>
             {loading && <Loader />}
-            {errorMessage && <ErrorMessage message={errorMessage} />}
+            {showModal && (
+                <ErrorModal
+                    errorMessage={errorMessage}
+                    onClose={handleCloseModal}
+                />
+            )}
         </>
     );
 };

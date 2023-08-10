@@ -22,11 +22,10 @@ const InfoContainer = () => {
                 </h2>
                 <div className='info-text'>
                     <p>
-                        Únete a nuestra comunidad para estar al tanto de nuevas
-                        ofertas de trabajo o si simplemente te interesan las
-                        colaboraciones esporádicas. Si quieres encontrar a las
-                        nuevas promesas del tatuaje antes que nadie deberías
-                        formar parte de TattoArt..
+                        Únete a nuestra comunidad para estar al tanto de las
+                        novedades en el mundo del tatuaje. Encontrarás estudios
+                        en alquiler, tatuadores con talento, ofertas de empleo y
+                        mucho más.
                     </p>
                 </div>
                 <div className='buttonsInfoContainer'>
