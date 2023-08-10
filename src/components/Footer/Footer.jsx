@@ -38,7 +38,7 @@ const Footer = () => {
                             <NavLink to='/home'>
                                 <FaSearch
                                     style={{
-                                        color: 'white',
+                                        color: 'black',
                                         fontSize: '2.5rem',
                                     }}
                                 />
@@ -48,7 +48,7 @@ const Footer = () => {
                             <NavLink to='/message'>
                                 <MdAddCircle
                                     style={{
-                                        color: 'white',
+                                        color: 'black',
                                         fontSize: '3rem',
                                     }}
                                 />
