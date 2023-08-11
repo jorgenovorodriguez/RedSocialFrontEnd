@@ -44,7 +44,7 @@ form {
     background-color: #000000ba;
     border-radius: 1rem;
     position: relative;
-    top: 100px;
+    top: 150px;
 }
 
 .login-input {
@@ -265,7 +265,7 @@ a {
 }
 
 .comment-text {
-    width: 8rem;
+    
     font-size: 0.8rem;
     white-space: pre-wrap;
     word-break: break-word;
