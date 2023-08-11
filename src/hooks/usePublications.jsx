@@ -25,7 +25,7 @@ const usePublications = () => {
                 );
 
                 const body = await res.json();
-                console.log(body);
+
                 if (!res.ok) {
                     throw new Error(body.message);
                 }

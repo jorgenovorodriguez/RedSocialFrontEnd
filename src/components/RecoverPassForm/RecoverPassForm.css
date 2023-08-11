@@ -13,7 +13,7 @@
     background-color: #000000ba;
     border-radius: 1rem;
     position: relative;
-    top: 100px;
+    top: 150px;
 }
 
 .reclogo-container img {
@@ -64,6 +64,7 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 2rem;
     margin-bottom: 0.3rem;
+    padding: 0 0.5rem 0 0.5rem;
 }
 
 .imputRecover button {
@@ -102,6 +103,7 @@
     border: none;
     border-radius: 2rem;
     margin-bottom: 0.5rem;
+    padding: 0 0.5rem 0 0.5rem;
 }
 
 .buttonEdit {

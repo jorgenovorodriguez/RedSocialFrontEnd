@@ -27,7 +27,6 @@ const useSingleUser = (userId) => {
                 }
 
                 setUser(body.data.user);
-                console.log(body.data.user);
             } catch (error) {
                 setErrorMessage(error.message);
             } finally {
