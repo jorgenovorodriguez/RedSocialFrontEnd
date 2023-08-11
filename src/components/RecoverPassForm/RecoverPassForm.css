@@ -37,7 +37,6 @@
     bottom: 87%;
     align-items: center;
     justify-content: center;
-    
 }
 
 .imputRecover {
@@ -51,12 +50,12 @@
 
 .imputRecover h2 {
     margin-bottom: 1rem;
-    color: white;
+    color: var(--primerColor);
     font-size: 1rem;
 }
 
 .imputRecover label {
-    color: white;
+    color: var(--primerColor);
     margin-bottom: 0.3rem;
 }
 
@@ -71,7 +70,7 @@
     width: 40%;
     border-radius: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
+    color: var(--primerColor);
     background-color: transparent;
     cursor: pointer;
 }
@@ -93,7 +92,7 @@
 }
 
 .imput2Recover label {
-    color: white;
+    color: var(--primerColor);
     font-size: 1rem;
     margin-bottom: 0.3rem;
 }
@@ -116,7 +115,7 @@
     width: 60%;
     border: 1px solid rgba(255, 255, 255, 0.3);
 
-    color: white;
+    color: var(--primerColor);
     background-color: transparent;
     cursor: pointer;
 }

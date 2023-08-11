@@ -108,5 +108,5 @@
 
 .select-type {
     border-radius: 1rem;
-    background-color: white;
+    background-color: var(--primerColor);
 }

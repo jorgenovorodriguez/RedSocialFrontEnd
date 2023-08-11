@@ -15,7 +15,7 @@
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
-    border: 3px solid white;
+    border: 3px solid var(--primerColor);
     border-top-color: transparent;
     animation: spin 1.2s linear infinite;
 }
