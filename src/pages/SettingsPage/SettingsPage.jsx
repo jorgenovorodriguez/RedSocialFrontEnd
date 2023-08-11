@@ -7,6 +7,7 @@ import onwerUserService from '../../services/onwerUserService';
 import EditPersonalInfo from '../../components/EditPersonalInfo/EditPersonalInfo';
 import EditPlace from '../../components/EditPlace/EditPlace';
 import Footer from '../../components/Footer/Footer';
+import { Element } from 'react-scroll';
 
 import './SettingsPage.css';
 
