@@ -14,7 +14,7 @@
     padding: 1rem;
 }
 .reglogo-container img {
-    background-color: white;
+    background-color: var(--primerColor);
     border-radius: 50%;
     min-height: 1rem;
     min-width: 1rem;
@@ -34,9 +34,7 @@
     bottom: 92.1%;
     align-items: center;
     justify-content: center;
-    
 }
-
 
 .register-input {
     margin-top: 2rem;
@@ -47,7 +45,7 @@
 }
 
 .register-input h2 {
-    color: white;
+    color: var(--primerColor);
     text-align: center;
 }
 .check-role input {
@@ -58,7 +56,7 @@
     flex-direction: row;
     align-items: center;
     margin-bottom: 0.5rem;
-    color: antiquewhite;
+    color: var(--primerColor);
 }
 /*para modificarlas se tendria que hacer separado*/
 .label-role {
@@ -66,5 +64,5 @@
 }
 
 .no-register {
-    color: white;
+    color: var(--primerColor);
 }

@@ -1,5 +1,5 @@
 .logo-container img {
-    background-color: white;
+    background-color: var(--primerColor);
     border-radius: 50%;
     min-height: 1rem;
     min-width: 1rem;
@@ -175,7 +175,7 @@ a {
     position: relative;
     width: 20rem;
     padding: 0.7rem 0 0 0;
-    background-color: white;
+    background-color: var(--primerColor);
     border-radius: 0 0 2rem 2rem;
     display: flex;
     flex-direction: column;

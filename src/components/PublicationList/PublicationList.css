@@ -1,13 +1,14 @@
 .classP p {
     text-align: left;
-    color: black;
+    color: var(--quintoColor);
     margin-left: 0.5rem;
+
 }
 
 .classP {
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: var(--primerColor);
     max-width: 20rem;
     align-content: center;
     border-radius: 0 0 2rem 2rem;
