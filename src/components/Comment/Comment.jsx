@@ -1,6 +1,5 @@
 import CommentHeader from './CommentHeader/CommentHeader';
 import CommentBody from './CommentBody/CommentBody';
-import './comment.css';
 import DeleteComment from '../DeleteComment/DeleteComment';
 import PropTypes from 'prop-types';
 
@@ -10,6 +9,7 @@ const Comment = ({
     publicationId,
     publicationOwner,
 }) => {
+    console.log(comments);
     return (
         <ul className='ul'>
             {comments.map((comment, index) => (
