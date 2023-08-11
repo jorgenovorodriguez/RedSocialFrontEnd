@@ -5,7 +5,6 @@ import { MdDelete } from 'react-icons/md';
 import DeleteConfirmationModal from '../Modals/DeleteConfirmationModal/DeleteConfirmationModal';
 import PropTypes from 'prop-types';
 
-//VersionDeControl
 const DeleteComment = ({
     publicationId,
     commentId,
@@ -29,7 +28,6 @@ const DeleteComment = ({
         };
         fetchUser();
     }, [token]);
-    console.log(user);
 
     const isAuthor = publicationOwner === 1 || commentOwner === user.username;
 

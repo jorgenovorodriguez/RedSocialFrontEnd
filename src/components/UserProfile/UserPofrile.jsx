@@ -22,7 +22,7 @@ const UserProfile = ({ user, token }) => {
         };
         fetchUser();
     }, [token]);
-    console.log(userOwner);
+
     return (
         <div className='fullProfileCard'>
             <div className='userProfile-card'>

@@ -13,7 +13,6 @@ const registerService = async (username, email, password, role) => {
     });
 
     const body = await res.json();
-    console.log(body);
 
     if (!res.ok) {
         throw new Error(body.message);
