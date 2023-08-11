@@ -211,7 +211,7 @@ const PublicationCreateForm = ({ token }) => {
 
                     <textarea
                         className='text-area-field'
-                        placeholder='Añade una descripcion a tu imagen'
+                        placeholder='Añade una breve descripción'
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                         id='description'

@@ -1,6 +1,8 @@
 .classP p {
-    text-align: center;
+    text-align: left;
     color: var(--quintoColor);
+    margin-left: 0.5rem;
+
 }
 
 .classP {

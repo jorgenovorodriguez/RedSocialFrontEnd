@@ -2,6 +2,7 @@ import { useState } from 'react';
 import placeEditService from '../../services/placeEditService';
 import Loader from '../Loader/Loader';
 import ErrorModal from '../Modals/ErrorModal/ErrorModal';
+import PropTypes from 'prop-types';
 
 const EditPlace = ({ token, currentPlace }) => {
     const [place, setPlace] = useState('');
@@ -44,7 +45,7 @@ const EditPlace = ({ token, currentPlace }) => {
                     onChange={(e) => setPlace(e.target.value)}
                     required
                     placeholder={
-                        currentPlace ? currentPlace : 'Editar ubicación'
+                        currentPlace ? currentPlace : 'Añadir ubicación'
                     }
                 />
                 <button type='submit' disabled={loading}>
@@ -61,6 +62,11 @@ const EditPlace = ({ token, currentPlace }) => {
             </form>
         </div>
     );
+};
+
+EditPlace.propTypes = {
+    token: PropTypes.any,
+    currentPlace: PropTypes.string,
 };
 
 export default EditPlace;

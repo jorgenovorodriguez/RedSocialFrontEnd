@@ -4,6 +4,7 @@ import ErrorModal from '../Modals/ErrorModal/ErrorModal';
 import sendRecoverPassService from '../../services/sendRecoverPassService';
 import './RecoverPassForm.css';
 import Loader from '../Loader/Loader';
+import PropTypes from 'prop-types';
 
 const RecoverPassForm = ({ setShowEditForm }) => {
     const [email, setEmail] = useState('');
@@ -67,6 +68,10 @@ const RecoverPassForm = ({ setShowEditForm }) => {
             </div>
         </div>
     );
+};
+
+RecoverPassForm.propTypes = {
+    setShowEditForm: PropTypes.bool,
 };
 
 export default RecoverPassForm;

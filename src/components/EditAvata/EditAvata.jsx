@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import avatarEditService from '../../services/avatarEditService';
+import PropTypes from 'prop-types';
 
 const EditAvata = ({ token }) => {
     const [avatar, setAvatar] = useState(null);
@@ -30,6 +31,10 @@ const EditAvata = ({ token }) => {
             </form>
         </div>
     );
+};
+
+EditAvata.propTypes = {
+    token: PropTypes.any,
 };
 
 export default EditAvata;

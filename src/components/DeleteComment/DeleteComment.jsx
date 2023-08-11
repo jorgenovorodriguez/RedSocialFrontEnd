@@ -3,6 +3,7 @@ import onwerUserService from '../../services/onwerUserService';
 import useAuth from '../../hooks/useAuth';
 import { MdDelete } from 'react-icons/md';
 import DeleteConfirmationModal from '../Modals/DeleteConfirmationModal/DeleteConfirmationModal';
+import PropTypes from 'prop-types';
 
 //VersionDeControl
 const DeleteComment = ({
@@ -73,6 +74,14 @@ const DeleteComment = ({
             )}
         </div>
     );
+};
+
+DeleteComment.propTypes = {
+    publicationId: PropTypes.number,
+    commentId: PropTypes.number,
+    deleteComment: PropTypes.func,
+    commentOwner: PropTypes.number,
+    publicationOwner: PropTypes.number,
 };
 
 export default DeleteComment;

@@ -100,6 +100,7 @@ UserProfile.propTypes = {
             })
         ),
     }),
+    token: PropTypes.string,
 };
 
 export default UserProfile;

@@ -177,6 +177,9 @@ a {
     padding: 0.7rem 0 0 0;
     background-color: var(--primerColor);
     border-radius: 0 0 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .li {
@@ -241,18 +244,19 @@ a {
 .comment-header {
     width: 12rem;
     height: 3.6rem;
-    display: flex;
     flex-direction: row;
+    width: 14rem;
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .comment-content {
     display: flex;
     flex-direction: column;
-
     align-content: flex-end;
-    align-items: center;
-
-    padding-left: 1.7rem;
+    align-items: end;
 }
 
 .comment-content button {
@@ -261,22 +265,24 @@ a {
 }
 
 .comment-text {
-    display: flex;
     width: 8rem;
     font-size: 0.8rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: 0.4rem;
-    margin-left: 0.7rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow: hidden;
 }
 
 .comment-text p {
     font-size: 0.9rem;
     margin-bottom: 0;
+    margin-left: 0.5rem;
+    text-align: left;
 }
 
 .comment-text :first-child {
     font-weight: 700;
+    display: flex;
+    margin-left: 0.5rem;
 }
 
 .delete-commnet {
@@ -306,4 +312,5 @@ a {
     margin: 0 auto;
     overflow: hidden;
     border-radius: 0 0 2rem 2rem;
+    padding-bottom: 2rem;
 }
