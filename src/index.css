@@ -122,7 +122,7 @@ body {
         top: 20vh;
         z-index: 1;
     }
-
+ 
     .comentarios {
         width: 320px;
         display: flex;
@@ -357,5 +357,18 @@ body {
         padding-right: 0.3rem;
         outline: none;
         margin-right: -1.1rem;
+    }
+
+    .avatarProfile {
+        display: flex;
+        width: 8rem;
+        min-height: 0.5rem;
+        height: 8rem;
+        min-width: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.524);
+        border-radius: 50%;
+        position: absolute;
+        bottom: 72%;
+        margin-bottom: -.8rem;
     }
 }
