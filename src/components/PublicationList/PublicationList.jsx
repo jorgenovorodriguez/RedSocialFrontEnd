@@ -5,10 +5,13 @@ import Comment from '../Comment/Comment';
 import Publication from '../Publication/Publication';
 import './PublicationList.css';
 import Loader from '../Loader/Loader';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const PublicationList = () => {
     const { publications, toogleLike, deletePublication, loading } =
         usePublications();
+    const { isDarkMode } = useTheme();
+
     return (
         <>
             {loading && <Loader />}
@@ -23,7 +26,11 @@ const PublicationList = () => {
                                 deletePublication={deletePublication}
                                 loading={loading}
                             />
-                            <div className='classP'>
+                            <div
+                                className={`classP ${
+                                    isDarkMode ? 'dark' : 'light'
+                                }`}
+                            >
                                 <Link
                                     to={`/singlepublication/${publication.id}`}
                                 >

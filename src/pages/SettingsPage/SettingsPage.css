@@ -1,10 +1,8 @@
-.settings-card {
+.settings-card.light {
     display: flex;
     flex-direction: column;
-
     margin: auto;
     border: 0px none;
-
     min-height: 1rem;
     max-width: 20rem;
     min-width: 1rem;
@@ -15,10 +13,33 @@
     margin-bottom: 3rem;
 }
 
-.settings-card h2 {
+.settings-card.dark {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border: 0px none;
+    min-height: 1rem;
+    max-width: 20rem;
+    min-width: 1rem;
+    background-color: var(--quintoColor);
+    color: white;
+    border-radius: 1rem;
+    position: relative;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+
+.settings-card.light h2 {
     font-size: 1.5rem;
     margin-top: 5rem;
     color: black;
+    text-align: center;
+}
+
+.settings-card.dark h2 {
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    color: white;
     text-align: center;
 }
 

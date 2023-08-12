@@ -5,6 +5,7 @@ import { AiFillHeart } from 'react-icons/ai';
 import { useNavigate } from 'react-router';
 import DeleteConfirmationModal from '../../Modals/DeleteConfirmationModal/DeleteConfirmationModal';
 import { useState } from 'react';
+import { useTheme } from '../../../contexts/ThemeContext';
 
 const PublicationFooter = ({
     publicationId,
@@ -16,6 +17,7 @@ const PublicationFooter = ({
     loading,
 }) => {
     const { token } = useAuth();
+    const { isDarkMode } = useTheme();
     const navigate = useNavigate();
     const [showDeleteModal, setShowDeleteModal] = useState(false);
 
@@ -42,7 +44,7 @@ const PublicationFooter = ({
         }
     };
     return (
-        <footer className='footer-like'>
+        <footer className={`footer-like ${isDarkMode ? 'dark' : 'light'}`}>
             <div className='toogle-like'>
                 {likedByMe ? (
                     <AiFillHeart

@@ -5,7 +5,7 @@
 .userList ul {
     padding-left: 0;
 }
-.userListItem {
+.userListItem.light {
     display: flex;
     align-items: center;
     padding-left: 1rem;
@@ -17,6 +17,21 @@
     margin-right: 2rem;
     box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);
 }
+
+.userListItem.dark {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    list-style-type: none;
+    background-color: var(--quintoColor);
+    color: white;
+    border-radius: 1.5rem;
+    margin-bottom: 0.7rem;
+    margin: 2rem 2rem 0.7rem 2rem;
+    margin-right: 2rem;
+    box-shadow: 4px 4px 4px 3px rgba(133, 132, 132, 0.2);
+}
+
 .userListItem a {
     width: auto;
     display: flex;
@@ -32,25 +47,48 @@
     border-radius: 50%;
 }
 
-.userInfoList {
+.userInfoList.light {
     padding-top: 0.3rem;
     display: flex;
     flex-direction: column;
     height: 5rem;
     color: #3c8dbc;
 }
-.userInfoList :nth-child(1) {
+.userInfoList.light :nth-child(1) {
     color: var(--quintoColor);
     font-weight: 600;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
 }
-.userInfoList :nth-child(2) {
-    color: black;
+.userInfoList.light :nth-child(2) {
+    color: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.userInfoList :nth-child(3) {
+.userInfoList.light :nth-child(3) {
+    color: rgba(33, 103, 200, 0.851);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.userInfoList.dark {
+    padding-top: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+    color: #3c8dbc;
+}
+.userInfoList.dark :nth-child(1) {
+    color: var(--primerColor);
+    font-weight: 600;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.userInfoList.dark :nth-child(2) {
+    color: rgb(255, 254, 254);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.userInfoList.dark :nth-child(3) {
     color: rgba(33, 103, 200, 0.851);
     font-family: Arial, Helvetica, sans-serif;
 }
