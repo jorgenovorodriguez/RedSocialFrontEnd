@@ -1,7 +1,6 @@
 .publication-location {
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
     align-content: space-around;
     align-items: baseline;
 }

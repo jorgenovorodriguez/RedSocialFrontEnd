@@ -5,6 +5,7 @@ import PublicationBody from './PublicationBody/PublicationBody';
 import PublicationFooter from './PublicationFooter/PublicationFooter';
 
 import './Publication.css';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const Publication = ({
     publication,
@@ -12,8 +13,12 @@ const Publication = ({
     deletePublication,
     loading,
 }) => {
+    const { isDarkMode } = useTheme();
+
     return (
-        <div className='publication-container'>
+        <div
+            className={`publication-container ${isDarkMode ? 'dark' : 'light'}`}
+        >
             <Link to={`/users/${publication.authorId}`}>
                 <PublicationHeader
                     avatar={publication.authorAvatar}

@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import defaultAvatar from '../../assets/images/defaultAvatar.jpg';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const UserListItem = ({ user }) => {
+    const { isDarkMode } = useTheme();
+
     return (
         <Link to={`/users/${user.id}`}>
-            <li className='userListItem'>
+            <li className={`userListItem ${isDarkMode ? 'dark' : 'light'}`}>
                 <img
                     src={
                         user.avatar
@@ -14,7 +17,9 @@ const UserListItem = ({ user }) => {
                     }
                     alt={`${user.username} avatar`}
                 />
-                <div className='userInfoList'>
+                <div
+                    className={`userInfoList ${isDarkMode ? 'dark' : 'light'}`}
+                >
                     <div>{user.username}</div>
                     <div>{user.role}</div>
                     <div>{user.place}</div>

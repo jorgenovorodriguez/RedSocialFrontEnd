@@ -166,16 +166,31 @@ a {
     text-decoration: none;
 }
 
-.ul {
+.ul.light {
     list-style: none;
     margin-left: auto;
     margin-right: auto;
-    /* margin-bottom: -0.6rem; */
     overflow: scroll;
     position: relative;
     width: 20rem;
     padding: 0.7rem 0 0 0;
     background-color: var(--primerColor);
+    border-radius: 0 0 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.ul.dark {
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: scroll;
+    position: relative;
+    width: 20rem;
+    padding: 0.7rem 0 0 0;
+    background-color: var(--quintoColor);
+    color: white;
     border-radius: 0 0 2rem 2rem;
     display: flex;
     flex-direction: column;
@@ -301,7 +316,7 @@ a {
     font-size: 0.7rem;
 }
 
-.comentarios {
+.comentarios.light {
     width: 20rem;
     display: flex;
     flex-direction: column;
@@ -314,4 +329,43 @@ a {
     border-radius: 0 0 2rem 2rem;
     padding-bottom: 2rem;
     margin-bottom: 3rem;
+}
+
+.comentarios.dark {
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    background-color: var(--quintoColor);
+    color: white;
+    align-items: center;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 0 0 2rem 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+}
+
+.publicationForm.light {
+    display: flex;
+    margin: auto;
+    height: 18rem;
+    width: 20rem;
+    min-height: 1rem;
+    min-width: 1rem;
+    background-color: var(--primerColor);
+    border-radius: 0 0 1rem 1rem;
+}
+
+.publicationForm.dark {
+    display: flex;
+    margin: auto;
+    height: 18rem;
+    width: 20rem;
+    min-height: 1rem;
+    min-width: 1rem;
+    background-color: var(--quintoColor);
+    color: white;
+    border-radius: 0 0 1rem 1rem;
 }
