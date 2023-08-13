@@ -182,7 +182,6 @@
     color: black;
     border-radius: 0 auto 1.5rem 1.5rem;
     margin-bottom: 1rem;
-    padding-bottom: 8rem;
 }
 
 .footer-like.dark {
@@ -191,10 +190,9 @@
     justify-content: space-between;
     padding: 1rem;
     background-color: var(--quintoColor);
-    color: rgb(123, 123, 123);
+    color: white;
     border-radius: 0 auto 1.5rem 1.5rem;
     margin-bottom: 1rem;
-    padding-bottom: 8rem;
 }
 
 .heart {
