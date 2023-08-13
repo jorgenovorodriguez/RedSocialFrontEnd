@@ -218,14 +218,16 @@ body {
     .photo-info img {
         width: 260px;
         min-width: 100px;
-        min-height: 100px;
+        max-height: 350px;
+        height: 260px;
         object-fit: cover;
     }
     
     .photo-info video {
         width: 260px;
         min-width: 100px;
-        min-height: 100px;
+        max-height: 350px;
+        height: 260px;
         object-fit: cover;
         margin-bottom: -0.5rem;
     }
