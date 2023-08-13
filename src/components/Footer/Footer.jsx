@@ -6,6 +6,7 @@ import onwerUserService from '../../services/onwerUserService';
 import './Footer.css';
 import { FaSearch } from 'react-icons/fa';
 import { MdAddCircle } from 'react-icons/md';
+import { BiSolidUserPlus } from 'react-icons/bi';
 
 const Footer = () => {
     const { token } = useAuth();
@@ -64,9 +65,13 @@ const Footer = () => {
                         </div>
                     </>
                 ) : (
-                    <div>
+                    <div className='footer-guest'>
                         <NavLink to='/register'>
                             <p>Regístrate o inicia sesión</p>
+                            <BiSolidUserPlus
+                                className='footer-icon'
+                                style={{ color: 'black', fontSize: '2.5rem' }}
+                            />
                         </NavLink>
                     </div>
                 )}
