@@ -310,7 +310,9 @@ a {
 .delete-commnet button {
     border: none;
     background-color: rgba(240, 248, 255, 0);
+    
 }
+
 .comment-time {
     display: flex;
     font-size: 0.7rem;
@@ -347,6 +349,7 @@ a {
     margin-bottom: 3rem;
 }
 
+
 .publicationForm.light {
     display: flex;
     margin: auto;
@@ -356,6 +359,7 @@ a {
     min-width: 1rem;
     background-color: var(--primerColor);
     border-radius: 0 0 1rem 1rem;
+    margin-bottom: 2rem;
 }
 
 .publicationForm.dark {
@@ -368,4 +372,5 @@ a {
     background-color: var(--quintoColor);
     color: white;
     border-radius: 0 0 1rem 1rem;
+    margin-bottom: 2rem;
 }

@@ -14,7 +14,8 @@ const PublicationHeader = ({ username, createdAt, place, avatar }) => {
             <div className='pubavatar-container'>
                 <Avatar avatar={avatar} username={username} />
             </div>
-            <div className='header-username'>
+            <div className={`header-username ${isDarkMode ? 'dark' : 'light'}`}
+        >
                 <p className='user-name'>{username}</p>
                 <div>
                     <time>

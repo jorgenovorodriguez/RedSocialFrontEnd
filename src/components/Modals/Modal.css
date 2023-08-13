@@ -29,6 +29,9 @@
     margin: 0.5rem;
 }
 
+.modal-content p{
+    color:black;
+}
 .modal-text {
     padding: 1rem;
 }
@@ -36,9 +39,13 @@
 .yes-no {
     display: flex;
     justify-content: space-between;
+    
 }
-
-.yes-no-res {
+.yes-no button{
+    color:black;
+}
+.yes-no-res  {
     border-radius: 15%;
     padding: 0.5rem 1rem;
+    
 }

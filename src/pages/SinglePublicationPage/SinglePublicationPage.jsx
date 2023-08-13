@@ -8,7 +8,7 @@ import useAuth from '../../hooks/useAuth';
 import Footer from '../../components/Footer/Footer';
 import Loader from '../../components/Loader/Loader';
 
-import './SinglePublicationPage.css';
+
 import { useTheme } from '../../contexts/ThemeContext';
 
 const SinglePublicationPage = () => {
@@ -57,7 +57,7 @@ const SinglePublicationPage = () => {
                                 publicationOwner={publication.owner}
                             />
                         ) : (
-                            <p className='pub-p'>
+                            <p className={`pub-p ${isDarkMode ? 'dark' : 'light'}`}>
                                 ¿No hay comentarios? Anímate, haz el primero
                             </p>
                         )}
