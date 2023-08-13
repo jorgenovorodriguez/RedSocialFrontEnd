@@ -98,7 +98,7 @@
 }
 
 .header-username.dark :nth-child(1) {
-    color: rgb(0, 0, 0);
+    color: white;
 
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
@@ -207,6 +207,15 @@
     width: 2rem;
     border-radius: 0.3rem;
     border: none;
+}
+.pub-p{
+    text-align: center;
+    color: black;
+}
+
+.pub-p.dark{
+    text-align: center;
+    color: white;
 }
 
 /*Este es el estilo del div de los likes, hay que eliminar el que estaba antes

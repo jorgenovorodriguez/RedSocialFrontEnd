@@ -98,7 +98,7 @@ body {
     margin-left: -1.6rem;
 }
 
-@media (min-width: 1024px) {
+/*@media (min-width: 1024px) {
     body {
         grid-template-rows: auto;
         grid-template-columns: auto auto 1fr;
@@ -472,4 +472,5 @@ body {
     .ul {
         margin-left: -1.6rem;
     }
-}
+}*/
+
