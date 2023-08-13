@@ -7,7 +7,7 @@ import './Footer.css';
 import { FaSearch } from 'react-icons/fa';
 import { MdAddCircle } from 'react-icons/md';
 import { BiSolidUserPlus } from 'react-icons/bi';
-import { useTheme } from '../../contexts/ThemeContext'; // Importa useTheme
+import { useTheme } from '../../contexts/ThemeContext'; 
 
 const Footer = () => {
     const { token } = useAuth();

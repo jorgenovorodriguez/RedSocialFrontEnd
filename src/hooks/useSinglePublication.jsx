@@ -96,8 +96,7 @@ const useSinglePublication = () => {
         }
     };
 
-    //deleteComment
-
+   
     return {
         publication,
         toogleLike,
