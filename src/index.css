@@ -218,14 +218,16 @@ body {
     .photo-info img {
         width: 260px;
         min-width: 100px;
-        min-height: 100px;
+        max-height: 350px;
+        height: 260px;
         object-fit: cover;
     }
     
     .photo-info video {
         width: 260px;
         min-width: 100px;
-        min-height: 100px;
+        max-height: 350px;
+        height: 260px;
         object-fit: cover;
         margin-bottom: -0.5rem;
     }
@@ -235,7 +237,7 @@ body {
     }
 
     .searchForm form {
-        margin: -15rem 0 1rem 0;
+        margin: -1rem 0 1rem 0;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -471,3 +473,4 @@ body {
         margin-left: -1.6rem;
     }
 }*/
+

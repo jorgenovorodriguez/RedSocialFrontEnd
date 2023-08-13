@@ -75,6 +75,7 @@
 
 .user-name {
     font-weight: 600;
+    margin-bottom: .1rem;
     font-size: 16px;
 }
 
@@ -178,8 +179,10 @@
     justify-content: space-between;
     padding: 1rem;
     background-color: var(--primerColor);
+    color: black;
     border-radius: 0 auto 1.5rem 1.5rem;
     margin-bottom: 1rem;
+    padding-bottom: 8rem;
 }
 
 .footer-like.dark {
@@ -188,9 +191,10 @@
     justify-content: space-between;
     padding: 1rem;
     background-color: var(--quintoColor);
-    color: white;
+    color: rgb(123, 123, 123);
     border-radius: 0 auto 1.5rem 1.5rem;
     margin-bottom: 1rem;
+    padding-bottom: 8rem;
 }
 
 .heart {
