@@ -8,4 +8,10 @@
 
 .container-fluid button {
     z-index: 1;
+    border-radius: 0.5rem;
+}
+
+.mode-button{
+    width:4rem;
+    background-color: var(--tercerColor);
 }

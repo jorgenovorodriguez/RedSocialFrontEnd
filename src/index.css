@@ -70,9 +70,6 @@ body {
     margin: 1.5rem auto;
 }
 
-.footer-icon {
-    display: none;
-
 .footer-layout.dark {
     grid-area: footer-layout;
     height: 10vh;
@@ -87,7 +84,6 @@ body {
     width: 100vw;
     z-index: 2;
     margin: 1.5rem auto;
-
 }
 
 .logos-footer img {
@@ -106,12 +102,12 @@ body {
     body {
         grid-template-rows: auto;
         grid-template-columns: auto auto 1fr;
-        grid-template-areas:
+        grid-template-areas: 
             'header-layout header-layout header-layout'
             'footer-layout main-layout main-layout'
             'footer-layout main-layout main-layout';
     }
-
+    
     .header-layout {
         grid-area: header-layout;
         position: static;
@@ -146,15 +142,7 @@ body {
         border-radius: 28px;
         margin-top: 4.7rem;
     }
-
-    .footer-guest p {
-        display: none;
-    }
-
-    .footer-icon {
-        display: block;
-    }
-
+    
     .main-layout {
         grid-area: main-layout;
         width: 100vw;
@@ -233,7 +221,7 @@ body {
         min-height: 100px;
         object-fit: cover;
     }
-
+    
     .photo-info video {
         width: 260px;
         min-width: 100px;
@@ -247,7 +235,7 @@ body {
     }
 
     .searchForm form {
-        margin: -15rem 0 1rem 0;
+        margin: -1rem 0 1rem 0;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -303,20 +291,12 @@ body {
         height: 60vh;
     }
 
-
-    .classP {
-        margin-top: -46px;
-        margin-bottom: 64px;
-        padding-bottom: 16px;
-        margin-right: -16px;
-        max-width: none;
-
     .classP.light {
        margin-top: -46px;
        margin-bottom: 64px;
        padding-bottom: 16px;
        margin-right: -16px;
-
+       
     }
 
     .classP.dark {
@@ -348,6 +328,7 @@ body {
     }
 
     .publication-profile {
+        
         height: auto;
     }
 
@@ -356,19 +337,11 @@ body {
         flex-wrap: wrap;
     }
 
-
-    .settings-card {
-        max-width: 50rem;
-        width: 50rem;
-        gap: 1rem;
-        z-index: 0;
-
     .settings-card.light {
        max-width: 50rem;
        width: 50rem;
        gap: 1rem;
        z-index: 0;
-
     }
 
     .settings-card.dark {
@@ -381,8 +354,8 @@ body {
     .avatar-settings {
         left: 42%;
     }
-
-    .edit-pass input {
+   
+    .edit-pass input{
         width: 87%;
     }
 
@@ -415,27 +388,26 @@ body {
     .edit-Avata {
         margin-top: 1rem;
     }
-
+    
     .edit-personalInfo button {
         margin-bottom: 1.8rem;
         margin-right: -3.7rem;
     }
 
     .edit-place button {
-        margin-bottom: 0.8rem;
+        margin-bottom: .8rem;
         margin-right: -3.7rem;
     }
 
     .edit-Avata button {
-        margin-bottom: 0.9rem;
+        margin-bottom: .9rem;
         margin-left: -1.3rem;
     }
 
-    .edit-Avata label,
-    .edit-Avata input {
+    .edit-Avata label, .edit-Avata input {
         margin-left: -1.8rem;
     }
-
+    
     .register-card {
         display: flex;
         flex-direction: column;

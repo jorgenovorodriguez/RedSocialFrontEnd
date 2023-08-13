@@ -3,6 +3,7 @@ import useAuth from '../../hooks/useAuth';
 import './Header.css';
 import Logo from '../Logo/Logo';
 import { useTheme } from '../../contexts/ThemeContext';
+import { GrActions } from 'react-icons/gr';
 
 const Header = () => {
     const { token, logout } = useAuth();
@@ -21,7 +22,9 @@ const Header = () => {
                             <Logo />{' '}
                         </div>
                     </NavLink>
-                    <button onClick={toggleDarkMode}>Cambiar Modo</button>
+                    <button className='mode-button' onClick={toggleDarkMode}>
+                        <GrActions style={{ fontSize: '1.2rem' }} />
+                    </button>
                     <button
                         className='navbar-toggler btn btn-light bg-light '
                         type='button'

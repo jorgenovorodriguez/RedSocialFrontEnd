@@ -9,7 +9,6 @@ import { MdAddCircle } from 'react-icons/md';
 import { BiSolidUserPlus } from 'react-icons/bi';
 import { useTheme } from '../../contexts/ThemeContext'; // Importa useTheme
 
-
 const Footer = () => {
     const { token } = useAuth();
     const [user, setUser] = useState('');
@@ -72,10 +71,9 @@ const Footer = () => {
                 ) : (
                     <div className='footer-guest'>
                         <NavLink to='/register'>
-                            <p>Regístrate o inicia sesión</p>
                             <BiSolidUserPlus
                                 className='footer-icon'
-                                style={{ color: 'black', fontSize: '2.5rem' }}
+                                style={{ color: 'gray', fontSize: '2.5rem' }}
                             />
                         </NavLink>
                     </div>
