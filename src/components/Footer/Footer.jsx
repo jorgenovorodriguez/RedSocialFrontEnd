@@ -7,11 +7,14 @@ import './Footer.css';
 import { FaSearch } from 'react-icons/fa';
 import { MdAddCircle } from 'react-icons/md';
 import { BiSolidUserPlus } from 'react-icons/bi';
+import { useTheme } from '../../contexts/ThemeContext'; // Importa useTheme
+
 
 const Footer = () => {
     const { token } = useAuth();
     const [user, setUser] = useState('');
     const [buscadorActivo, setBuscadorActivo] = useState(false);
+    const { isDarkMode } = useTheme();
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -28,8 +31,10 @@ const Footer = () => {
     const perfil = `/users/`;
 
     return (
-        <div className='fijo'>
-            <footer className='footer-layout'>
+        <div className={`fijo ${isDarkMode ? 'dark' : 'light'}`}>
+            <footer
+                className={`footer-layout ${isDarkMode ? 'dark' : 'light'}`}
+            >
                 {token ? (
                     <>
                         <div
@@ -39,7 +44,7 @@ const Footer = () => {
                             <NavLink to='/home'>
                                 <FaSearch
                                     style={{
-                                        color: 'black',
+                                        color: isDarkMode ? 'white' : 'black',
                                         fontSize: '2.5rem',
                                     }}
                                 />
@@ -49,7 +54,7 @@ const Footer = () => {
                             <NavLink to='/message'>
                                 <MdAddCircle
                                     style={{
-                                        color: 'black',
+                                        color: isDarkMode ? 'white' : 'black',
                                         fontSize: '3rem',
                                     }}
                                 />

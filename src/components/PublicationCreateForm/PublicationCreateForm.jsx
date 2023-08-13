@@ -7,13 +7,14 @@ import { MdAddLocationAlt } from 'react-icons/md';
 import { BiSolidImageAdd } from 'react-icons/bi';
 import ErrorModal from '../Modals/ErrorModal/ErrorModal';
 import Loader from '../Loader/Loader';
+import { useTheme } from '../../contexts/ThemeContext';
+import getGeolocationService from '../../services/getGeolocationService';
 
 import './PublicationCreateForm.css';
 
-import getGeolocationService from '../../services/getGeolocationService';
-
 const PublicationCreateForm = ({ token }) => {
     const navigate = useNavigate();
+    const { isDarkMode } = useTheme();
 
     const [description, setDescription] = useState('');
     const [photo, setPhoto] = useState(null);
@@ -151,7 +152,7 @@ const PublicationCreateForm = ({ token }) => {
                     )}
                 </label>
             </div>
-            <div className='publicationForm'>
+            <div className={`publicationForm ${isDarkMode ? 'dark' : 'light'}`}>
                 <form onSubmit={handleSubmit}>
                     <input
                         type='file'

@@ -7,9 +7,11 @@ import onwerUserService from '../../services/onwerUserService';
 import { MdSettings } from 'react-icons/md';
 import './UserProfile.css';
 import { FaLocationDot } from 'react-icons/fa6';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const UserProfile = ({ user, token }) => {
     const [userOwner, setUserOwner] = useState('');
+    const { isDarkMode } = useTheme();
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -25,7 +27,9 @@ const UserProfile = ({ user, token }) => {
 
     return (
         <div className='fullProfileCard'>
-            <div className='userProfile-card'>
+            <div
+                className={`userProfile-card ${isDarkMode ? 'dark' : 'light'}`}
+            >
                 <div className='avatarProfile'>
                     <Avatar avatar={user.avatar} username={user.username} />
                 </div>
@@ -50,7 +54,9 @@ const UserProfile = ({ user, token }) => {
                             )}
                         </div>
                     </div>
-                    <div className='userName'>
+                    <div
+                        className={`userName ${isDarkMode ? 'dark' : 'light'}`}
+                    >
                         <h2>{user.username}</h2>
                         <div className='profile-location'>
                             {user.place && (
@@ -62,7 +68,11 @@ const UserProfile = ({ user, token }) => {
                         </div>
                     </div>
 
-                    <div className='userPersonalInfo'>
+                    <div
+                        className={`userPersonalInfo ${
+                            isDarkMode ? 'dark' : 'light'
+                        }`}
+                    >
                         <p>{user.personalInfo}</p>
                     </div>
                 </div>

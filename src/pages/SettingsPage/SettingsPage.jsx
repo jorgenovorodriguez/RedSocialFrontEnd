@@ -7,13 +7,13 @@ import onwerUserService from '../../services/onwerUserService';
 import EditPersonalInfo from '../../components/EditPersonalInfo/EditPersonalInfo';
 import EditPlace from '../../components/EditPlace/EditPlace';
 import Footer from '../../components/Footer/Footer';
-import { Element } from 'react-scroll';
-
 import './SettingsPage.css';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const SettingsPage = () => {
     const { token } = useAuth();
     const [user, setUser] = useState('');
+    const { isDarkMode } = useTheme();
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -30,7 +30,9 @@ const SettingsPage = () => {
     return (
         <>
             <main className='main-layout'>
-                <div className='settings-card'>
+                <div
+                    className={`settings-card ${isDarkMode ? 'dark' : 'light'}`}
+                >
                     <h2>Ajustes</h2>
 
                     <div className='avatar-settings'>

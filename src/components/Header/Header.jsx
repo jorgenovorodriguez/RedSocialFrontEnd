@@ -2,20 +2,26 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Header.css';
 import Logo from '../Logo/Logo';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const Header = () => {
     const { token, logout } = useAuth();
+    const { isDarkMode, toggleDarkMode } = useTheme();
 
     return (
         <header>
-            <nav className='navbar navbar-expand-lg bg-white '>
+            <nav
+                className={`navbar navbar-expand-lg bg-${
+                    isDarkMode ? 'dark' : 'light'
+                }`}
+            >
                 <div className='container-fluid'>
                     <NavLink to='/home'>
                         <div className='logo-navbar'>
                             <Logo />{' '}
                         </div>
                     </NavLink>
-
+                    <button onClick={toggleDarkMode}>Cambiar Modo</button>
                     <button
                         className='navbar-toggler btn btn-light bg-light '
                         type='button'
@@ -34,7 +40,9 @@ const Header = () => {
                         <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                             <li className='nav-item'>
                                 <a
-                                    className='nav-link active text-dark'
+                                    className={`nav-link active text-${
+                                        !isDarkMode ? 'dark' : 'light'
+                                    }`}
                                     aria-current='page'
                                     href='/home'
                                 >
@@ -45,7 +53,9 @@ const Header = () => {
                                 <>
                                     <li className='nav-item'>
                                         <a
-                                            className='nav-link active text-dark'
+                                            className={`nav-link active text-${
+                                                !isDarkMode ? 'dark' : 'light'
+                                            }`}
                                             aria-current='page'
                                             href='/register'
                                         >
@@ -54,7 +64,9 @@ const Header = () => {
                                     </li>
                                     <li className='nav-item '>
                                         <a
-                                            className='nav-link active text-dark'
+                                            className={`nav-link active text-${
+                                                !isDarkMode ? 'dark' : 'light'
+                                            }`}
                                             aria-current='page'
                                             href='/login'
                                         >
@@ -66,7 +78,9 @@ const Header = () => {
 
                             <li className='nav-item'>
                                 <a
-                                    className='nav-link active text-dark'
+                                    className={`nav-link active text-${
+                                        !isDarkMode ? 'dark' : 'light'
+                                    }`}
                                     aria-current='page'
                                     href='/users'
                                 >
@@ -76,7 +90,9 @@ const Header = () => {
 
                             <li className='nav-item'>
                                 <a
-                                    className='nav-link active text-dark'
+                                    className={`nav-link active text-${
+                                        !isDarkMode ? 'dark' : 'light'
+                                    }`}
                                     aria-current='page'
                                     href='/contact'
                                 >
@@ -90,7 +106,11 @@ const Header = () => {
                                         className='nav-item'
                                         onClick={() => logout()}
                                     >
-                                        <a className='nav-link active text-dark'>
+                                        <a
+                                            className={`nav-link active text-${
+                                                !isDarkMode ? 'dark' : 'light'
+                                            }`}
+                                        >
                                             Cerrar Sesión
                                         </a>
                                     </li>

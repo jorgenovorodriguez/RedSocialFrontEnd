@@ -9,6 +9,7 @@ import Footer from '../../components/Footer/Footer';
 import Loader from '../../components/Loader/Loader';
 
 import './SinglePublicationPage.css';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const SinglePublicationPage = () => {
     const { token } = useAuth();
@@ -21,6 +22,7 @@ const SinglePublicationPage = () => {
         loading,
         setPublication,
     } = useSinglePublication();
+    const { isDarkMode } = useTheme();
 
     const [userComment, setUserComment] = useState([]);
 
@@ -42,7 +44,7 @@ const SinglePublicationPage = () => {
                         loading={loading}
                     />
                 )}
-                <div className='comentarios'>
+                <div className={`comentarios ${isDarkMode ? 'dark' : 'light'}`}>
                     <div className='container-comment'>
                         {Array.isArray(publication?.comments) &&
                         publication.comments.length > 0 ? (
